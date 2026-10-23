@@ -42,7 +42,7 @@ PUT `/api/admin/users/<int:user_id>/roles` 要求admin:assign，body `{role_ids:
 PUT `/api/admin/roles/<int:role_id>/permissions` 要求admin:policy，body `{permission_ids:[int],base_revision:int}`，还检查修改前有效权限的委派范围。
 PUT `/api/admin/hierarchy` 要求admin:policy，body `{edges:[{senior_id,junior_id}],base_revision:int}`（完整替换），同样不能通过继承绕过委派边界。过期版本409 `STALE_POLICY`，成功返回新`policy_revision`。
 
-`/api/state`新增`resources:{menus,pages,actions}`与`policy_revision`；资源字段及本轮委派边界详见[修订合同](revision-contract.md)。目录存数据库，不含受保护正文；菜单导航成功返回该领地目录。
+`/api/state`新增`resources:{menus,pages,actions}`与`policy_revision`；资源目录及委派边界详见[设计说明](design.md)。目录存数据库，不含受保护正文；菜单导航成功返回该领地目录。
 
 `audit_ledger`返回真实`audit_report`：开账余额、金币流入/流出、预期/实际余额、差异、是否一致及覆盖流水上界；审计次数+1不再是全部业务语义。所有报告、计数、流水和成功审计一起提交。
 
