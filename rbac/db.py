@@ -146,13 +146,21 @@ def _replace_default(conn, table, key_column, key, column, old, new):
 
 
 def _migrate_kuttenberg_theme(conn):
-    """A separate display revision keeps the v1/v2 data schema compatible.
+    """Apply display revisions without changing the v1/v2 data schema."""
+    row = conn.execute("SELECT version FROM theme_meta WHERE theme='kuttenberg-mint'").fetchone()
+    version = row['version'] if row else 0
+    if version < 1:
+        _migrate_kuttenberg_v1(conn)
+    if version < 2:
+        _migrate_kuttenberg_v2(conn)
+
+
+def _migrate_kuttenberg_v1(conn):
+    """Retain the originally shipped display defaults as migration history.
 
     This is a teaching setting inspired by locations in KCD2, not a statement
     that the fictional account holders occupy these offices in the game's plot.
     """
-    if conn.execute("SELECT 1 FROM theme_meta WHERE theme='kuttenberg-mint' AND version>=1").fetchone():
-        return
     resource_updates = {
         'menu:square': {
             'title': ('王城公共广场', '库滕贝格市政广场'),
@@ -289,6 +297,31 @@ def _migrate_kuttenberg_theme(conn):
     _replace_default(conn, 'kingdom_document', 'slug', 'defense_map', 'records_json',
                      json.dumps(old_records, ensure_ascii=False), json.dumps(new_records, ensure_ascii=False))
     conn.execute("INSERT INTO theme_meta VALUES ('kuttenberg-mint',1)")
+
+
+def _migrate_kuttenberg_v2(conn):
+    """Correct only known v1 defaults; user prose and evidence stay intact."""
+    defaults = (
+        ('ui_resource', 'code', 'menu:square', 'title', '库滕贝格市政广场'),
+        ('ui_resource', 'code', 'menu:square', 'description', '库滕贝格的行会生产、税务公告与市政通行。'),
+        ('ui_resource', 'code', 'page:tax_scroll', 'description', '查阅库滕贝格市政税目、教学税则与申报周期。'),
+        ('sys_permission', 'code', 'menu:square', 'name', '库滕贝格市政广场'),
+        ('sys_permission', 'code', 'menu:square', 'description', '库滕贝格市政与行会事务入口'),
+        ('sys_permission', 'code', 'page:tax_scroll', 'description', '查阅库滕贝格市政税务告示'),
+        ('kingdom_document', 'slug', 'tax_scroll', 'content',
+         '库滕贝格市政公开告示：行会按季度申报，农户按秋收结算。下列税目与比例仅为课程教学数据，不代表游戏税制或历史税率。'),
+        ('kingdom_document', 'slug', 'defense_map', 'content',
+         '教学机密手令：特罗斯基城堡出发的运银护送由第七骑兵团负责，经库滕贝格外城交接，凭军令进入意大利宫。此驻军与换防安排为RBAC教学情境，不作为游戏剧情事实。'),
+    )
+    for table, key_column, key, column, old in defaults:
+        _replace_default(conn, table, key_column, key, column, old, old.replace('库滕贝格', '库滕堡'))
+    old_records = json.dumps([
+        {'据点': '特罗斯基城堡集结点（教学）', '驻军': '第七骑兵团（教学）', '换防': '卯时'},
+        {'据点': '库滕贝格外城交接点（教学）', '驻军': '第三护送队（教学）', '换防': '黎明'},
+    ], ensure_ascii=False)
+    _replace_default(conn, 'kingdom_document', 'slug', 'defense_map', 'records_json',
+                     old_records, old_records.replace('库滕贝格', '库滕堡'))
+    conn.execute("UPDATE theme_meta SET version=2 WHERE theme='kuttenberg-mint'")
 
 
 def resource_catalog(conn, territory=None):
