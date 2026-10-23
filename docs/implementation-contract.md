@@ -1,11 +1,11 @@
 # 接口与策略契约
 
-应用为本地 Python Flask + SQLite 作业，不部署到公网。前端使用本地原生 JS/CSS；Google Fonts 仅提供可选展示字体，并设置本机字体后备。字体服务不可用时，已安装依赖的应用仍可离线完成登录、页面读取、权限管理和业务操作。UTF-8 中文界面；主题为中世纪王室政令大厅。
+应用为本地 Python Flask + SQLite 作业，不部署到公网。前端使用本地原生 JS/CSS；Google Fonts 仅提供可选展示字体，并设置本机字体后备。字体服务不可用时，已安装依赖的应用仍可离线完成登录、页面读取、权限管理和业务操作。UTF-8 中文界面；主题为库滕贝格皇家铸币厂与市政厅，人物职务采用原创教学设定，见[场景说明](kuttenberg-scenario.md)。
 
 ## 安全和模型
 
 - 密码登录，所有演示账号共用公开的教学密码 `Kingdom@2026`；服务端从 Flask 签名会话识别 actor，业务请求不接受 actor/user_id 作为身份。
-- GET `/api/bootstrap` -> `{authenticated, users:[{id,username,display_name,title}], csrf_token}`。用户名 henry/radzig/hans/wenceslas/agnes；5 位分别平民、卫队长、财政大臣、国王、审计官。
+- GET `/api/bootstrap` -> `{authenticated, users:[{id,username,display_name,title}], csrf_token}`。用户名 henry/radzig/hans/wenceslas/agnes；5 位分别平民、卫队长、铸币司库、国王、审计官。
 - 所有 POST/PUT 必须 `X-CSRF-Token`；登录 POST `/api/login` body `{username,password}` -> `{ok,message,csrf_token}`；退出 POST `/api/logout`。
 - RBAC0 用户/角色/权限和会话；默认激活所有直接分配角色。RBAC1 多继承 DAG（senior 继承 junior），闭包去重、防环。RBAC2 实现 SSD（财政与审计互斥，按有效角色闭包判断）；RBAC3 同时生效。额外拒绝有效权限同时包含拨款和审计的策略，防止直接授权绕过职责分离。国王无自动全权，不兼任财政与审计。
 - 政策修改事务内检查：无环、所有用户有效角色 SSD、所有角色/用户的有效权限不能同时拨款与审计，至少一位用户同时拥有 admin:assign、admin:policy、admin:audit，失败全部回滚。角色激活必须是当前仍分配的角色子集；撤权下次请求即生效。
@@ -18,7 +18,7 @@ PAGE: page:tax_scroll, page:defense_map, page:royal_ledger。
 BUTTON: btn:forge_sword, btn:deploy_cavalry, btn:open_vault, btn:audit_ledger。
 ADMIN: admin:assign, admin:policy, admin:audit。
 
-roles 的 id/code/name: 1 PEASANT 行会平民，2 CAPTAIN 皇家卫队长，3 TREASURER 财政大臣，4 KING 至高国王，5 AUDITOR 皇家审计官。
+roles 的 id/code/name: 1 PEASANT 行会平民，2 CAPTAIN 皇家卫队长，3 TREASURER 铸币司库，4 KING 至高国王，5 AUDITOR 皇家银库审计官。
 hierarchy 初始 2->1,3->1,4->2,5->1。KING 直接权限 menu:treasury/page:royal_ledger/所有 ADMIN；不直接持有拨款或审计。
 
 ## 响应
@@ -44,7 +44,7 @@ PUT `/api/admin/hierarchy` 要求admin:policy，body `{edges:[{senior_id,junior_
 
 `/api/state`新增`resources:{menus,pages,actions}`与`policy_revision`；资源目录及委派边界详见[设计说明](design.md)。目录存数据库，不含受保护正文；菜单导航成功返回该领地目录。
 
-`audit_ledger`返回真实`audit_report`：开账余额、金币流入/流出、预期/实际余额、差异、是否一致及覆盖流水上界；审计次数+1不再是全部业务语义。所有报告、计数、流水和成功审计一起提交。
+`audit_ledger`返回真实`audit_report`：开账余额、格罗申流入/流出、预期/实际余额、差异、是否一致及覆盖流水上界；审计次数+1不再是全部业务语义。所有报告、计数、流水和成功审计一起提交。
 
 GET `/` 渲染 index.html。前端 script 使用 `url_for('static',filename='app.js')`，style 同理。index/resource 都自己负责模板，无 Jinja 上下文额外依赖（resource 的四个字段见上）。
 

@@ -119,3 +119,7 @@ CREATE TABLE IF NOT EXISTS audit_report (
     created_at TEXT NOT NULL
 );
 CREATE INDEX IF NOT EXISTS idx_audit_time ON audit_event(created_at DESC);
+CREATE TABLE IF NOT EXISTS theme_meta (
+    theme TEXT PRIMARY KEY,
+    version INTEGER NOT NULL CHECK(version>=1)
+);

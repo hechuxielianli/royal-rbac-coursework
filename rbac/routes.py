@@ -234,7 +234,7 @@ def document(conn, slug):
         data['records'] = rows(conn,
             'SELECT b.id,u.display_name AS 操作者,b.description AS 事项,b.amount AS 数量,b.created_at AS 时间 '
             'FROM business_ledger b JOIN sys_user u ON u.id=b.actor_id ORDER BY b.id DESC LIMIT 30')
-        data['content'] += f' 当前国库余额：{business_state(conn)["gold"]} 枚金币。'
+        data['content'] += f' 当前银库余额：{business_state(conn)["gold"]} 格罗申。'
         data['audit_reports'] = rows(conn, 'SELECT * FROM audit_report ORDER BY id DESC LIMIT 5')
         for report in data['audit_reports']:
             report['consistent'] = bool(report['consistent'])

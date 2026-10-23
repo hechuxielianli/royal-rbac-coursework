@@ -3,21 +3,21 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>{{ title }} · 皇家档案卷轴</title>
+  <title>{{ title }} · 意大利宫档案</title>
   <link rel="icon" href="{{ url_for('static',filename='crest.svg') }}" type="image/svg+xml">
   <link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}">
 </head>
 {% set granted = event and event.allowed %}
 <body class="resource-body archive-page {{ 'archive-allowed' if granted else 'archive-denied' }}">
-  <main class="standalone-scroll archive-shell archive-scroll">
+  <main class="standalone-scroll archive-shell archive-scroll codex-scroll">
     <img class="archive-watermark" src="{{ url_for('static',filename='crest.svg') }}" alt="" aria-hidden="true">
     <a href="/" class="scroll-back archive-back">← 返回政令大厅</a>
     <header class="scroll-brand archive-brand">
-      <img class="archive-crest" src="{{ url_for('static',filename='crest.svg') }}" alt="王室盾徽">
-      <div><span>THE ROYAL ARCHIVES</span><small>波希米亚王室 · 机密档案卷轴</small></div>
+      <img class="archive-crest" src="{{ url_for('static',filename='crest.svg') }}" alt="原创双尾银狮盾徽">
+      <div><span>THE ITALIAN COURT ARCHIVES</span><small>库滕贝格 · 皇家铸币厂与市政厅</small></div>
       <span class="archive-status">{{ '授权通过 · AUTHORIZED' if granted else '卫兵拦截 · ACCESS DENIED' }}</span>
     </header>
-    <div class="eyebrow archive-kicker">{{ 'BY ROYAL AUTHORITY / 奉王室之命启封' if granted else 'THE ROYAL GUARD / 封存令仍然生效' }}</div>
+    <div class="eyebrow archive-kicker">{{ 'BY ROYAL AUTHORITY / 奉王室之命启封' if granted else 'HALT! / 卫兵盘查，禁止擅入' }}</div>
     <h1 class="archive-title">{{ title }}</h1>
     <p class="scroll-content archive-content">{{ content }}</p>
     {% if records %}
@@ -42,7 +42,7 @@
       {% endfor %}
     </details>
     {% endif %}
-    <footer><span>ROYAL CHANCELLERY · BOHEMIA</span><p>此页由服务器鉴权后渲染，页面内容没有预先发送到未授权浏览器。</p></footer>
+    <footer><span>KUTTENBERG · BOHEMIA · 1403</span><p>授权决定卷轴是否启封。人物职务与政令内容采用原创教学设定。</p></footer>
   </main>
 </body>
 </html>

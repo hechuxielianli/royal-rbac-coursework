@@ -3159,6 +3159,175 @@ main {
     font-size: 12px
   }
 }
+/* Kuttenberg: original silver-lion heraldry, illuminated folios and coin feedback. */
+.resource-body.archive-allowed .archive-content {
+  display: flow-root;
+}
+.resource-body.archive-allowed .archive-content::first-letter {
+  float: left;
+  margin: 8px 15px 2px 0;
+  padding: 11px 12px 13px;
+  border: 1px solid #b8934d;
+  color: #f3d18a;
+  background: radial-gradient(circle at 30% 20%,#8d3e36,#611f28 72%);
+  box-shadow: inset 0 0 0 3px #6c2b29,inset 0 0 0 4px #c7a35a88,0 3px 9px #462d2026;
+  font-family: var(--serif);
+  font-size: 68px;
+  font-weight: 600;
+  line-height: .98;
+  text-shadow: 0 1px 0 #fff0b74d,1px 2px 1px #492b16;
+}
+.guard-alert {
+  position: relative;
+  display: grid;
+  grid-template-columns: 36px minmax(0,1fr) 40px;
+  gap: 15px;
+  align-items: start;
+  margin: 22px 28px 0 34px;
+  padding: 18px 20px;
+  border: 1px solid #bc78625f;
+  border-left: 3px solid #cd8972;
+  color: #e7b6a6;
+  background: radial-gradient(ellipse at 0 0,#9e4a3826,transparent 65%),linear-gradient(115deg,#332120,#21171a);
+  box-shadow: inset 0 1px 0 #f3d6a20c,0 8px 24px #0003;
+}
+.workspace-grid .guard-alert {
+  margin-inline: 0;
+}
+.guard-alert-mark {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 38px;
+  border: 1px solid #bd82637a;
+  border-radius: 40% 40% 46% 46%;
+  color: #f0c38e;
+  background: #9e4a381a;
+  font: 22px/1 var(--display);
+}
+.guard-alert-copy {
+  min-width: 0;
+  padding-top: 1px;
+}
+.guard-alert-copy>strong {
+  display: block;
+  color: #f1ceae;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.8;
+}
+.guard-alert-copy p {
+  margin: 6px 0 0;
+  color: #dab2a5;
+  font: 12px/1.9 var(--sans);
+  overflow-wrap: anywhere;
+}
+.guard-alert-close {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  min-height: 40px;
+  color: #dfb39c;
+  background: #ffffff03;
+  border: 1px solid #d49b6e33;
+  font: 23px/1 var(--sans);
+}
+.guard-alert-close:hover {
+  color: #ffe3c6;
+  background: #c27a4b18;
+  border-color: #d49b6e77;
+}
+.metric-treasury {
+  position: relative;
+  isolation: isolate;
+}
+.metric-treasury:after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: 7px;
+  border: 1px solid transparent;
+  pointer-events: none;
+}
+.metric-treasury.currency-updated {
+  animation: treasury-flash .9s ease-out;
+}
+.metric-treasury.currency-updated #metricGold {
+  animation: coin-count-settle .45s ease-out;
+}
+.currency-delta {
+  position: absolute;
+  right: 13px;
+  top: 13px;
+  z-index: 2;
+  max-width: calc(100% - 20px);
+  padding: 2px 5px;
+  border: 1px solid #cab4714d;
+  color: #ece5d2;
+  background: #191819e8;
+  box-shadow: 0 2px 8px #0005;
+  font: 10px/1.8 var(--mono);
+  letter-spacing: .2px;
+  white-space: nowrap;
+  pointer-events: none;
+}
+.currency-updated .currency-delta {
+  animation: coin-delta-rise 1.25s ease-out both;
+}
+.currency-delta:empty {
+  display: none;
+}
+@keyframes treasury-flash {
+  0%,100% { background-color: transparent; box-shadow: none; }
+  20% { background-color: #c9a25324; box-shadow: inset 0 0 22px #d9b66626; }
+  55% { background-color: #c9a2530e; box-shadow: inset 0 0 14px #d9b66613; }
+}
+@keyframes coin-count-settle {
+  0% { transform: translateY(-3px); color: #fff1c2; }
+  100% { transform: translateY(0); color: #f0d595; }
+}
+@keyframes coin-delta-rise {
+  0% { opacity: 0; transform: translateY(7px); }
+  15%,55% { opacity: 1; }
+  100% { opacity: 0; transform: translateY(-12px); }
+}
+@media(max-width:720px) {
+  .guard-alert {
+    grid-template-columns: 28px minmax(0,1fr) 40px;
+    gap: 10px;
+    margin: 18px 18px 0;
+    padding: 16px 13px;
+  }
+  .guard-alert-mark {
+    width: 27px;
+    height: 32px;
+    font-size: 19px;
+  }
+  .guard-alert-copy>strong {
+    font-size: 14px;
+  }
+  .resource-body.archive-allowed .archive-content::first-letter {
+    margin: 7px 11px 1px 0;
+    padding: 9px 9px 10px;
+    font-size: 53px;
+    line-height: .98;
+  }
+  .currency-delta {
+    top: 8px;
+    right: 8px;
+    font-size: 10px;
+  }
+}
+@media(max-width:390px) {
+  .guard-alert {
+    margin-inline: 16px;
+  }
+  .resource-body.archive-allowed .archive-content::first-letter {
+    margin-right: 9px;
+    padding: 8px;
+    font-size: 49px;
+  }
+}
 @media(prefers-reduced-motion:reduce) {
   *,*:before,*:after {
     animation: none!important;
@@ -3167,5 +3336,13 @@ main {
   }
   .brand:hover img,.login-art>img:hover,.archive-crest:hover,.action-card button:hover,.small-button:hover,.primary-button:hover {
     transform: none
+  }
+  .metric-treasury.currency-updated {
+    outline: 1px solid #d8b66a99;
+    outline-offset: -5px;
+  }
+  .currency-updated .currency-delta {
+    opacity: 1;
+    transform: none;
   }
 }

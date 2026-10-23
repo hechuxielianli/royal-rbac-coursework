@@ -21,6 +21,28 @@ let pendingAdminAction = null;
 let appliedHash = '';
 let routeVersion = 0;
 let recoveringSession = null;
+let displayedTreasury = null;
+let treasuryFeedbackTimer;
+
+function clearGuardAlert() {
+  $('#guardAlert').hidden = true;
+}
+
+function showGuardAlert(error) {
+  const event = error.data?.event;
+  if (!state || event?.allowed !== false || ![403,409].includes(error.status)) return;
+  const code = error.data.code;
+  const heading = ['SSD_CONFLICT','PERMISSION_CONFLICT'].includes(code)
+    ? '皇家反走私法令 · 职责不可兼任'
+    : code === 'INSUFFICIENT_GOLD' ? '银库余额不足 · 拨款未执行'
+    : code === 'STALE_POLICY' ? '旧手令已失效 · 请核对最新授权'
+    : '卫兵盘查 · 该政令尚未获准通行';
+  $('#guardAlertTitle').textContent = heading;
+  const resource = Object.values(state.resources || {}).flat().find(item => item.code === event.target);
+  $('#guardAlertMessage').textContent = `${state.user.display_name}，${resource?.title || '本次政令'}已被拦截。${error.message} 事件：${event.id}`;
+  $('#guardAlert').dataset.eventId = event.id;
+  $('#guardAlert').hidden = false;
+}
 
 // Remember a control across a policy refresh that may rebuild its DOM node.
 function describeTrigger(trigger) {
@@ -107,6 +129,7 @@ async function api(path, {method = 'GET', body} = {}) {
       await recoverSession();
       error.message = state ? '通行令牌已更新，请检查当前状态后重新操作；原请求未自动重发。' : '会话已过期，请重新登录。原操作未执行或重发。';
     }
+    showGuardAlert(error);
     throw error;
   }
   return data;
@@ -134,6 +157,11 @@ function showLogin() {
   adminState = null;
   adminDirty = false;
   pendingAdminAction = null;
+  clearGuardAlert();
+  displayedTreasury = null;
+  clearTimeout(treasuryFeedbackTimer);
+  $('.metric-treasury').classList.remove('currency-updated');
+  $('#treasuryDelta').textContent = '';
   clearViewport();
   events = [];
   renderEvents();
@@ -196,6 +224,21 @@ function renderBusiness() {
   const business = state.business || {};
   for (const [id,key] of [['metricSwords','swords'],['metricCavalry','cavalry_deployments'],['metricGold','gold'],['metricAudits','audits']]) {
     $(`#${id}`).textContent = Number(business[key] ?? 0).toLocaleString('zh-CN');
+  }
+  const balance = Number(business.gold ?? 0);
+  const delta = displayedTreasury === null ? 0 : balance - displayedTreasury;
+  displayedTreasury = balance;
+  if (delta !== 0) {
+    const card = $('.metric-treasury');
+    clearTimeout(treasuryFeedbackTimer);
+    $('#treasuryDelta').textContent = `${delta > 0 ? '+' : '−'}${Math.abs(delta).toLocaleString('zh-CN')} G`;
+    card.classList.remove('currency-updated');
+    void card.offsetWidth;
+    card.classList.add('currency-updated');
+    treasuryFeedbackTimer = setTimeout(() => {
+      card.classList.remove('currency-updated');
+      $('#treasuryDelta').textContent = '';
+    }, 1400);
   }
 }
 
@@ -395,8 +438,8 @@ function showDenied(error, target, slug = null) {
 
 function auditReportHTML(report) {
   if (!report) return '';
-  const labels = {opening_gold:'期初金币',total_credits:'入账金币合计',total_debits:'支出金币合计',expected_gold:'账本预期余额',actual_gold:'实际国库余额',difference:'实际 − 预期',ledger_count:'核对流水条数',through_ledger_id:'核对至流水ID'};
-  return `<section class="audit-report" data-testid="audit-report"><h3>独立审计报告 #${escapeHTML(report.id)}</h3><p class="audit-result${report.consistent ? '' : ' error'}">${report.consistent ? '核对一致：账本与国库余额相符。' : '发现差异：账本与国库余额不符。'}</p><p>预期余额 = 期初金币 + 入账金币 − 支出金币。仅汇总金币业务流水。</p><dl>${Object.entries(labels).map(([key,label]) => `<div><dt>${label}</dt><dd data-report-field="${key}">${escapeHTML(report[key])}</dd></div>`).join('')}</dl><p>生成时间：${escapeHTML(report.created_at)}。报告与业务记录在同一事务持久化。</p></section>`;
+  const labels = {opening_gold:'期初格罗申',total_credits:'入账格罗申合计',total_debits:'支出格罗申合计',expected_gold:'账本预期余额',actual_gold:'实际银库余额',difference:'实际 − 预期',ledger_count:'核对流水条数',through_ledger_id:'核对至流水ID'};
+  return `<section class="audit-report" data-testid="audit-report"><h3>独立审计报告 #${escapeHTML(report.id)}</h3><p class="audit-result${report.consistent ? '' : ' error'}">${report.consistent ? '核对一致：账本与银库余额相符。' : '发现差异：账本与银库余额不符。'}</p><p>预期余额 = 期初格罗申 + 入账格罗申 − 支出格罗申。仅汇总银库收支流水。</p><dl>${Object.entries(labels).map(([key,label]) => `<div><dt>${label}</dt><dd data-report-field="${key}">${escapeHTML(report[key])}</dd></div>`).join('')}</dl><p>金额单位：格罗申（Groschen）。生成时间：${escapeHTML(report.created_at)}。报告与业务记录在同一事务持久化。</p></section>`;
 }
 
 async function openPage(slug) {
@@ -407,6 +450,7 @@ async function openPage(slug) {
   const requestVersion = routeVersion;
   const data = await api(`/api/pages/${encodeURIComponent(slug)}`);
   if (!state || requestVersion !== routeVersion) return;
+  clearGuardAlert();
   viewport.classList.remove('denial-panel');
   viewport.dataset.testid = 'page-content';
   viewport.innerHTML = `<div class="viewport-top"><h3>${escapeHTML(data.title)}</h3><button data-close-page aria-label="关闭卷轴">×</button></div><p>${escapeHTML(data.content)}</p>${recordTable(data.records)}${(data.audit_reports || []).map(auditReportHTML).join('')}<a class="text-button" href="/pages/${encodeURIComponent(slug)}" target="_blank" rel="noopener">在独立受控页面中打开 ↗</a>`;
@@ -419,6 +463,7 @@ async function executeAction(slug) {
   try {
     const data = await api(`/api/actions/${encodeURIComponent(slug)}`, {method:'POST', body:{}});
     if (!state) return;
+    clearGuardAlert();
     if (data.business) { state.business = data.business; renderBusiness(); }
     else await loadState();
     if (data.audit_report) {
@@ -568,7 +613,8 @@ async function saveActivation(form) {
 document.addEventListener('click', async event => {
   const button = event.target.closest('button');
   if (!button || button.disabled) return;
-  if (button.dataset.nav) await busy(button, () => navigate(button.dataset.nav, button));
+  if (button.id === 'closeGuardAlert') clearGuardAlert();
+  else if (button.dataset.nav) await busy(button, () => navigate(button.dataset.nav, button));
   else if (button.dataset.page) await busy(button, () => routeTo(`/pages/${encodeURIComponent(button.dataset.page)}`, {trigger:button}));
   else if (button.dataset.action) await busy(button, () => executeAction(button.dataset.action));
   else if (button.hasAttribute('data-close-page') || button.hasAttribute('data-back')) await busy(button, () => routeTo(currentTerritory ? `/territory/${encodeURIComponent(currentTerritory)}` : '/experiment'));

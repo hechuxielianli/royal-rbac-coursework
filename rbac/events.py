@@ -224,9 +224,9 @@ class BusinessActionListener:
     def on_event(self, event, conn):
         slug = event.context['slug']
         operations = {
-            'forge_sword': ('swords',1,'一把行会铁剑已入库'),
-            'deploy_cavalry': ('cavalry_deployments',1,'重装骑兵调遣令已登记'),
-            'open_vault': ('gold',-100,'已拨付100枚金币，支出已记入总账'),
+            'forge_sword': ('swords',1,'一把矿路护卫铁剑已入库'),
+            'deploy_cavalry': ('cavalry_deployments',1,'运银护送调令已登记，骑兵调遣次数增加一次'),
+            'open_vault': ('gold',-100,'已拨付100格罗申运银经费，支出已记入意大利宫收支密账'),
             'audit_ledger': ('audits',1,'独立审计记录已封存'),
         }
         if not event.allowed:
@@ -235,9 +235,9 @@ class BusinessActionListener:
         if slug == 'audit_ledger':
             report = reconcile_ledger(conn, event)
             event.result['audit_report'] = report
-            description = '账本核对报告已保存：' + ('余额一致' if report['consistent'] else f'发现差异 {report["difference"]:+d} 枚金币')
+            description = '银库核对报告已保存：' + ('余额一致' if report['consistent'] else f'发现差异 {report["difference"]:+d} 格罗申')
         if slug == 'open_vault' and business_state(conn)['gold'] < 100:
-            raise DomainError('国库余额不足100枚金币', 'INSUFFICIENT_GOLD', 409)
+            raise DomainError('银库余额不足100格罗申，无法拨付运银经费', 'INSUFFICIENT_GOLD', 409)
         # column comes from the internal mapping above, not from a request value.
         conn.execute(f'UPDATE kingdom_state SET {column}={column}+? WHERE id=1', (amount,))
         conn.execute('INSERT INTO business_ledger(event_id,actor_id,action,amount,description,created_at) '
