@@ -22,6 +22,46 @@ let appliedHash = '';
 let routeVersion = 0;
 let recoveringSession = null;
 
+// Remember a control across a policy refresh that may rebuild its DOM node.
+function describeTrigger(trigger) {
+  if (!trigger || trigger.selector !== undefined) return trigger;
+  const selector = trigger.id ? `#${CSS.escape(trigger.id)}` : trigger.dataset.testid
+    ? `[data-testid="${CSS.escape(trigger.dataset.testid)}"]` : null;
+  return {element:trigger, selector};
+}
+
+function interceptShake(trigger) {
+  const source = describeTrigger(trigger);
+  const element = source?.element?.isConnected ? source.element : source?.selector ? $(source.selector) : null;
+  if (!element || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (element._interceptCleanup) element._interceptCleanup();
+  element.classList.remove('intercept-shake');
+  void element.offsetWidth; // Restart the same short animation on repeated refusals.
+  element.classList.add('intercept-shake');
+  const cleanup = () => {
+    clearTimeout(timer);
+    element.classList.remove('intercept-shake');
+    element.removeEventListener('animationend', onEnd);
+    delete element._interceptCleanup;
+  };
+  const onEnd = event => { if (event.target === element && event.animationName === 'intercept-shake') cleanup(); };
+  const timer = setTimeout(cleanup, 420);
+  element._interceptCleanup = cleanup;
+  element.addEventListener('animationend', onEnd);
+}
+
+function isIntercept(error) {
+  return error.status === 403 || error.status === 409 || error.data?.event?.allowed === false;
+}
+
+function eventVerdict(event) {
+  if (event.allowed) return 'allow';
+  const conflicts = new Set(['SSD_CONFLICT', 'PERMISSION_CONFLICT', 'HIERARCHY_CYCLE',
+    'LAST_ADMINISTRATOR', 'STALE_POLICY', 'INSUFFICIENT_GOLD']);
+  const denial = (event.logs || []).find(log => log.step === 'DECISION_DENY');
+  return conflicts.has(String(denial?.detail || '').split(':')[0]) ? 'conflict' : 'deny';
+}
+
 function hasPermission(code) { return Boolean(state?.permission_codes?.includes(code)); }
 function roleName(id) { return state?.roles?.find(role => Number(role.id) === Number(id))?.name || `角色 ${id}`; }
 function canManage() { return (state?.permission_codes || []).some(code => code.startsWith('admin:')); }
@@ -73,6 +113,7 @@ async function api(path, {method = 'GET', body} = {}) {
 }
 
 async function busy(button, task) {
+  const trigger = describeTrigger(button);
   const wasDisabled = button?.disabled;
   if (button) { button.disabled = true; button.setAttribute('aria-busy','true'); }
   try { return await task(); }
@@ -81,6 +122,7 @@ async function busy(button, task) {
     if (state && error.status === 403 && error.data?.code === 'PERMISSION_DENIED') {
       try { await loadState(); } catch (_) { /* The original error remains visible. */ }
     }
+    if (isIntercept(error)) interceptShake(trigger);
   }
   finally { if (button?.isConnected) { button.disabled = wasDisabled; button.removeAttribute('aria-busy'); } }
 }
@@ -229,8 +271,8 @@ function setView(view) {
   renderNavigation();
 }
 
-async function navigate(slug) {
-  return routeTo(`/territory/${encodeURIComponent(slug)}`);
+async function navigate(slug, trigger = null) {
+  return routeTo(`/territory/${encodeURIComponent(slug)}`, {trigger});
 }
 
 function adminFeedback(message = '', {error = false, discard = false} = {}) {
@@ -268,16 +310,17 @@ function allowDraftExit(action) {
   return false;
 }
 
-async function routeTo(path, {replace = false, force = false} = {}) {
+async function routeTo(path, {replace = false, force = false, trigger = null} = {}) {
+  const source = describeTrigger(trigger);
   const nextHash = `#${path}`;
-  if (!force && nextHash === appliedHash) return adminDirty ? undefined : applyRoute();
-  if (!force && nextHash !== appliedHash && !allowDraftExit(() => routeTo(path,{replace,force:true}))) return;
+  if (!force && nextHash === appliedHash) return adminDirty ? undefined : applyRoute(source);
+  if (!force && nextHash !== appliedHash && !allowDraftExit(() => routeTo(path,{replace,force:true,trigger:source}))) return;
   if (force) { adminDirty = false; pendingAdminAction = null; }
   if (location.hash !== nextHash) history[replace ? 'replaceState' : 'pushState'](null, '', nextHash);
-  await applyRoute();
+  await applyRoute(source);
 }
 
-async function applyRoute() {
+async function applyRoute(trigger = null) {
   if (!state) return;
   const version = ++routeVersion;
   const requestedHash = location.hash;
@@ -323,6 +366,7 @@ async function applyRoute() {
     setView('governance');
     showDenied(error, parts[0] === 'pages' ? `page:${slug}` : `menu:${slug}`, parts[0] === 'pages' ? slug : null);
     notify(error.message, true);
+    if (isIntercept(error)) interceptShake(trigger);
   }
 }
 
@@ -401,6 +445,7 @@ function addEvent(event) {
 
 function renderEvents(openId) {
   const previouslyOpen = new Set($$('.event-entry[open]').map(entry => entry.dataset.eventId));
+  const previouslyRendered = new Set($$('.event-entry').map(entry => entry.dataset.eventId));
   $('#eventCount').textContent = events.length;
   const filtered = eventFilter === 'denied' ? events.filter(event => !event.allowed) : events;
   const feed = $('#eventFeed');
@@ -410,12 +455,16 @@ function renderEvents(openId) {
   }
   feed.innerHTML = filtered.map((event, index) => {
     const denied = !event.allowed;
+    const verdict = eventVerdict(event);
+    const labels = {allow:['ALLOW','授权放行'], deny:['DENY','卫兵拦截'], conflict:['CONFLICT','约束冲突']};
+    const [badge, label] = labels[verdict];
     const timestamp = event.created_at || event.logs?.[0]?.time || '';
     const parsedTime = new Date(timestamp);
     const time = Number.isNaN(parsedTime.getTime()) ? timestamp.slice(0,12) : parsedTime.toLocaleTimeString('zh-CN', {timeZone:'Asia/Shanghai',hour12:false});
     const shortId = String(event.id).slice(0,8);
     const open = event.id === openId || previouslyOpen.has(String(event.id)) || (index === 0 && previouslyOpen.size === 0);
-    return `<details class="event-entry" data-event-id="${escapeHTML(event.id)}"${open ? ' open' : ''}><summary><div class="entry-meta"><span class="decision${denied ? ' denied' : ''}">${denied ? 'DENY' : 'ALLOW'}</span><time>${escapeHTML(time)}</time><span>#${escapeHTML(shortId)}</span></div><div class="entry-name">${escapeHTML(event.target || event.event_type)}<span>⌄</span></div><div class="entry-actor">${escapeHTML(event.actor_name || state?.user?.display_name || '匿名请求')} · ${escapeHTML(event.event_type || '')}</div></summary><div class="event-logs">${(event.logs || []).map(log => `<div class="event-log${/DENY|VIOLATION|CONFLICT|ROLLBACK|ERROR/i.test(log.step) ? ' deny' : ''}"><code>${escapeHTML(log.step)}</code><p>${escapeHTML(log.detail)}</p></div>`).join('')}${event.message ? `<div class="event-log${denied ? ' deny' : ''}"><code>RESPONSE</code><p>${escapeHTML(event.message)}</p></div>` : ''}</div></details>`;
+    const arrived = !previouslyRendered.has(String(event.id));
+    return `<details class="event-entry event-card verdict-${verdict}${arrived ? ' event-arrival' : ''}" data-event-id="${escapeHTML(event.id)}"${open ? ' open' : ''}><summary><div class="entry-meta"><span class="decision${denied ? ' denied' : ''}${verdict === 'conflict' ? ' conflict' : ''}">${badge}</span><time datetime="${escapeHTML(timestamp)}">${escapeHTML(time)}</time><span>#${escapeHTML(shortId)}</span></div><div class="event-status-label">${label}</div><div class="entry-name">${escapeHTML(event.target || event.event_type)}<span aria-hidden="true">⌄</span></div><div class="entry-actor">${escapeHTML(event.actor_name || state?.user?.display_name || '匿名请求')} · ${escapeHTML(event.event_type || '')}</div></summary><div class="event-logs">${(event.logs || []).map(log => `<div class="event-log${/DENY|VIOLATION|CONFLICT|ROLLBACK|ERROR/i.test(log.step) ? verdict === 'conflict' ? ' conflict' : ' deny' : ''}"><code>${escapeHTML(log.step)}</code><p>${escapeHTML(log.detail)}</p></div>`).join('')}${event.message ? `<div class="event-log${denied ? verdict === 'conflict' ? ' conflict' : ' deny' : ''}"><code>RESPONSE</code><p>${escapeHTML(event.message)}</p></div>` : ''}</div></details>`;
   }).join('');
   if (openId) feed.scrollTop = 0;
 }
@@ -519,13 +568,13 @@ async function saveActivation(form) {
 document.addEventListener('click', async event => {
   const button = event.target.closest('button');
   if (!button || button.disabled) return;
-  if (button.dataset.nav) await busy(button, () => navigate(button.dataset.nav));
-  else if (button.dataset.page) await busy(button, () => routeTo(`/pages/${encodeURIComponent(button.dataset.page)}`));
+  if (button.dataset.nav) await busy(button, () => navigate(button.dataset.nav, button));
+  else if (button.dataset.page) await busy(button, () => routeTo(`/pages/${encodeURIComponent(button.dataset.page)}`, {trigger:button}));
   else if (button.dataset.action) await busy(button, () => executeAction(button.dataset.action));
   else if (button.hasAttribute('data-close-page') || button.hasAttribute('data-back')) await busy(button, () => routeTo(currentTerritory ? `/territory/${encodeURIComponent(currentTerritory)}` : '/experiment'));
   else if (button.id === 'modelButton' || button.dataset.mobileView === 'model') await routeTo('/model');
-  else if (button.id === 'adminButton' || button.dataset.mobileView === 'admin') await busy(button, () => routeTo(`/admin/${adminTab || 'assign'}`));
-  else if (button.dataset.adminTab) await busy(button, () => routeTo(`/admin/${button.dataset.adminTab}`));
+  else if (button.id === 'adminButton' || button.dataset.mobileView === 'admin') await busy(button, () => routeTo(`/admin/${adminTab || 'assign'}`, {trigger:button}));
+  else if (button.dataset.adminTab) await busy(button, () => routeTo(`/admin/${button.dataset.adminTab}`, {trigger:button}));
   else if (button.dataset.eventFilter) { eventFilter = button.dataset.eventFilter; $$('[data-event-filter]').forEach(item => item.classList.toggle('active', item === button)); renderEvents(); }
   else if (button.id === 'refreshEvents' || button.id === 'adminRefreshAudit') await busy(button, refreshEvents);
   else if (button.id === 'switchAccount') {
@@ -612,8 +661,8 @@ document.addEventListener('submit', async event => {
   else if (form.id === 'probeForm') await busy(button, async () => {
     const code = $('#probeSelect').value;
     const [type,slug] = code.split(':');
-    if (type === 'menu') await navigate(slug);
-    else if (type === 'page') await routeTo(`/pages/${encodeURIComponent(slug)}`);
+    if (type === 'menu') await navigate(slug, button);
+    else if (type === 'page') await routeTo(`/pages/${encodeURIComponent(slug)}`, {trigger:button});
     else if (type === 'btn') await executeAction(slug);
   });
   else if (form.id === 'assignForm') await busy(button, () => savePolicy(`/api/admin/users/${selectedUserId}/roles`, {role_ids:$$('input[name="assignedRole"]:checked',form).map(input => Number(input.value))}));

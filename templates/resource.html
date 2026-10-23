@@ -1,1 +1,48 @@
-<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{{ title }} · 王室卷轴</title><link rel="icon" href="{{ url_for('static',filename='crest.svg') }}" type="image/svg+xml"><link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}"></head><body class="resource-body"><main class="standalone-scroll"><a href="/" class="scroll-back">← 返回政令大厅</a><div class="scroll-brand"><img src="{{ url_for('static',filename='crest.svg') }}" alt="王室盾徽"><span>ROYAL ARCHIVES · 王室档案</span></div><div class="eyebrow">PROTECTED RESOURCE / 服务端路由鉴权</div><h1>{{ title }}</h1><p class="scroll-content">{{ content }}</p>{% if records %}<div class="scroll-records">{% for record in records %}<article>{% if record is mapping %}{% for key,value in record.items() %}<div><span>{{ key }}</span><strong>{{ value }}</strong></div>{% endfor %}{% else %}{{ record }}{% endif %}</article>{% endfor %}</div>{% endif %}{% if event %}<details class="scroll-event" open><summary>本次访问的真实授权轨迹</summary><div class="scroll-event-id">事件 {{ event.id }} · {{ event.event_type }} · {{ event.target }}</div>{% for log in event.logs %}<div class="scroll-log"><code>{{ log.step }}</code><span>{{ log.detail }}</span></div>{% endfor %}</details>{% endif %}<footer>此页由服务器鉴权后渲染，页面内容没有预先发送到未授权浏览器。</footer></main></body></html>
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{{ title }} · 皇家档案卷轴</title>
+  <link rel="icon" href="{{ url_for('static',filename='crest.svg') }}" type="image/svg+xml">
+  <link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}">
+</head>
+{% set granted = event and event.allowed %}
+<body class="resource-body archive-page {{ 'archive-allowed' if granted else 'archive-denied' }}">
+  <main class="standalone-scroll archive-shell archive-scroll">
+    <img class="archive-watermark" src="{{ url_for('static',filename='crest.svg') }}" alt="" aria-hidden="true">
+    <a href="/" class="scroll-back archive-back">← 返回政令大厅</a>
+    <header class="scroll-brand archive-brand">
+      <img class="archive-crest" src="{{ url_for('static',filename='crest.svg') }}" alt="王室盾徽">
+      <div><span>THE ROYAL ARCHIVES</span><small>波希米亚王室 · 机密档案卷轴</small></div>
+      <span class="archive-status">{{ '授权通过 · AUTHORIZED' if granted else '卫兵拦截 · ACCESS DENIED' }}</span>
+    </header>
+    <div class="eyebrow archive-kicker">{{ 'BY ROYAL AUTHORITY / 奉王室之命启封' if granted else 'THE ROYAL GUARD / 封存令仍然生效' }}</div>
+    <h1 class="archive-title">{{ title }}</h1>
+    <p class="scroll-content archive-content">{{ content }}</p>
+    {% if records %}
+    <div class="scroll-records archive-records">
+      {% for record in records %}
+      <article>
+        {% if record is mapping %}
+          {% for key,value in record.items() %}
+          <div><span>{{ key }}</span><strong>{{ value }}</strong></div>
+          {% endfor %}
+        {% else %}{{ record }}{% endif %}
+      </article>
+      {% endfor %}
+    </div>
+    {% endif %}
+    {% if event %}
+    <details class="scroll-event archive-trace" open>
+      <summary>本次访问的真实授权轨迹 <span>AUTHORIZATION RECORD</span></summary>
+      <div class="scroll-event-id">事件 {{ event.id }} · {{ event.event_type }} · {{ event.target }}</div>
+      {% for log in event.logs %}
+      <div class="scroll-log"><code>{{ log.step }}</code><span>{{ log.detail }}</span></div>
+      {% endfor %}
+    </details>
+    {% endif %}
+    <footer><span>ROYAL CHANCELLERY · BOHEMIA</span><p>此页由服务器鉴权后渲染，页面内容没有预先发送到未授权浏览器。</p></footer>
+  </main>
+</body>
+</html>

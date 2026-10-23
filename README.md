@@ -1,6 +1,6 @@
 # 王室与行会政令大厅
 
-软件系统分析与设计 · 第三次作业。基于 **Flask + SQLite + 原生 JavaScript**，将中世纪王国业务与 RBAC 访问控制、同步事件监听机制结合，支持离线页面资源、本地运行与数据持久化。
+软件系统分析与设计 · 第三次作业。基于 **Flask + SQLite + 原生 JavaScript**，将中世纪王国业务与 RBAC 访问控制、同步事件监听机制结合，核心页面资源随源码提供，支持本地运行与数据持久化。
 
 ## 运行
 
@@ -20,7 +20,7 @@ python -m venv .venv
 .venv\Scripts\python run.py
 ```
 
-macOS / Linux 使用 `.venv/bin/python` 代替 `.venv\Scripts\python`。运行后端不需要 Node、数据库服务器或前端构建工具。首次安装 Python 包需要网络，界面不引用远程字体、脚本或 CDN。
+macOS / Linux 使用 `.venv/bin/python` 代替 `.venv\Scripts\python`。运行后端不需要 Node、数据库服务器或前端构建工具。首次安装 Python 包需要网络；脚本与应用样式均从本地加载。Google Fonts 仅提供可选展示字体，字体服务不可用时使用本机后备字体；依赖安装完成后，登录、受控页面、权限配置及业务操作均可离线运行。
 
 所有演示账号的公开教学密码均为 **`Kingdom@2026`**：
 
@@ -35,6 +35,8 @@ macOS / Linux 使用 `.venv/bin/python` 代替 `.venv\Scripts\python`。运行�
 国王没有绕过授权的特殊分支，也不同时持有财政与审计业务权限。界面内切换账号通过密码登录完成，业务接口依据签名会话识别用户。
 
 修订版将资源按领地展示，并用独立跨域实验区演示菜单、页面、按钮权限的差别。账本审计会保存真实余额核对报告；管理变更增加委派边界、版本冲突检查及启动策略校验。
+
+当前前端采用黑曜石与暗金典藏主题：身份/领地、业务台、事件终端构成桌面三栏，卷轴正文采用暖色羊皮纸；真实拒绝反馈和三态日志时间轴保留服务端裁决依据。设计边界及补充视觉检查见[界面重构说明](docs/ui-redesign.md)。
 
 ## 作业要求与交付
 
@@ -72,11 +74,3 @@ macOS / Linux 使用 `.venv/bin/python` 代替 `.venv\Scripts\python`。运行�
 - 三类策略PUT必须携带管理快照的`base_revision`，旧版本返回409 `STALE_POLICY`，界面保留候选并提示重载。所有用户均不能修改自己的直接角色分配。
 - 事件终端显示当前权限范围内最近40条记录，可手动刷新；不是跨浏览器实时推送。会话恢复不会自动重放业务写请求。当前接口没有请求幂等键，每次显式提交代表一次政令。
 - 本地教学程序使用公开演示密码，只监听 `127.0.0.1`，不应直接用于真实系统或公网服务。审计持久化可用于演示，数据库管理员仍能修改本地 SQLite 文件。
-
-## 实现与验证
-
-Python功能回归92项通过，Edge/Playwright浏览器回归9组通过；两类结果分别计数。测试涵盖委派约束、策略版本竞争、真实账本核对、事务回滚、迁移、界面恢复与受控路由。
-
-仓库包含完整应用、SQL、测试、启动脚本，以及设计、接口和演示文档。首次运行自动创建本地数据库与会话密钥。
-
-RBAC概念依据[NIST说明](https://csrc.nist.gov/projects/role-based-access-control/faqs)，服务端授权原则参考[OWASP授权指南](https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html)。

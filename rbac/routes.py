@@ -121,8 +121,8 @@ def secure_response(response):
     response.headers['X-Frame-Options'] = 'DENY'
     response.headers['Referrer-Policy'] = 'same-origin'
     response.headers['Content-Security-Policy'] = (
-        "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; "
-        "font-src 'self'; connect-src 'self'; object-src 'none'; frame-ancestors 'none'; "
+        "default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; img-src 'self' data:; "
+        "font-src 'self' https://fonts.gstatic.com; connect-src 'self'; object-src 'none'; frame-ancestors 'none'; "
         "base-uri 'none'; form-action 'self'")
     response.headers['Permissions-Policy'] = 'camera=(), microphone=(), geolocation=()'
     if request.path.startswith('/api/') or request.path.startswith('/pages/'):

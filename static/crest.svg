@@ -1,1 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 76"><path fill="#bc9859" d="M8 19h48v31c0 11-13 20-24 25C21 70 8 61 8 50z"/><path fill="#182c35" d="M12 23h40v26c0 9-10 17-20 22-10-5-20-13-20-22z"/><path fill="#bc9859" d="m16 12 1-9 8 6 7-9 7 9 8-6 1 9v4H16zm8 22h16v5H29v7h9v5h-9v10h-5zm14 18 9 10h-7l-9-10z"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 104" fill="none">
+  <defs>
+    <linearGradient id="gold" x1="12" y1="8" x2="72" y2="96" gradientUnits="userSpaceOnUse"><stop stop-color="#F7E2AC"/><stop offset=".34" stop-color="#D2AC5C"/><stop offset=".65" stop-color="#9B722D"/><stop offset="1" stop-color="#E9C77C"/></linearGradient>
+    <linearGradient id="face" x1="19" y1="30" x2="62" y2="89" gradientUnits="userSpaceOnUse"><stop stop-color="#2D2922"/><stop offset=".6" stop-color="#151619"/><stop offset="1" stop-color="#23201D"/></linearGradient>
+    <filter id="glow" x="-20%" y="-15%" width="140%" height="140%"><feDropShadow dx="0" dy="1" stdDeviation="2.2" flood-color="#C9A253" flood-opacity=".24"/></filter>
+  </defs>
+  <g filter="url(#glow)">
+    <path d="m20 12 3 14h34l3-14-12 8-8-14-8 14-12-8Z" fill="url(#gold)"/>
+    <path d="M23 29h34" stroke="#F0D293" stroke-width="2"/>
+    <path d="M11 33h58v31c0 16-15 29-29 37C26 93 11 80 11 64V33Z" fill="url(#gold)"/>
+    <path d="M15 37h50v26c0 14-12 26-25 34-13-8-25-20-25-34V37Z" fill="url(#face)"/>
+    <path d="M19 41h42v22c0 12-10 22-21 29-11-7-21-17-21-29V41Z" stroke="#BD9650" stroke-opacity=".58"/>
+    <path d="M28 51h12c8 0 12 4 12 10 0 5-3 9-8 10l12 15h-9L35 71v15h-7V51Zm7 6v8h5c4 0 6-1 6-4s-2-4-6-4h-5Z" fill="url(#gold)"/>
+    <path d="m8 42-4 4 4 4M72 42l4 4-4 4M9 58H4m72 0h-5" stroke="#BF974C" stroke-width="1.2"/>
+    <path d="m40 0 2 3-2 3-2-3 2-3Z" fill="#E8C77A"/>
+  </g>
+</svg>
