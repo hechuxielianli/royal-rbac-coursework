@@ -1,0 +1,27 @@
+.venv/
+node_modules/
+instance/
+__pycache__/
+.pytest_cache/
+*.pyc
+*.sqlite3
+*.db
+*.log
+dist/
+report/tmp/
+report/build-output.txt
+*.aux
+*.toc
+*.out
+
+# Keep the code repository free of coursework report artifacts.
+report/
+*.pdf
+*.tex
+docs/inputs/
+docs/screenshots/
+docs/report-*
+docs/revision-*
+.env
+.env.*
+*.key
