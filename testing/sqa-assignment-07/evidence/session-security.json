@@ -1,0 +1,378 @@
+{
+  "created": 1793187434.943282,
+  "duration": 8.920071363449097,
+  "exitcode": 0,
+  "root": "[WORKSPACE]",
+  "environment": {},
+  "summary": {
+    "passed": 11,
+    "total": 11,
+    "collected": 11
+  },
+  "collectors": [
+    {
+      "nodeid": "",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": "tests/test_session_security.py",
+          "type": "Module"
+        }
+      ]
+    },
+    {
+      "nodeid": "tests/test_session_security.py",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": "tests/test_session_security.py::test_R01_revoked_session_denied_on_all_entry_points[GET-/api/state]",
+          "type": "Function",
+          "lineno": 7
+        },
+        {
+          "nodeid": "tests/test_session_security.py::test_R01_revoked_session_denied_on_all_entry_points[GET-/api/events]",
+          "type": "Function",
+          "lineno": 7
+        },
+        {
+          "nodeid": "tests/test_session_security.py::test_R01_revoked_session_denied_on_all_entry_points[GET-/api/admin/state]",
+          "type": "Function",
+          "lineno": 7
+        },
+        {
+          "nodeid": "tests/test_session_security.py::test_R01_revoked_session_denied_on_all_entry_points[GET-/api/navigation/square]",
+          "type": "Function",
+          "lineno": 7
+        },
+        {
+          "nodeid": "tests/test_session_security.py::test_R01_revoked_session_denied_on_all_entry_points[GET-/api/pages/tax_scroll]",
+          "type": "Function",
+          "lineno": 7
+        },
+        {
+          "nodeid": "tests/test_session_security.py::test_R01_revoked_session_denied_on_all_entry_points[GET-/pages/tax_scroll]",
+          "type": "Function",
+          "lineno": 7
+        },
+        {
+          "nodeid": "tests/test_session_security.py::test_R01_revoked_session_denied_on_all_entry_points[POST-/api/actions/forge_sword]",
+          "type": "Function",
+          "lineno": 7
+        },
+        {
+          "nodeid": "tests/test_session_security.py::test_R01_revoked_session_denied_on_all_entry_points[POST-/api/session/roles]",
+          "type": "Function",
+          "lineno": 7
+        },
+        {
+          "nodeid": "tests/test_session_security.py::test_R01_revoked_session_denied_on_all_entry_points[POST-/api/logout]",
+          "type": "Function",
+          "lineno": 7
+        },
+        {
+          "nodeid": "tests/test_session_security.py::test_R02_expired_server_session_denied_even_with_valid_signed_cookie",
+          "type": "Function",
+          "lineno": 23
+        },
+        {
+          "nodeid": "tests/test_session_security.py::test_R03_session_registry_stores_hash_and_relogin_replaces_current_session",
+          "type": "Function",
+          "lineno": 31
+        }
+      ]
+    }
+  ],
+  "tests": [
+    {
+      "nodeid": "tests/test_session_security.py::test_R01_revoked_session_denied_on_all_entry_points[GET-/api/state]",
+      "lineno": 7,
+      "outcome": "passed",
+      "keywords": [
+        "test_R01_revoked_session_denied_on_all_entry_points[GET-/api/state]",
+        "parametrize",
+        "pytestmark",
+        "GET-/api/state",
+        "test_session_security.py",
+        "tests",
+        "作业七-测试技术使用",
+        ""
+      ],
+      "setup": {
+        "duration": 0.20643429993651807,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.1596329000312835,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0002870000898838043,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_session_security.py::test_R01_revoked_session_denied_on_all_entry_points[GET-/api/events]",
+      "lineno": 7,
+      "outcome": "passed",
+      "keywords": [
+        "test_R01_revoked_session_denied_on_all_entry_points[GET-/api/events]",
+        "parametrize",
+        "pytestmark",
+        "GET-/api/events",
+        "test_session_security.py",
+        "tests",
+        "作业七-测试技术使用",
+        ""
+      ],
+      "setup": {
+        "duration": 0.22498190007172525,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.1495656999759376,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00035349989775568247,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_session_security.py::test_R01_revoked_session_denied_on_all_entry_points[GET-/api/admin/state]",
+      "lineno": 7,
+      "outcome": "passed",
+      "keywords": [
+        "test_R01_revoked_session_denied_on_all_entry_points[GET-/api/admin/state]",
+        "parametrize",
+        "pytestmark",
+        "GET-/api/admin/state",
+        "test_session_security.py",
+        "tests",
+        "作业七-测试技术使用",
+        ""
+      ],
+      "setup": {
+        "duration": 0.21795820002444088,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.18233330000657588,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0003496999852359295,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_session_security.py::test_R01_revoked_session_denied_on_all_entry_points[GET-/api/navigation/square]",
+      "lineno": 7,
+      "outcome": "passed",
+      "keywords": [
+        "test_R01_revoked_session_denied_on_all_entry_points[GET-/api/navigation/square]",
+        "parametrize",
+        "pytestmark",
+        "GET-/api/navigation/square",
+        "test_session_security.py",
+        "tests",
+        "作业七-测试技术使用",
+        ""
+      ],
+      "setup": {
+        "duration": 0.2091756999725476,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.15008940000552684,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0002706999657675624,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_session_security.py::test_R01_revoked_session_denied_on_all_entry_points[GET-/api/pages/tax_scroll]",
+      "lineno": 7,
+      "outcome": "passed",
+      "keywords": [
+        "test_R01_revoked_session_denied_on_all_entry_points[GET-/api/pages/tax_scroll]",
+        "parametrize",
+        "pytestmark",
+        "GET-/api/pages/tax_scroll",
+        "test_session_security.py",
+        "tests",
+        "作业七-测试技术使用",
+        ""
+      ],
+      "setup": {
+        "duration": 0.21682730002794415,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.42066780000459403,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0013608000008389354,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_session_security.py::test_R01_revoked_session_denied_on_all_entry_points[GET-/pages/tax_scroll]",
+      "lineno": 7,
+      "outcome": "passed",
+      "keywords": [
+        "test_R01_revoked_session_denied_on_all_entry_points[GET-/pages/tax_scroll]",
+        "parametrize",
+        "pytestmark",
+        "GET-/pages/tax_scroll",
+        "test_session_security.py",
+        "tests",
+        "作业七-测试技术使用",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6031608000630513,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.45575610001105815,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0012968000955879688,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_session_security.py::test_R01_revoked_session_denied_on_all_entry_points[POST-/api/actions/forge_sword]",
+      "lineno": 7,
+      "outcome": "passed",
+      "keywords": [
+        "test_R01_revoked_session_denied_on_all_entry_points[POST-/api/actions/forge_sword]",
+        "parametrize",
+        "pytestmark",
+        "POST-/api/actions/forge_sword",
+        "test_session_security.py",
+        "tests",
+        "作业七-测试技术使用",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6288611999480054,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.4222594000166282,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0010385001078248024,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_session_security.py::test_R01_revoked_session_denied_on_all_entry_points[POST-/api/session/roles]",
+      "lineno": 7,
+      "outcome": "passed",
+      "keywords": [
+        "test_R01_revoked_session_denied_on_all_entry_points[POST-/api/session/roles]",
+        "parametrize",
+        "pytestmark",
+        "POST-/api/session/roles",
+        "test_session_security.py",
+        "tests",
+        "作业七-测试技术使用",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6173231999855489,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.4308630001032725,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0009751999750733376,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_session_security.py::test_R01_revoked_session_denied_on_all_entry_points[POST-/api/logout]",
+      "lineno": 7,
+      "outcome": "passed",
+      "keywords": [
+        "test_R01_revoked_session_denied_on_all_entry_points[POST-/api/logout]",
+        "parametrize",
+        "pytestmark",
+        "POST-/api/logout",
+        "test_session_security.py",
+        "tests",
+        "作业七-测试技术使用",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6033799999859184,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.4258796999929473,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00119270000141114,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_session_security.py::test_R02_expired_server_session_denied_even_with_valid_signed_cookie",
+      "lineno": 23,
+      "outcome": "passed",
+      "keywords": [
+        "test_R02_expired_server_session_denied_even_with_valid_signed_cookie",
+        "test_session_security.py",
+        "tests",
+        "作业七-测试技术使用",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6587113999994472,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.4360591999720782,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0014328999677672982,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_session_security.py::test_R03_session_registry_stores_hash_and_relogin_replaces_current_session",
+      "lineno": 31,
+      "outcome": "passed",
+      "keywords": [
+        "test_R03_session_registry_stores_hash_and_relogin_replaces_current_session",
+        "test_session_security.py",
+        "tests",
+        "作业七-测试技术使用",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6318783999886364,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.8177502999315038,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0011955000227317214,
+        "outcome": "passed"
+      }
+    }
+  ]
+}

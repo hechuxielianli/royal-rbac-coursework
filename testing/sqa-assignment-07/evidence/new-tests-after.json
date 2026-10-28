@@ -1,0 +1,2165 @@
+{
+  "created": 1793187524.7148654,
+  "duration": 193.3792405128479,
+  "exitcode": 0,
+  "root": "[WORKSPACE]",
+  "environment": {},
+  "summary": {
+    "passed": 65,
+    "total": 65,
+    "collected": 65
+  },
+  "collectors": [
+    {
+      "nodeid": "",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": "tests/test_function_spec.py",
+          "type": "Module"
+        },
+        {
+          "nodeid": "tests/test_equivalence.py",
+          "type": "Module"
+        },
+        {
+          "nodeid": "tests/test_random.py",
+          "type": "Module"
+        }
+      ]
+    },
+    {
+      "nodeid": "tests/test_function_spec.py",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": "tests/test_function_spec.py::test_F01_login_logout_and_csrf_rotation",
+          "type": "Function",
+          "lineno": 8
+        },
+        {
+          "nodeid": "tests/test_function_spec.py::test_F02_F05_business_operation_has_one_effect_and_saved_actor[F02-forge]",
+          "type": "Function",
+          "lineno": 27
+        },
+        {
+          "nodeid": "tests/test_function_spec.py::test_F02_F05_business_operation_has_one_effect_and_saved_actor[F03-deploy]",
+          "type": "Function",
+          "lineno": 27
+        },
+        {
+          "nodeid": "tests/test_function_spec.py::test_F02_F05_business_operation_has_one_effect_and_saved_actor[F04-pay]",
+          "type": "Function",
+          "lineno": 27
+        },
+        {
+          "nodeid": "tests/test_function_spec.py::test_F02_F05_business_operation_has_one_effect_and_saved_actor[F05-audit]",
+          "type": "Function",
+          "lineno": 27
+        },
+        {
+          "nodeid": "tests/test_function_spec.py::test_S01_S05_fixed_access_matrix[S01-peasant]",
+          "type": "Function",
+          "lineno": 53
+        },
+        {
+          "nodeid": "tests/test_function_spec.py::test_S01_S05_fixed_access_matrix[S02-captain]",
+          "type": "Function",
+          "lineno": 53
+        },
+        {
+          "nodeid": "tests/test_function_spec.py::test_S01_S05_fixed_access_matrix[S03-treasurer]",
+          "type": "Function",
+          "lineno": 53
+        },
+        {
+          "nodeid": "tests/test_function_spec.py::test_S01_S05_fixed_access_matrix[S04-king]",
+          "type": "Function",
+          "lineno": 53
+        },
+        {
+          "nodeid": "tests/test_function_spec.py::test_S01_S05_fixed_access_matrix[S05-auditor]",
+          "type": "Function",
+          "lineno": 53
+        },
+        {
+          "nodeid": "tests/test_function_spec.py::test_F06_event_feed_separates_user_and_administrator",
+          "type": "Function",
+          "lineno": 76
+        },
+        {
+          "nodeid": "tests/test_function_spec.py::test_S06_new_role_requires_activation_and_revocation_is_immediate",
+          "type": "Function",
+          "lineno": 87
+        },
+        {
+          "nodeid": "tests/test_function_spec.py::test_S07_S09_menu_page_button_are_independent[S07-menu-only]",
+          "type": "Function",
+          "lineno": 104
+        },
+        {
+          "nodeid": "tests/test_function_spec.py::test_S07_S09_menu_page_button_are_independent[S08-page-only]",
+          "type": "Function",
+          "lineno": 104
+        },
+        {
+          "nodeid": "tests/test_function_spec.py::test_S07_S09_menu_page_button_are_independent[S09-button-only]",
+          "type": "Function",
+          "lineno": 104
+        },
+        {
+          "nodeid": "tests/test_function_spec.py::test_S10_S12_stale_policy_rejected_without_lost_update[S10-assignment]",
+          "type": "Function",
+          "lineno": 119
+        },
+        {
+          "nodeid": "tests/test_function_spec.py::test_S10_S12_stale_policy_rejected_without_lost_update[S11-permissions]",
+          "type": "Function",
+          "lineno": 119
+        },
+        {
+          "nodeid": "tests/test_function_spec.py::test_S10_S12_stale_policy_rejected_without_lost_update[S12-hierarchy]",
+          "type": "Function",
+          "lineno": 119
+        },
+        {
+          "nodeid": "tests/test_function_spec.py::test_S13_mutually_exclusive_roles_rollback",
+          "type": "Function",
+          "lineno": 138
+        },
+        {
+          "nodeid": "tests/test_function_spec.py::test_S14_cycle_rollback",
+          "type": "Function",
+          "lineno": 146
+        }
+      ]
+    },
+    {
+      "nodeid": "tests/test_equivalence.py",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": "tests/test_equivalence.py::test_E01_E17_role_array_partition_and_boundaries[E01-empty-subset]",
+          "type": "Function",
+          "lineno": 29
+        },
+        {
+          "nodeid": "tests/test_equivalence.py::test_E01_E17_role_array_partition_and_boundaries[E02-assigned-subset]",
+          "type": "Function",
+          "lineno": 29
+        },
+        {
+          "nodeid": "tests/test_equivalence.py::test_E01_E17_role_array_partition_and_boundaries[E03-unassigned-existing-role]",
+          "type": "Function",
+          "lineno": 29
+        },
+        {
+          "nodeid": "tests/test_equivalence.py::test_E01_E17_role_array_partition_and_boundaries[E04-unknown-role]",
+          "type": "Function",
+          "lineno": 29
+        },
+        {
+          "nodeid": "tests/test_equivalence.py::test_E01_E17_role_array_partition_and_boundaries[E05-null]",
+          "type": "Function",
+          "lineno": 29
+        },
+        {
+          "nodeid": "tests/test_equivalence.py::test_E01_E17_role_array_partition_and_boundaries[E06-string]",
+          "type": "Function",
+          "lineno": 29
+        },
+        {
+          "nodeid": "tests/test_equivalence.py::test_E01_E17_role_array_partition_and_boundaries[E07-object]",
+          "type": "Function",
+          "lineno": 29
+        },
+        {
+          "nodeid": "tests/test_equivalence.py::test_E01_E17_role_array_partition_and_boundaries[E08-zero-id]",
+          "type": "Function",
+          "lineno": 29
+        },
+        {
+          "nodeid": "tests/test_equivalence.py::test_E01_E17_role_array_partition_and_boundaries[E09-negative-id]",
+          "type": "Function",
+          "lineno": 29
+        },
+        {
+          "nodeid": "tests/test_equivalence.py::test_E01_E17_role_array_partition_and_boundaries[E10-float-id]",
+          "type": "Function",
+          "lineno": 29
+        },
+        {
+          "nodeid": "tests/test_equivalence.py::test_E01_E17_role_array_partition_and_boundaries[E11-bool-is-not-id]",
+          "type": "Function",
+          "lineno": 29
+        },
+        {
+          "nodeid": "tests/test_equivalence.py::test_E01_E17_role_array_partition_and_boundaries[E12-string-id]",
+          "type": "Function",
+          "lineno": 29
+        },
+        {
+          "nodeid": "tests/test_equivalence.py::test_E01_E17_role_array_partition_and_boundaries[E13-nested-id]",
+          "type": "Function",
+          "lineno": 29
+        },
+        {
+          "nodeid": "tests/test_equivalence.py::test_E01_E17_role_array_partition_and_boundaries[E14-duplicate]",
+          "type": "Function",
+          "lineno": 29
+        },
+        {
+          "nodeid": "tests/test_equivalence.py::test_E01_E17_role_array_partition_and_boundaries[E15-five-existing-ids]",
+          "type": "Function",
+          "lineno": 29
+        },
+        {
+          "nodeid": "tests/test_equivalence.py::test_E01_E17_role_array_partition_and_boundaries[E16-length-100]",
+          "type": "Function",
+          "lineno": 29
+        },
+        {
+          "nodeid": "tests/test_equivalence.py::test_E01_E17_role_array_partition_and_boundaries[E17-length-101]",
+          "type": "Function",
+          "lineno": 29
+        },
+        {
+          "nodeid": "tests/test_equivalence.py::test_E18_E21_payment_threshold[E18-balance-0]",
+          "type": "Function",
+          "lineno": 44
+        },
+        {
+          "nodeid": "tests/test_equivalence.py::test_E18_E21_payment_threshold[E19-balance-99]",
+          "type": "Function",
+          "lineno": 44
+        },
+        {
+          "nodeid": "tests/test_equivalence.py::test_E18_E21_payment_threshold[E20-balance-100]",
+          "type": "Function",
+          "lineno": 44
+        },
+        {
+          "nodeid": "tests/test_equivalence.py::test_E18_E21_payment_threshold[E21-balance-101]",
+          "type": "Function",
+          "lineno": 44
+        },
+        {
+          "nodeid": "tests/test_equivalence.py::test_E22_E29_revision_partition[E22-revision-null]",
+          "type": "Function",
+          "lineno": 66
+        },
+        {
+          "nodeid": "tests/test_equivalence.py::test_E22_E29_revision_partition[E23-revision-bool]",
+          "type": "Function",
+          "lineno": 66
+        },
+        {
+          "nodeid": "tests/test_equivalence.py::test_E22_E29_revision_partition[E24-revision-zero]",
+          "type": "Function",
+          "lineno": 66
+        },
+        {
+          "nodeid": "tests/test_equivalence.py::test_E22_E29_revision_partition[E25-revision-negative]",
+          "type": "Function",
+          "lineno": 66
+        },
+        {
+          "nodeid": "tests/test_equivalence.py::test_E22_E29_revision_partition[E26-revision-string]",
+          "type": "Function",
+          "lineno": 66
+        },
+        {
+          "nodeid": "tests/test_equivalence.py::test_E22_E29_revision_partition[E27-revision-float]",
+          "type": "Function",
+          "lineno": 66
+        },
+        {
+          "nodeid": "tests/test_equivalence.py::test_E22_E29_revision_partition[E28-revision-current]",
+          "type": "Function",
+          "lineno": 66
+        },
+        {
+          "nodeid": "tests/test_equivalence.py::test_E22_E29_revision_partition[E29-revision-future]",
+          "type": "Function",
+          "lineno": 66
+        },
+        {
+          "nodeid": "tests/test_equivalence.py::test_E30_E35_json_envelope[E30-object]",
+          "type": "Function",
+          "lineno": 89
+        },
+        {
+          "nodeid": "tests/test_equivalence.py::test_E30_E35_json_envelope[E31-root-null]",
+          "type": "Function",
+          "lineno": 89
+        },
+        {
+          "nodeid": "tests/test_equivalence.py::test_E30_E35_json_envelope[E32-root-array]",
+          "type": "Function",
+          "lineno": 89
+        },
+        {
+          "nodeid": "tests/test_equivalence.py::test_E30_E35_json_envelope[E33-root-string]",
+          "type": "Function",
+          "lineno": 89
+        },
+        {
+          "nodeid": "tests/test_equivalence.py::test_E30_E35_json_envelope[E34-malformed]",
+          "type": "Function",
+          "lineno": 89
+        },
+        {
+          "nodeid": "tests/test_equivalence.py::test_E30_E35_json_envelope[E35-wrong-media]",
+          "type": "Function",
+          "lineno": 89
+        },
+        {
+          "nodeid": "tests/test_equivalence.py::test_E36_E41_credential_boundaries[E36-username-80]",
+          "type": "Function",
+          "lineno": 107
+        },
+        {
+          "nodeid": "tests/test_equivalence.py::test_E36_E41_credential_boundaries[E37-username-81]",
+          "type": "Function",
+          "lineno": 107
+        },
+        {
+          "nodeid": "tests/test_equivalence.py::test_E36_E41_credential_boundaries[E38-password-200]",
+          "type": "Function",
+          "lineno": 107
+        },
+        {
+          "nodeid": "tests/test_equivalence.py::test_E36_E41_credential_boundaries[E39-password-201]",
+          "type": "Function",
+          "lineno": 107
+        },
+        {
+          "nodeid": "tests/test_equivalence.py::test_E36_E41_credential_boundaries[E40-username-number]",
+          "type": "Function",
+          "lineno": 107
+        },
+        {
+          "nodeid": "tests/test_equivalence.py::test_E36_E41_credential_boundaries[E41-password-null]",
+          "type": "Function",
+          "lineno": 107
+        }
+      ]
+    },
+    {
+      "nodeid": "tests/test_random.py",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": "tests/test_random.py::test_Q01_random_role_payload_is_rejected_or_activates_only_assigned",
+          "type": "Function",
+          "lineno": 16
+        },
+        {
+          "nodeid": "tests/test_random.py::test_Q02_random_policy_revision_never_changes_data_on_rejection",
+          "type": "Function",
+          "lineno": 38
+        },
+        {
+          "nodeid": "tests/test_random.py::test_Q03_random_root_json_preserves_type_contract",
+          "type": "Function",
+          "lineno": 60
+        },
+        {
+          "nodeid": "tests/test_random.py::test_Q04_random_user_operation_sequences_preserve_balance_and_ledger",
+          "type": "Function",
+          "lineno": 94
+        }
+      ]
+    }
+  ],
+  "tests": [
+    {
+      "nodeid": "tests/test_function_spec.py::test_F01_login_logout_and_csrf_rotation",
+      "lineno": 8,
+      "outcome": "passed",
+      "keywords": [
+        "test_F01_login_logout_and_csrf_rotation",
+        "test_function_spec.py",
+        "tests",
+        "作业七-测试技术使用",
+        ""
+      ],
+      "setup": {
+        "duration": 0.24476250004954636,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.29682729998603463,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00033469998743385077,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_function_spec.py::test_F02_F05_business_operation_has_one_effect_and_saved_actor[F02-forge]",
+      "lineno": 27,
+      "outcome": "passed",
+      "keywords": [
+        "test_F02_F05_business_operation_has_one_effect_and_saved_actor[F02-forge]",
+        "parametrize",
+        "pytestmark",
+        "F02-forge",
+        "test_function_spec.py",
+        "tests",
+        "作业七-测试技术使用",
+        ""
+      ],
+      "setup": {
+        "duration": 0.2002521000104025,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.22168139996938407,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0004469000268727541,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_function_spec.py::test_F02_F05_business_operation_has_one_effect_and_saved_actor[F03-deploy]",
+      "lineno": 27,
+      "outcome": "passed",
+      "keywords": [
+        "test_F02_F05_business_operation_has_one_effect_and_saved_actor[F03-deploy]",
+        "parametrize",
+        "pytestmark",
+        "F03-deploy",
+        "test_function_spec.py",
+        "tests",
+        "作业七-测试技术使用",
+        ""
+      ],
+      "setup": {
+        "duration": 0.22311050002463162,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.16426500002853572,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0004684000741690397,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_function_spec.py::test_F02_F05_business_operation_has_one_effect_and_saved_actor[F04-pay]",
+      "lineno": 27,
+      "outcome": "passed",
+      "keywords": [
+        "test_F02_F05_business_operation_has_one_effect_and_saved_actor[F04-pay]",
+        "parametrize",
+        "pytestmark",
+        "F04-pay",
+        "test_function_spec.py",
+        "tests",
+        "作业七-测试技术使用",
+        ""
+      ],
+      "setup": {
+        "duration": 0.4624874999281019,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.44715510006062686,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0015712999738752842,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_function_spec.py::test_F02_F05_business_operation_has_one_effect_and_saved_actor[F05-audit]",
+      "lineno": 27,
+      "outcome": "passed",
+      "keywords": [
+        "test_F02_F05_business_operation_has_one_effect_and_saved_actor[F05-audit]",
+        "parametrize",
+        "pytestmark",
+        "F05-audit",
+        "test_function_spec.py",
+        "tests",
+        "作业七-测试技术使用",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6160448000300676,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.4424318999517709,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0011239000596106052,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_function_spec.py::test_S01_S05_fixed_access_matrix[S01-peasant]",
+      "lineno": 53,
+      "outcome": "passed",
+      "keywords": [
+        "test_S01_S05_fixed_access_matrix[S01-peasant]",
+        "parametrize",
+        "pytestmark",
+        "S01-peasant",
+        "test_function_spec.py",
+        "tests",
+        "作业七-测试技术使用",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6090172999538481,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.6211408999515697,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0011285999789834023,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_function_spec.py::test_S01_S05_fixed_access_matrix[S02-captain]",
+      "lineno": 53,
+      "outcome": "passed",
+      "keywords": [
+        "test_S01_S05_fixed_access_matrix[S02-captain]",
+        "parametrize",
+        "pytestmark",
+        "S02-captain",
+        "test_function_spec.py",
+        "tests",
+        "作业七-测试技术使用",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6047891000052914,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.6163216000422835,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0009400000562891364,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_function_spec.py::test_S01_S05_fixed_access_matrix[S03-treasurer]",
+      "lineno": 53,
+      "outcome": "passed",
+      "keywords": [
+        "test_S01_S05_fixed_access_matrix[S03-treasurer]",
+        "parametrize",
+        "pytestmark",
+        "S03-treasurer",
+        "test_function_spec.py",
+        "tests",
+        "作业七-测试技术使用",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6323083000024781,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.6068852000171319,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.000964400009252131,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_function_spec.py::test_S01_S05_fixed_access_matrix[S04-king]",
+      "lineno": 53,
+      "outcome": "passed",
+      "keywords": [
+        "test_S01_S05_fixed_access_matrix[S04-king]",
+        "parametrize",
+        "pytestmark",
+        "S04-king",
+        "test_function_spec.py",
+        "tests",
+        "作业七-测试技术使用",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6185803000116721,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.6528301999205723,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.000937800039537251,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_function_spec.py::test_S01_S05_fixed_access_matrix[S05-auditor]",
+      "lineno": 53,
+      "outcome": "passed",
+      "keywords": [
+        "test_S01_S05_fixed_access_matrix[S05-auditor]",
+        "parametrize",
+        "pytestmark",
+        "S05-auditor",
+        "test_function_spec.py",
+        "tests",
+        "作业七-测试技术使用",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6387400000821799,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.6144038999918848,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0009380000410601497,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_function_spec.py::test_F06_event_feed_separates_user_and_administrator",
+      "lineno": 76,
+      "outcome": "passed",
+      "keywords": [
+        "test_F06_event_feed_separates_user_and_administrator",
+        "test_function_spec.py",
+        "tests",
+        "作业七-测试技术使用",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6314803999848664,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 1.2430892999982461,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0008252999978139997,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_function_spec.py::test_S06_new_role_requires_activation_and_revocation_is_immediate",
+      "lineno": 87,
+      "outcome": "passed",
+      "keywords": [
+        "test_S06_new_role_requires_activation_and_revocation_is_immediate",
+        "test_function_spec.py",
+        "tests",
+        "作业七-测试技术使用",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6530409000115469,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 1.2155789999524131,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0008944000583142042,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_function_spec.py::test_S07_S09_menu_page_button_are_independent[S07-menu-only]",
+      "lineno": 104,
+      "outcome": "passed",
+      "keywords": [
+        "test_S07_S09_menu_page_button_are_independent[S07-menu-only]",
+        "parametrize",
+        "pytestmark",
+        "S07-menu-only",
+        "test_function_spec.py",
+        "tests",
+        "作业七-测试技术使用",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6217834000708535,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.9279262999771163,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0009212000295519829,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_function_spec.py::test_S07_S09_menu_page_button_are_independent[S08-page-only]",
+      "lineno": 104,
+      "outcome": "passed",
+      "keywords": [
+        "test_S07_S09_menu_page_button_are_independent[S08-page-only]",
+        "parametrize",
+        "pytestmark",
+        "S08-page-only",
+        "test_function_spec.py",
+        "tests",
+        "作业七-测试技术使用",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6258005000418052,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.9280331999761984,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0010991999879479408,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_function_spec.py::test_S07_S09_menu_page_button_are_independent[S09-button-only]",
+      "lineno": 104,
+      "outcome": "passed",
+      "keywords": [
+        "test_S07_S09_menu_page_button_are_independent[S09-button-only]",
+        "parametrize",
+        "pytestmark",
+        "S09-button-only",
+        "test_function_spec.py",
+        "tests",
+        "作业七-测试技术使用",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6104441999923438,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 1.7010022000176832,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.000952600035816431,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_function_spec.py::test_S10_S12_stale_policy_rejected_without_lost_update[S10-assignment]",
+      "lineno": 119,
+      "outcome": "passed",
+      "keywords": [
+        "test_S10_S12_stale_policy_rejected_without_lost_update[S10-assignment]",
+        "parametrize",
+        "pytestmark",
+        "S10-assignment",
+        "test_function_spec.py",
+        "tests",
+        "作业七-测试技术使用",
+        ""
+      ],
+      "setup": {
+        "duration": 1.3093847000272945,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.5062484999652952,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.000893699936568737,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_function_spec.py::test_S10_S12_stale_policy_rejected_without_lost_update[S11-permissions]",
+      "lineno": 119,
+      "outcome": "passed",
+      "keywords": [
+        "test_S10_S12_stale_policy_rejected_without_lost_update[S11-permissions]",
+        "parametrize",
+        "pytestmark",
+        "S11-permissions",
+        "test_function_spec.py",
+        "tests",
+        "作业七-测试技术使用",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6148969000205398,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.4996594999684021,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0011117999674752355,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_function_spec.py::test_S10_S12_stale_policy_rejected_without_lost_update[S12-hierarchy]",
+      "lineno": 119,
+      "outcome": "passed",
+      "keywords": [
+        "test_S10_S12_stale_policy_rejected_without_lost_update[S12-hierarchy]",
+        "parametrize",
+        "pytestmark",
+        "S12-hierarchy",
+        "test_function_spec.py",
+        "tests",
+        "作业七-测试技术使用",
+        ""
+      ],
+      "setup": {
+        "duration": 0.640862499945797,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.5106669999659061,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0008970999624580145,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_function_spec.py::test_S13_mutually_exclusive_roles_rollback",
+      "lineno": 138,
+      "outcome": "passed",
+      "keywords": [
+        "test_S13_mutually_exclusive_roles_rollback",
+        "test_function_spec.py",
+        "tests",
+        "作业七-测试技术使用",
+        ""
+      ],
+      "setup": {
+        "duration": 0.7609667000360787,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.6641149999340996,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0009200999047607183,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_function_spec.py::test_S14_cycle_rollback",
+      "lineno": 146,
+      "outcome": "passed",
+      "keywords": [
+        "test_S14_cycle_rollback",
+        "test_function_spec.py",
+        "tests",
+        "作业七-测试技术使用",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6409072000533342,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.49896680004894733,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0010251000057905912,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_equivalence.py::test_E01_E17_role_array_partition_and_boundaries[E01-empty-subset]",
+      "lineno": 29,
+      "outcome": "passed",
+      "keywords": [
+        "test_E01_E17_role_array_partition_and_boundaries[E01-empty-subset]",
+        "parametrize",
+        "pytestmark",
+        "E01-empty-subset",
+        "test_equivalence.py",
+        "tests",
+        "作业七-测试技术使用",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6907230000942945,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.5004811000544578,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.001284400001168251,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_equivalence.py::test_E01_E17_role_array_partition_and_boundaries[E02-assigned-subset]",
+      "lineno": 29,
+      "outcome": "passed",
+      "keywords": [
+        "test_E01_E17_role_array_partition_and_boundaries[E02-assigned-subset]",
+        "parametrize",
+        "pytestmark",
+        "E02-assigned-subset",
+        "test_equivalence.py",
+        "tests",
+        "作业七-测试技术使用",
+        ""
+      ],
+      "setup": {
+        "duration": 0.653285100008361,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.49612849997356534,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0010781000601127744,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_equivalence.py::test_E01_E17_role_array_partition_and_boundaries[E03-unassigned-existing-role]",
+      "lineno": 29,
+      "outcome": "passed",
+      "keywords": [
+        "test_E01_E17_role_array_partition_and_boundaries[E03-unassigned-existing-role]",
+        "parametrize",
+        "pytestmark",
+        "E03-unassigned-existing-role",
+        "test_equivalence.py",
+        "tests",
+        "作业七-测试技术使用",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6989861000329256,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.4920714000472799,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0009747000876814127,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_equivalence.py::test_E01_E17_role_array_partition_and_boundaries[E04-unknown-role]",
+      "lineno": 29,
+      "outcome": "passed",
+      "keywords": [
+        "test_E01_E17_role_array_partition_and_boundaries[E04-unknown-role]",
+        "parametrize",
+        "pytestmark",
+        "E04-unknown-role",
+        "test_equivalence.py",
+        "tests",
+        "作业七-测试技术使用",
+        ""
+      ],
+      "setup": {
+        "duration": 1.0913657000055537,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.5261973000597209,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0005366000114008784,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_equivalence.py::test_E01_E17_role_array_partition_and_boundaries[E05-null]",
+      "lineno": 29,
+      "outcome": "passed",
+      "keywords": [
+        "test_E01_E17_role_array_partition_and_boundaries[E05-null]",
+        "parametrize",
+        "pytestmark",
+        "E05-null",
+        "test_equivalence.py",
+        "tests",
+        "作业七-测试技术使用",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6645455999532714,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.5430609000613913,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0012125000357627869,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_equivalence.py::test_E01_E17_role_array_partition_and_boundaries[E06-string]",
+      "lineno": 29,
+      "outcome": "passed",
+      "keywords": [
+        "test_E01_E17_role_array_partition_and_boundaries[E06-string]",
+        "parametrize",
+        "pytestmark",
+        "E06-string",
+        "test_equivalence.py",
+        "tests",
+        "作业七-测试技术使用",
+        ""
+      ],
+      "setup": {
+        "duration": 0.7137438000645489,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.5276615000329912,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0009774999925866723,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_equivalence.py::test_E01_E17_role_array_partition_and_boundaries[E07-object]",
+      "lineno": 29,
+      "outcome": "passed",
+      "keywords": [
+        "test_E01_E17_role_array_partition_and_boundaries[E07-object]",
+        "parametrize",
+        "pytestmark",
+        "E07-object",
+        "test_equivalence.py",
+        "tests",
+        "作业七-测试技术使用",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6349111000308767,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.486723699956201,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0012368999887257814,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_equivalence.py::test_E01_E17_role_array_partition_and_boundaries[E08-zero-id]",
+      "lineno": 29,
+      "outcome": "passed",
+      "keywords": [
+        "test_E01_E17_role_array_partition_and_boundaries[E08-zero-id]",
+        "parametrize",
+        "pytestmark",
+        "E08-zero-id",
+        "test_equivalence.py",
+        "tests",
+        "作业七-测试技术使用",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6333384000463411,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.4877106000203639,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0009385000448673964,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_equivalence.py::test_E01_E17_role_array_partition_and_boundaries[E09-negative-id]",
+      "lineno": 29,
+      "outcome": "passed",
+      "keywords": [
+        "test_E01_E17_role_array_partition_and_boundaries[E09-negative-id]",
+        "parametrize",
+        "pytestmark",
+        "E09-negative-id",
+        "test_equivalence.py",
+        "tests",
+        "作业七-测试技术使用",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6616009999997914,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.5043781000422314,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.005468799965456128,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_equivalence.py::test_E01_E17_role_array_partition_and_boundaries[E10-float-id]",
+      "lineno": 29,
+      "outcome": "passed",
+      "keywords": [
+        "test_E01_E17_role_array_partition_and_boundaries[E10-float-id]",
+        "parametrize",
+        "pytestmark",
+        "E10-float-id",
+        "test_equivalence.py",
+        "tests",
+        "作业七-测试技术使用",
+        ""
+      ],
+      "setup": {
+        "duration": 0.7063528000144288,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.5307413999689743,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0011162000009790063,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_equivalence.py::test_E01_E17_role_array_partition_and_boundaries[E11-bool-is-not-id]",
+      "lineno": 29,
+      "outcome": "passed",
+      "keywords": [
+        "test_E01_E17_role_array_partition_and_boundaries[E11-bool-is-not-id]",
+        "parametrize",
+        "pytestmark",
+        "E11-bool-is-not-id",
+        "test_equivalence.py",
+        "tests",
+        "作业七-测试技术使用",
+        ""
+      ],
+      "setup": {
+        "duration": 0.7369143000105396,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.5570585000095889,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0012927999487146735,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_equivalence.py::test_E01_E17_role_array_partition_and_boundaries[E12-string-id]",
+      "lineno": 29,
+      "outcome": "passed",
+      "keywords": [
+        "test_E01_E17_role_array_partition_and_boundaries[E12-string-id]",
+        "parametrize",
+        "pytestmark",
+        "E12-string-id",
+        "test_equivalence.py",
+        "tests",
+        "作业七-测试技术使用",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6728665999835357,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.5286375000141561,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0009332000045105815,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_equivalence.py::test_E01_E17_role_array_partition_and_boundaries[E13-nested-id]",
+      "lineno": 29,
+      "outcome": "passed",
+      "keywords": [
+        "test_E01_E17_role_array_partition_and_boundaries[E13-nested-id]",
+        "parametrize",
+        "pytestmark",
+        "E13-nested-id",
+        "test_equivalence.py",
+        "tests",
+        "作业七-测试技术使用",
+        ""
+      ],
+      "setup": {
+        "duration": 0.7082246999489143,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.4998036000179127,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0010231999913230538,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_equivalence.py::test_E01_E17_role_array_partition_and_boundaries[E14-duplicate]",
+      "lineno": 29,
+      "outcome": "passed",
+      "keywords": [
+        "test_E01_E17_role_array_partition_and_boundaries[E14-duplicate]",
+        "parametrize",
+        "pytestmark",
+        "E14-duplicate",
+        "test_equivalence.py",
+        "tests",
+        "作业七-测试技术使用",
+        ""
+      ],
+      "setup": {
+        "duration": 0.7381857000291348,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.5268173000076786,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.001240600016899407,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_equivalence.py::test_E01_E17_role_array_partition_and_boundaries[E15-five-existing-ids]",
+      "lineno": 29,
+      "outcome": "passed",
+      "keywords": [
+        "test_E01_E17_role_array_partition_and_boundaries[E15-five-existing-ids]",
+        "parametrize",
+        "pytestmark",
+        "E15-five-existing-ids",
+        "test_equivalence.py",
+        "tests",
+        "作业七-测试技术使用",
+        ""
+      ],
+      "setup": {
+        "duration": 0.7002477999776602,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.5317361999768764,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00230529997497797,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_equivalence.py::test_E01_E17_role_array_partition_and_boundaries[E16-length-100]",
+      "lineno": 29,
+      "outcome": "passed",
+      "keywords": [
+        "test_E01_E17_role_array_partition_and_boundaries[E16-length-100]",
+        "parametrize",
+        "pytestmark",
+        "E16-length-100",
+        "test_equivalence.py",
+        "tests",
+        "作业七-测试技术使用",
+        ""
+      ],
+      "setup": {
+        "duration": 0.7371078999713063,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.5064062000019476,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0010052999714389443,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_equivalence.py::test_E01_E17_role_array_partition_and_boundaries[E17-length-101]",
+      "lineno": 29,
+      "outcome": "passed",
+      "keywords": [
+        "test_E01_E17_role_array_partition_and_boundaries[E17-length-101]",
+        "parametrize",
+        "pytestmark",
+        "E17-length-101",
+        "test_equivalence.py",
+        "tests",
+        "作业七-测试技术使用",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6377489999867976,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.5171041000867262,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0013157000066712499,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_equivalence.py::test_E18_E21_payment_threshold[E18-balance-0]",
+      "lineno": 44,
+      "outcome": "passed",
+      "keywords": [
+        "test_E18_E21_payment_threshold[E18-balance-0]",
+        "parametrize",
+        "pytestmark",
+        "E18-balance-0",
+        "test_equivalence.py",
+        "tests",
+        "作业七-测试技术使用",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6913459000643343,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.4889862999552861,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.001033599954098463,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_equivalence.py::test_E18_E21_payment_threshold[E19-balance-99]",
+      "lineno": 44,
+      "outcome": "passed",
+      "keywords": [
+        "test_E18_E21_payment_threshold[E19-balance-99]",
+        "parametrize",
+        "pytestmark",
+        "E19-balance-99",
+        "test_equivalence.py",
+        "tests",
+        "作业七-测试技术使用",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6735405999934301,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.47745170001871884,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00048809999134391546,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_equivalence.py::test_E18_E21_payment_threshold[E20-balance-100]",
+      "lineno": 44,
+      "outcome": "passed",
+      "keywords": [
+        "test_E18_E21_payment_threshold[E20-balance-100]",
+        "parametrize",
+        "pytestmark",
+        "E20-balance-100",
+        "test_equivalence.py",
+        "tests",
+        "作业七-测试技术使用",
+        ""
+      ],
+      "setup": {
+        "duration": 0.5787700999062508,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.49978710000868887,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0010504999663680792,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_equivalence.py::test_E18_E21_payment_threshold[E21-balance-101]",
+      "lineno": 44,
+      "outcome": "passed",
+      "keywords": [
+        "test_E18_E21_payment_threshold[E21-balance-101]",
+        "parametrize",
+        "pytestmark",
+        "E21-balance-101",
+        "test_equivalence.py",
+        "tests",
+        "作业七-测试技术使用",
+        ""
+      ],
+      "setup": {
+        "duration": 0.5700013999594375,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.4964147999417037,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0009988999227061868,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_equivalence.py::test_E22_E29_revision_partition[E22-revision-null]",
+      "lineno": 66,
+      "outcome": "passed",
+      "keywords": [
+        "test_E22_E29_revision_partition[E22-revision-null]",
+        "parametrize",
+        "pytestmark",
+        "E22-revision-null",
+        "test_equivalence.py",
+        "tests",
+        "作业七-测试技术使用",
+        ""
+      ],
+      "setup": {
+        "duration": 0.7049674999434501,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.4086347999982536,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.001826800056733191,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_equivalence.py::test_E22_E29_revision_partition[E23-revision-bool]",
+      "lineno": 66,
+      "outcome": "passed",
+      "keywords": [
+        "test_E22_E29_revision_partition[E23-revision-bool]",
+        "parametrize",
+        "pytestmark",
+        "E23-revision-bool",
+        "test_equivalence.py",
+        "tests",
+        "作业七-测试技术使用",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6587034000549465,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.4819647000404075,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0009736999636515975,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_equivalence.py::test_E22_E29_revision_partition[E24-revision-zero]",
+      "lineno": 66,
+      "outcome": "passed",
+      "keywords": [
+        "test_E22_E29_revision_partition[E24-revision-zero]",
+        "parametrize",
+        "pytestmark",
+        "E24-revision-zero",
+        "test_equivalence.py",
+        "tests",
+        "作业七-测试技术使用",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6799688999308273,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.44785539992153645,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0005791999865323305,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_equivalence.py::test_E22_E29_revision_partition[E25-revision-negative]",
+      "lineno": 66,
+      "outcome": "passed",
+      "keywords": [
+        "test_E22_E29_revision_partition[E25-revision-negative]",
+        "parametrize",
+        "pytestmark",
+        "E25-revision-negative",
+        "test_equivalence.py",
+        "tests",
+        "作业七-测试技术使用",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6314644999802113,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.4611813999945298,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.000925700063817203,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_equivalence.py::test_E22_E29_revision_partition[E26-revision-string]",
+      "lineno": 66,
+      "outcome": "passed",
+      "keywords": [
+        "test_E22_E29_revision_partition[E26-revision-string]",
+        "parametrize",
+        "pytestmark",
+        "E26-revision-string",
+        "test_equivalence.py",
+        "tests",
+        "作业七-测试技术使用",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6370312999933958,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.439369700034149,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00048439996317029,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_equivalence.py::test_E22_E29_revision_partition[E27-revision-float]",
+      "lineno": 66,
+      "outcome": "passed",
+      "keywords": [
+        "test_E22_E29_revision_partition[E27-revision-float]",
+        "parametrize",
+        "pytestmark",
+        "E27-revision-float",
+        "test_equivalence.py",
+        "tests",
+        "作业七-测试技术使用",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6779317000182346,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.47024779999628663,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0009872999507933855,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_equivalence.py::test_E22_E29_revision_partition[E28-revision-current]",
+      "lineno": 66,
+      "outcome": "passed",
+      "keywords": [
+        "test_E22_E29_revision_partition[E28-revision-current]",
+        "parametrize",
+        "pytestmark",
+        "E28-revision-current",
+        "test_equivalence.py",
+        "tests",
+        "作业七-测试技术使用",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6293026000494137,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.4671743999933824,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0022350000217556953,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_equivalence.py::test_E22_E29_revision_partition[E29-revision-future]",
+      "lineno": 66,
+      "outcome": "passed",
+      "keywords": [
+        "test_E22_E29_revision_partition[E29-revision-future]",
+        "parametrize",
+        "pytestmark",
+        "E29-revision-future",
+        "test_equivalence.py",
+        "tests",
+        "作业七-测试技术使用",
+        ""
+      ],
+      "setup": {
+        "duration": 0.7129661999642849,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.4825886999024078,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0009400000562891364,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_equivalence.py::test_E30_E35_json_envelope[E30-object]",
+      "lineno": 89,
+      "outcome": "passed",
+      "keywords": [
+        "test_E30_E35_json_envelope[E30-object]",
+        "parametrize",
+        "pytestmark",
+        "E30-object",
+        "test_equivalence.py",
+        "tests",
+        "作业七-测试技术使用",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6013516000239179,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.5032270000083372,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00045469996985048056,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_equivalence.py::test_E30_E35_json_envelope[E31-root-null]",
+      "lineno": 89,
+      "outcome": "passed",
+      "keywords": [
+        "test_E30_E35_json_envelope[E31-root-null]",
+        "parametrize",
+        "pytestmark",
+        "E31-root-null",
+        "test_equivalence.py",
+        "tests",
+        "作业七-测试技术使用",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6645429000491276,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.4489012999692932,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0009281999664381146,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_equivalence.py::test_E30_E35_json_envelope[E32-root-array]",
+      "lineno": 89,
+      "outcome": "passed",
+      "keywords": [
+        "test_E30_E35_json_envelope[E32-root-array]",
+        "parametrize",
+        "pytestmark",
+        "E32-root-array",
+        "test_equivalence.py",
+        "tests",
+        "作业七-测试技术使用",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6234550001099706,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.43068629992194474,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.000901399995200336,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_equivalence.py::test_E30_E35_json_envelope[E33-root-string]",
+      "lineno": 89,
+      "outcome": "passed",
+      "keywords": [
+        "test_E30_E35_json_envelope[E33-root-string]",
+        "parametrize",
+        "pytestmark",
+        "E33-root-string",
+        "test_equivalence.py",
+        "tests",
+        "作业七-测试技术使用",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6338575999252498,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.4276160999434069,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0009895000839605927,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_equivalence.py::test_E30_E35_json_envelope[E34-malformed]",
+      "lineno": 89,
+      "outcome": "passed",
+      "keywords": [
+        "test_E30_E35_json_envelope[E34-malformed]",
+        "parametrize",
+        "pytestmark",
+        "E34-malformed",
+        "test_equivalence.py",
+        "tests",
+        "作业七-测试技术使用",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6449844000162557,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.4537508999928832,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.001124400063417852,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_equivalence.py::test_E30_E35_json_envelope[E35-wrong-media]",
+      "lineno": 89,
+      "outcome": "passed",
+      "keywords": [
+        "test_E30_E35_json_envelope[E35-wrong-media]",
+        "parametrize",
+        "pytestmark",
+        "E35-wrong-media",
+        "test_equivalence.py",
+        "tests",
+        "作业七-测试技术使用",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6418814000207931,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.4492842999752611,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0012322000693529844,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_equivalence.py::test_E36_E41_credential_boundaries[E36-username-80]",
+      "lineno": 107,
+      "outcome": "passed",
+      "keywords": [
+        "test_E36_E41_credential_boundaries[E36-username-80]",
+        "parametrize",
+        "pytestmark",
+        "E36-username-80",
+        "test_equivalence.py",
+        "tests",
+        "作业七-测试技术使用",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6626742000225931,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.07009619998279959,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0018141999607905746,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_equivalence.py::test_E36_E41_credential_boundaries[E37-username-81]",
+      "lineno": 107,
+      "outcome": "passed",
+      "keywords": [
+        "test_E36_E41_credential_boundaries[E37-username-81]",
+        "parametrize",
+        "pytestmark",
+        "E37-username-81",
+        "test_equivalence.py",
+        "tests",
+        "作业七-测试技术使用",
+        ""
+      ],
+      "setup": {
+        "duration": 0.7270810999907553,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.05360739992465824,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0011820999206975102,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_equivalence.py::test_E36_E41_credential_boundaries[E38-password-200]",
+      "lineno": 107,
+      "outcome": "passed",
+      "keywords": [
+        "test_E36_E41_credential_boundaries[E38-password-200]",
+        "parametrize",
+        "pytestmark",
+        "E38-password-200",
+        "test_equivalence.py",
+        "tests",
+        "作业七-测试技术使用",
+        ""
+      ],
+      "setup": {
+        "duration": 0.644724200014025,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.44825239991769195,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0009241000516340137,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_equivalence.py::test_E36_E41_credential_boundaries[E39-password-201]",
+      "lineno": 107,
+      "outcome": "passed",
+      "keywords": [
+        "test_E36_E41_credential_boundaries[E39-password-201]",
+        "parametrize",
+        "pytestmark",
+        "E39-password-201",
+        "test_equivalence.py",
+        "tests",
+        "作业七-测试技术使用",
+        ""
+      ],
+      "setup": {
+        "duration": 0.7162920000264421,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.05219730001408607,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.000911200069822371,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_equivalence.py::test_E36_E41_credential_boundaries[E40-username-number]",
+      "lineno": 107,
+      "outcome": "passed",
+      "keywords": [
+        "test_E36_E41_credential_boundaries[E40-username-number]",
+        "parametrize",
+        "pytestmark",
+        "E40-username-number",
+        "test_equivalence.py",
+        "tests",
+        "作业七-测试技术使用",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6398921000072733,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.06915230001322925,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0013387000653892756,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_equivalence.py::test_E36_E41_credential_boundaries[E41-password-null]",
+      "lineno": 107,
+      "outcome": "passed",
+      "keywords": [
+        "test_E36_E41_credential_boundaries[E41-password-null]",
+        "parametrize",
+        "pytestmark",
+        "E41-password-null",
+        "test_equivalence.py",
+        "tests",
+        "作业七-测试技术使用",
+        ""
+      ],
+      "setup": {
+        "duration": 0.5525182000128552,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.05409490002784878,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0005720000481233001,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_random.py::test_Q01_random_role_payload_is_rejected_or_activates_only_assigned",
+      "lineno": 16,
+      "outcome": "passed",
+      "keywords": [
+        "test_Q01_random_role_payload_is_rejected_or_activates_only_assigned",
+        "__wrapped_target",
+        "is_hypothesis_test",
+        "_hypothesis_internal_use_seed",
+        "_hypothesis_internal_use_settings",
+        "_hypothesis_internal_use_reproduce_failure",
+        "hypothesis",
+        "_hypothesis_internal_settings_applied",
+        "test_random.py",
+        "tests",
+        "作业七-测试技术使用",
+        ""
+      ],
+      "setup": {
+        "duration": 0.7125462999101728,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 35.76509120000992,
+        "outcome": "passed"
+      },
+      "user_properties": [
+        {
+          "examples": 300
+        },
+        {
+          "http_operations": 300
+        }
+      ],
+      "teardown": {
+        "duration": 0.0009441000875085592,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_random.py::test_Q02_random_policy_revision_never_changes_data_on_rejection",
+      "lineno": 38,
+      "outcome": "passed",
+      "keywords": [
+        "test_Q02_random_policy_revision_never_changes_data_on_rejection",
+        "__wrapped_target",
+        "is_hypothesis_test",
+        "_hypothesis_internal_use_seed",
+        "_hypothesis_internal_use_settings",
+        "_hypothesis_internal_use_reproduce_failure",
+        "hypothesis",
+        "_hypothesis_internal_settings_applied",
+        "test_random.py",
+        "tests",
+        "作业七-测试技术使用",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6463080000830814,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 18.803734399960376,
+        "outcome": "passed"
+      },
+      "user_properties": [
+        {
+          "examples": 300
+        },
+        {
+          "http_operations": 300
+        }
+      ],
+      "teardown": {
+        "duration": 0.001303600030951202,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_random.py::test_Q03_random_root_json_preserves_type_contract",
+      "lineno": 60,
+      "outcome": "passed",
+      "keywords": [
+        "test_Q03_random_root_json_preserves_type_contract",
+        "__wrapped_target",
+        "is_hypothesis_test",
+        "_hypothesis_internal_use_seed",
+        "_hypothesis_internal_use_settings",
+        "_hypothesis_internal_use_reproduce_failure",
+        "hypothesis",
+        "_hypothesis_internal_settings_applied",
+        "test_random.py",
+        "tests",
+        "作业七-测试技术使用",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6524848999688402,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 17.286891299998388,
+        "outcome": "passed"
+      },
+      "user_properties": [
+        {
+          "examples": 300
+        },
+        {
+          "http_operations": 300
+        }
+      ],
+      "teardown": {
+        "duration": 0.0013161998940631747,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_random.py::test_Q04_random_user_operation_sequences_preserve_balance_and_ledger",
+      "lineno": 94,
+      "outcome": "passed",
+      "keywords": [
+        "test_Q04_random_user_operation_sequences_preserve_balance_and_ledger",
+        "__wrapped_target",
+        "is_hypothesis_test",
+        "_hypothesis_internal_use_seed",
+        "_hypothesis_internal_use_settings",
+        "_hypothesis_internal_use_reproduce_failure",
+        "hypothesis",
+        "_hypothesis_internal_settings_applied",
+        "test_random.py",
+        "tests",
+        "作业七-测试技术使用",
+        ""
+      ],
+      "setup": {
+        "duration": 0.7056522000348195,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 47.32504190003965,
+        "outcome": "passed"
+      },
+      "user_properties": [
+        {
+          "examples": 200
+        },
+        {
+          "http_operations": 1329
+        }
+      ],
+      "teardown": {
+        "duration": 0.0025875999126583338,
+        "outcome": "passed"
+      }
+    }
+  ]
+}

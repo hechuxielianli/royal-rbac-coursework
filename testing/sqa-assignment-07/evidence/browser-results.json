@@ -1,0 +1,78 @@
+{
+  "kind": "browser scenario testing",
+  "base_url": "http://127.0.0.1:5089",
+  "browser": "Microsoft Edge headless",
+  "browser_version": "156.0.4314.50",
+  "started_at": "2026-10-28T11:37:52.267Z",
+  "ended_at": "2026-10-28T11:38:25.487Z",
+  "records": [
+    {
+      "id": "S1",
+      "purpose": "国王授予卫队角色、亨利激活并停留军事卷轴，撤权后通过旧页面按钮真实提交。",
+      "started_at": "2026-10-28T11:38:10.761Z",
+      "ended_at": "2026-10-28T11:38:14.956Z",
+      "elapsed_ms": 4195,
+      "status": "passed",
+      "observed": {
+        "separate_browser_contexts": true,
+        "assigned": [
+          1,
+          2
+        ],
+        "activated": [
+          1,
+          2
+        ],
+        "revoked_to": [
+          1
+        ],
+        "response_status": 403,
+        "response_code": "PERMISSION_DENIED",
+        "cavalry_before": 0,
+        "cavalry_after": 0,
+        "event_id": "703b92f776fa4f52b06b365d98e744da",
+        "visible_error": "亨利·斯卡里茨，签发运银护送调令已被拦截。当前激活角色没有「签发运银护送调令」权限 事件：703b92f776fa4f52b06b365d98e744da",
+        "old_protected_content_removed": true
+      }
+    },
+    {
+      "id": "S2",
+      "purpose": "两个管理员各持一个快照，第二个保存旧版本候选应409且不覆盖已提交策略。",
+      "started_at": "2026-10-28T11:38:14.958Z",
+      "ended_at": "2026-10-28T11:38:18.698Z",
+      "elapsed_ms": 3740,
+      "status": "passed",
+      "observed": {
+        "snapshot_revision": 3,
+        "committed_revision": 4,
+        "second_status": 409,
+        "second_code": "STALE_POLICY",
+        "saved_permissions": [
+          1,
+          4
+        ],
+        "candidate_retained": true,
+        "feedback": "策略已被其他管理员修改（当前数据库 v4）。你的候选草稿已保留；请比较后重新载入，系统不会覆盖或自动重放。"
+      }
+    },
+    {
+      "id": "S3",
+      "purpose": "铸币司库拨付100，审计官在独立会话核对流水与余额。",
+      "started_at": "2026-10-28T11:38:18.699Z",
+      "ended_at": "2026-10-28T11:38:25.487Z",
+      "elapsed_ms": 6788,
+      "status": "passed",
+      "observed": {
+        "opening_gold": 3200,
+        "total_debits": 100,
+        "expected_gold": 3100,
+        "actual_gold": 3100,
+        "difference": 0,
+        "ledger_count": 1,
+        "payment_event": "36f56b283a0e4f8391dc41e7b11f9223",
+        "audit_event": "913373ec7a214b0e8e99a04dbb4a8e41"
+      }
+    }
+  ],
+  "page_errors": []
+}

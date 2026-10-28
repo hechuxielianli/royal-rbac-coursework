@@ -1,0 +1,71 @@
+[
+  {
+    "person": "P1",
+    "id": "U1",
+    "prior": "未使用过",
+    "result": "完成",
+    "elapsed_seconds": 109,
+    "wrong_menus": 1,
+    "ease": 4,
+    "notes": "在市政大厅下方找到了，之前大厅进来没找到，先跳转到知识图谱里看了看，回到大厅下滑才找到",
+    "verified_actions": [
+      {
+        "id": 1,
+        "event_id": "26a8c070450241f99f04fb8cfd135c84",
+        "action": "forge_sword",
+        "amount": 1,
+        "created_at": "2026-10-28T11:34:23.631+00:00",
+        "username": "henry"
+      }
+    ],
+    "source": "用户在本聊天提供的真实参与者反馈截图；人工转录并核对独立测试数据库",
+    "time_status": "用户在本聊天转述的同学人工计时；详见user-timing-supplement.md",
+    "time_source": "human-reported stopwatch duration"
+  },
+  {
+    "person": "P1",
+    "id": "U2",
+    "prior": "未使用过",
+    "result": "完成",
+    "elapsed_seconds": 158,
+    "wrong_menus": 3,
+    "ease": 2,
+    "notes": "搞错需求，以为是要核对银库账目，发现没有权限，后面才找到了收支账密的位置。",
+    "verified_actions": [
+      {
+        "id": 2,
+        "event_id": "79f34b360a7c40bc98e8f95232fdf9ee",
+        "action": "open_vault",
+        "amount": -100,
+        "created_at": "2026-10-28T11:40:14.988+00:00",
+        "username": "hans"
+      }
+    ],
+    "source": "用户在本聊天提供的真实参与者反馈截图；人工转录并核对独立测试数据库",
+    "time_status": "用户在本聊天转述的同学人工计时；详见user-timing-supplement.md",
+    "time_source": "human-reported stopwatch duration"
+  },
+  {
+    "person": "P1",
+    "id": "U3",
+    "prior": "未使用过",
+    "result": "完成",
+    "elapsed_seconds": 53,
+    "wrong_menus": 0,
+    "ease": 4,
+    "notes": "有了前面两个的尝试，本次任务轻车熟路",
+    "verified_actions": [
+      {
+        "id": 3,
+        "event_id": "d724ec61e9954385919b80a329261b0d",
+        "action": "audit_ledger",
+        "amount": 1,
+        "created_at": "2026-10-28T11:42:29.171+00:00",
+        "username": "agnes"
+      }
+    ],
+    "source": "用户在本聊天提供的真实参与者反馈截图；人工转录并核对独立测试数据库",
+    "time_status": "用户在本聊天转述的同学人工计时；详见user-timing-supplement.md",
+    "time_source": "human-reported stopwatch duration"
+  }
+]

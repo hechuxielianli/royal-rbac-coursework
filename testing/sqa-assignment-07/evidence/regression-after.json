@@ -1,0 +1,381 @@
+{
+  "created": 1793187242.1935918,
+  "duration": 8.400709867477417,
+  "exitcode": 0,
+  "root": "[WORKSPACE]",
+  "environment": {},
+  "summary": {
+    "passed": 11,
+    "total": 11,
+    "collected": 11
+  },
+  "collectors": [
+    {
+      "nodeid": "",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": "tests/test_regressions.py",
+          "type": "Module"
+        }
+      ]
+    },
+    {
+      "nodeid": "tests/test_regressions.py",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": "tests/test_regressions.py::test_url_identifier_outside_sqlite_range_returns_400[9223372036854775808-users-payload0]",
+          "type": "Function",
+          "lineno": 39
+        },
+        {
+          "nodeid": "tests/test_regressions.py::test_url_identifier_outside_sqlite_range_returns_400[9223372036854775808-roles-payload1]",
+          "type": "Function",
+          "lineno": 39
+        },
+        {
+          "nodeid": "tests/test_regressions.py::test_url_identifier_outside_sqlite_range_returns_400[10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000-users-payload0]",
+          "type": "Function",
+          "lineno": 39
+        },
+        {
+          "nodeid": "tests/test_regressions.py::test_url_identifier_outside_sqlite_range_returns_400[10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000-roles-payload1]",
+          "type": "Function",
+          "lineno": 39
+        },
+        {
+          "nodeid": "tests/test_regressions.py::test_nonstandard_json_constant_rejected_without_business_write[NaN]",
+          "type": "Function",
+          "lineno": 60
+        },
+        {
+          "nodeid": "tests/test_regressions.py::test_nonstandard_json_constant_rejected_without_business_write[Infinity]",
+          "type": "Function",
+          "lineno": 60
+        },
+        {
+          "nodeid": "tests/test_regressions.py::test_nonstandard_json_constant_rejected_without_business_write[-Infinity]",
+          "type": "Function",
+          "lineno": 60
+        },
+        {
+          "nodeid": "tests/test_regressions.py::test_unpaired_unicode_surrogate_login_returns_400[username-\\\\ud800]",
+          "type": "Function",
+          "lineno": 73
+        },
+        {
+          "nodeid": "tests/test_regressions.py::test_unpaired_unicode_surrogate_login_returns_400[username-\\\\udfff]",
+          "type": "Function",
+          "lineno": 73
+        },
+        {
+          "nodeid": "tests/test_regressions.py::test_unpaired_unicode_surrogate_login_returns_400[password-\\\\ud800]",
+          "type": "Function",
+          "lineno": 73
+        },
+        {
+          "nodeid": "tests/test_regressions.py::test_logged_out_cookie_cannot_be_replayed_and_other_session_remains",
+          "type": "Function",
+          "lineno": 90
+        }
+      ]
+    }
+  ],
+  "tests": [
+    {
+      "nodeid": "tests/test_regressions.py::test_url_identifier_outside_sqlite_range_returns_400[9223372036854775808-users-payload0]",
+      "lineno": 39,
+      "outcome": "passed",
+      "keywords": [
+        "test_url_identifier_outside_sqlite_range_returns_400[9223372036854775808-users-payload0]",
+        "parametrize",
+        "pytestmark",
+        "9223372036854775808-users-payload0",
+        "test_regressions.py",
+        "tests",
+        "作业七-测试技术使用",
+        ""
+      ],
+      "setup": {
+        "duration": 0.2259587999433279,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.1705921000102535,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0003741000546142459,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_regressions.py::test_url_identifier_outside_sqlite_range_returns_400[9223372036854775808-roles-payload1]",
+      "lineno": 39,
+      "outcome": "passed",
+      "keywords": [
+        "test_url_identifier_outside_sqlite_range_returns_400[9223372036854775808-roles-payload1]",
+        "parametrize",
+        "pytestmark",
+        "9223372036854775808-roles-payload1",
+        "test_regressions.py",
+        "tests",
+        "作业七-测试技术使用",
+        ""
+      ],
+      "setup": {
+        "duration": 0.21805649995803833,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.18559130001813173,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00028959999326616526,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_regressions.py::test_url_identifier_outside_sqlite_range_returns_400[10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000-users-payload0]",
+      "lineno": 39,
+      "outcome": "passed",
+      "keywords": [
+        "test_url_identifier_outside_sqlite_range_returns_400[10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000-users-payload0]",
+        "parametrize",
+        "pytestmark",
+        "10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000-users-payload0",
+        "test_regressions.py",
+        "tests",
+        "作业七-测试技术使用",
+        ""
+      ],
+      "setup": {
+        "duration": 0.2138927000341937,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.18434869998600334,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00027439999394118786,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_regressions.py::test_url_identifier_outside_sqlite_range_returns_400[10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000-roles-payload1]",
+      "lineno": 39,
+      "outcome": "passed",
+      "keywords": [
+        "test_url_identifier_outside_sqlite_range_returns_400[10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000-roles-payload1]",
+        "parametrize",
+        "pytestmark",
+        "10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000-roles-payload1",
+        "test_regressions.py",
+        "tests",
+        "作业七-测试技术使用",
+        ""
+      ],
+      "setup": {
+        "duration": 0.2312716000014916,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.18262390000745654,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0004547999706119299,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_regressions.py::test_nonstandard_json_constant_rejected_without_business_write[NaN]",
+      "lineno": 60,
+      "outcome": "passed",
+      "keywords": [
+        "test_nonstandard_json_constant_rejected_without_business_write[NaN]",
+        "parametrize",
+        "pytestmark",
+        "NaN",
+        "test_regressions.py",
+        "tests",
+        "作业七-测试技术使用",
+        ""
+      ],
+      "setup": {
+        "duration": 0.22013969998806715,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.4385035999584943,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0011416999623179436,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_regressions.py::test_nonstandard_json_constant_rejected_without_business_write[Infinity]",
+      "lineno": 60,
+      "outcome": "passed",
+      "keywords": [
+        "test_nonstandard_json_constant_rejected_without_business_write[Infinity]",
+        "parametrize",
+        "pytestmark",
+        "Infinity",
+        "test_regressions.py",
+        "tests",
+        "作业七-测试技术使用",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6737132000271231,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.4879314999561757,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0008780999341979623,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_regressions.py::test_nonstandard_json_constant_rejected_without_business_write[-Infinity]",
+      "lineno": 60,
+      "outcome": "passed",
+      "keywords": [
+        "test_nonstandard_json_constant_rejected_without_business_write[-Infinity]",
+        "parametrize",
+        "pytestmark",
+        "-Infinity",
+        "test_regressions.py",
+        "tests",
+        "作业七-测试技术使用",
+        ""
+      ],
+      "setup": {
+        "duration": 0.7572763999924064,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.48973959998693317,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0010426000226289034,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_regressions.py::test_unpaired_unicode_surrogate_login_returns_400[username-\\\\ud800]",
+      "lineno": 73,
+      "outcome": "passed",
+      "keywords": [
+        "test_unpaired_unicode_surrogate_login_returns_400[username-\\\\ud800]",
+        "parametrize",
+        "pytestmark",
+        "username-\\\\ud800",
+        "test_regressions.py",
+        "tests",
+        "作业七-测试技术使用",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6670923000201583,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.047664700075984,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0010510000865906477,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_regressions.py::test_unpaired_unicode_surrogate_login_returns_400[username-\\\\udfff]",
+      "lineno": 73,
+      "outcome": "passed",
+      "keywords": [
+        "test_unpaired_unicode_surrogate_login_returns_400[username-\\\\udfff]",
+        "parametrize",
+        "pytestmark",
+        "username-\\\\udfff",
+        "test_regressions.py",
+        "tests",
+        "作业七-测试技术使用",
+        ""
+      ],
+      "setup": {
+        "duration": 0.652993299998343,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.04391060001216829,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.001059599919244647,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_regressions.py::test_unpaired_unicode_surrogate_login_returns_400[password-\\\\ud800]",
+      "lineno": 73,
+      "outcome": "passed",
+      "keywords": [
+        "test_unpaired_unicode_surrogate_login_returns_400[password-\\\\ud800]",
+        "parametrize",
+        "pytestmark",
+        "password-\\\\ud800",
+        "test_regressions.py",
+        "tests",
+        "作业七-测试技术使用",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6512032001046464,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.04234609997365624,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0013729999773204327,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_regressions.py::test_logged_out_cookie_cannot_be_replayed_and_other_session_remains",
+      "lineno": 90,
+      "outcome": "passed",
+      "keywords": [
+        "test_logged_out_cookie_cannot_be_replayed_and_other_session_remains",
+        "test_regressions.py",
+        "tests",
+        "作业七-测试技术使用",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6720430999994278,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.8973871000343934,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.001334400032646954,
+        "outcome": "passed"
+      }
+    }
+  ]
+}

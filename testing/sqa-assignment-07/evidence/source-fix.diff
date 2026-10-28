@@ -1,0 +1,179 @@
+--- baseline/rbac/routes.py
++++ sut/rbac/routes.py
+@@ -1,6 +1,7 @@
+ """HTTP 适配层只选择事件及固定权限码，不在客户端信任身份。"""
+ import hmac
+ import json
++import math
+ import secrets
+ 
+ from flask import Blueprint, current_app, jsonify, render_template, request, session
+@@ -8,6 +9,7 @@
+ 
+ from .db import business_state, get_db, policy_revision, resource_catalog, rows
+ from .events import AuditListener, Event
++from .auth_sessions import authenticated_user, issue_session, revoke_session
+ from .policy import (DomainError, check_permission_constraints, check_ssd, direct_roles,
+                      permissions_for_roles, role_closure)
+ 
+@@ -25,8 +27,8 @@
+ 
+ 
+ def require_user():
+-    user_id = session.get('user_id')
+-    if not user_id or get_db().execute('SELECT 1 FROM sys_user WHERE id=?', (user_id,)).fetchone() is None:
++    user_id = authenticated_user(get_db())
++    if user_id is None:
+         raise DomainError('请先登录王室大厅', 'AUTHENTICATION_REQUIRED', 401)
+     return user_id
+ 
+@@ -48,7 +50,24 @@
+ def body():
+     if not request.is_json:
+         raise DomainError('请求正文必须为 JSON 对象')
+-    value = request.get_json(silent=True)
++    def reject_constant(constant):
++        raise ValueError(f'Invalid JSON constant: {constant}')
++    try:
++        value = json.loads(request.get_data(), parse_constant=reject_constant)
++        pending = [value]
++        while pending:
++            item = pending.pop()
++            if isinstance(item, str):
++                item.encode('utf-8', errors='strict')
++            elif isinstance(item, float) and not math.isfinite(item):
++                raise ValueError('Non-finite JSON number')
++            elif isinstance(item, dict):
++                pending.extend(item.keys())
++                pending.extend(item.values())
++            elif isinstance(item, list):
++                pending.extend(item)
++    except (ValueError, UnicodeError, RecursionError):
++        raise DomainError('请求正文必须为有效 JSON，字符串需为有效 Unicode，数值必须有限')
+     if not isinstance(value, dict):
+         raise DomainError('请求正文必须为有效 JSON 对象')
+     return value
+@@ -57,7 +76,7 @@
+ def run_event(kind, target, permission=None, context=None, result_builder=None):
+     """授权、响应及成功审计原子提交；失败回滚后独立记录拒绝。"""
+     conn = get_db()
+-    actor_id = session.get('user_id')
++    actor_id = authenticated_user(conn)
+     if kind == 'LOGIN_REQUEST':
+         actor_id = None
+     event = Event(kind, actor_id, target, permission,
+@@ -67,7 +86,17 @@
+         # Even read checks persist an audit event. One writer transaction also
+         # prevents a policy change racing authorization and business execution.
+         conn.execute('BEGIN IMMEDIATE')
++        if kind != 'LOGIN_REQUEST':
++            event.actor_id = authenticated_user(conn)
++            if event.actor_id is None:
++                raise DomainError('请先登录王室大厅', 'AUTHENTICATION_REQUIRED', 401)
++            event.active_role_ids = active_ids(conn, event.actor_id)
+         current_app.extensions['event_bus'].publish(event, conn)
++        if kind == 'LOGIN_REQUEST':
++            revoke_session(conn, session.get('session_nonce'))
++            event.result['session_nonce'] = issue_session(conn, event.actor_id)
++        elif kind == 'LOGOUT_REQUEST':
++            revoke_session(conn, session.get('session_nonce'))
+         if result_builder:
+             event.result.update(result_builder(conn))
+         event.log('DB_COMMIT', '授权响应与审计记录作为同一事务提交')
+@@ -151,7 +180,7 @@
+ 
+ @bp.get('/api/bootstrap')
+ def bootstrap():
+-    return jsonify(authenticated=bool(session.get('user_id')), users=users(get_db()), csrf_token=csrf_token())
++    return jsonify(authenticated=authenticated_user(get_db()) is not None, users=users(get_db()), csrf_token=csrf_token())
+ 
+ 
+ @bp.get('/healthz')
+@@ -172,8 +201,10 @@
+     payload, status = run_event('LOGIN_REQUEST', 'session:login', context=body())
+     if payload['ok']:
+         user_id, role_ids = payload.pop('user_id'), payload.pop('active_role_ids')
++        nonce = payload.pop('session_nonce')
+         session.clear()
+         session['user_id'], session['active_role_ids'] = user_id, role_ids
++        session['session_nonce'] = nonce
+         session.permanent = True
+         payload['csrf_token'] = csrf_token()
+     return jsonify(payload), status
+@@ -317,6 +348,8 @@
+ 
+ @bp.put('/api/admin/users/<int:user_id>/roles')
+ def assign_roles(user_id):
++    if not 0 < user_id <= 2**63-1:
++        raise DomainError('用户 ID 超出有效整数范围')
+     data = body()
+     payload,status = run_event('ROLE_ASSIGN_REQUEST',f'user:{user_id}','admin:assign',
+                                {'user_id':user_id,'role_ids':data.get('role_ids'),'base_revision':data.get('base_revision')})
+@@ -325,6 +358,8 @@
+ 
+ @bp.put('/api/admin/roles/<int:role_id>/permissions')
+ def grant_permissions(role_id):
++    if not 0 < role_id <= 2**63-1:
++        raise DomainError('角色 ID 超出有效整数范围')
+     data = body()
+     payload,status = run_event('ROLE_PERMISSION_UPDATE',f'role:{role_id}','admin:policy',
+                                {'role_id':role_id,'permission_ids':data.get('permission_ids'),'base_revision':data.get('base_revision')})
+--- baseline/rbac/policy.py
++++ sut/rbac/policy.py
+@@ -10,7 +10,7 @@
+ def id_list(value, label='ID列表'):
+     if not isinstance(value, list) or len(value) > 100:
+         raise DomainError(f'{label}必须是最多100项的整数数组')
+-    if any(type(item) is not int or item <= 0 for item in value):
++    if any(type(item) is not int or not 0 < item <= 2**63-1 for item in value):
+         raise DomainError(f'{label}只能包含正整数')
+     if len(value) != len(set(value)):
+         raise DomainError(f'{label}不得包含重复ID')
+--- baseline/rbac/schema.sql
++++ sut/rbac/schema.sql
+@@ -123,3 +123,8 @@
+     theme TEXT PRIMARY KEY,
+     version INTEGER NOT NULL CHECK(version>=1)
+ );
++CREATE TABLE IF NOT EXISTS auth_session (
++    session_id TEXT PRIMARY KEY,
++    user_id INTEGER NOT NULL REFERENCES sys_user(id),
++    expires_at REAL NOT NULL
++);
+--- baseline/rbac/auth_sessions.py
++++ sut/rbac/auth_sessions.py
+@@ -0,0 +1,34 @@
++"""Track each signed browser session so logout revokes that session on the server."""
++import hashlib
++import secrets
++import time
++
++from flask import current_app, session
++
++
++def session_key(nonce):
++    return hashlib.sha256(nonce.encode('ascii')).hexdigest()
++
++
++def authenticated_user(conn):
++    user_id, nonce = session.get('user_id'), session.get('session_nonce')
++    if type(user_id) is not int or not isinstance(nonce, str) or not nonce.isascii():
++        return None
++    row = conn.execute('SELECT user_id FROM auth_session WHERE session_id=? AND expires_at>?',
++                       (session_key(nonce), time.time())).fetchone()
++    return user_id if row and row['user_id'] == user_id else None
++
++
++def issue_session(conn, user_id):
++    now = time.time()
++    conn.execute('DELETE FROM auth_session WHERE expires_at<=?', (now,))
++    nonce = secrets.token_urlsafe(32)
++    conn.execute('INSERT INTO auth_session VALUES (?,?,?)',
++                 (session_key(nonce), user_id,
++                  now + current_app.permanent_session_lifetime.total_seconds()))
++    return nonce
++
++
++def revoke_session(conn, nonce):
++    if isinstance(nonce, str) and nonce.isascii():
++        conn.execute('DELETE FROM auth_session WHERE session_id=?', (session_key(nonce),))

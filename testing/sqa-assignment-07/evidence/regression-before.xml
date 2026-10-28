@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="11" skipped="0" tests="11" time="6.901" timestamp="2026-10-28T19:31:27.821304+08:00" hostname="HuangZhanpeng"><testcase classname="tests.test_regressions" name="test_url_identifier_outside_sqlite_range_returns_400[9223372036854775808-users-payload0]" time="0.394"><failure message="AssertionError: {'code': 'EVENT_FAILURE', 'event': {'allowed': False, 'created_at': '2026-10-28T11:31:28.218+00:00', 'event_type': 'ROLE_ASSIGN_REQUEST', 'id': '303eb774ff3e40de9bfdc301af295958', ...}, 'message': '事件处理失败，事务已回滚', 'ok': False}&#10;assert 503 == 400&#10; +  where 503 = &lt;WrapperTestResponse 1299 bytes [503 SERVICE UNAVAILABLE]&gt;.status_code">app = &lt;Flask 'app'&gt;, route = 'users', payload = {'role_ids': [1]}
+identifier = 9223372036854775808
+
+    @pytest.mark.parametrize('route,payload', [
+        ('users', {'role_ids': [1]}),
+        ('roles', {'permission_ids': [1, 4, 7]}),
+    ])
+    @pytest.mark.parametrize('identifier', [2**63, 10**100])
+    def test_url_identifier_outside_sqlite_range_returns_400(app, route, payload, identifier):
+        client, token = _login(app)
+        before = client.get('/api/admin/state').get_json()
+        suffix = 'roles' if route == 'users' else 'permissions'
+        result = client.put(f'/api/admin/{route}/{identifier}/{suffix}',
+                            json={**payload, 'base_revision': before['policy_revision']},
+                            headers={'X-CSRF-Token': token})
+        after = client.get('/api/admin/state').get_json()
+        assert after['policy_revision'] == before['policy_revision']
+        assert after['user_role_map'] == before['user_role_map']
+        assert after['role_permission_map'] == before['role_permission_map']
+        _record(f'REG-ID-{route}-{identifier}', 400, result.status_code,
+                code=result.get_json().get('code'), policy_unchanged=True)
+&gt;       assert result.status_code == 400, result.get_json()
+E       AssertionError: {'code': 'EVENT_FAILURE', 'event': {'allowed': False, 'created_at': '2026-10-28T11:31:28.218+00:00', 'event_type': 'ROLE_ASSIGN_REQUEST', 'id': '303eb774ff3e40de9bfdc301af295958', ...}, 'message': '事件处理失败，事务已回滚', 'ok': False}
+E       assert 503 == 400
+E        +  where 503 = &lt;WrapperTestResponse 1299 bytes [503 SERVICE UNAVAILABLE]&gt;.status_code
+
+tests\test_regressions.py:58: AssertionError</failure></testcase><testcase classname="tests.test_regressions" name="test_url_identifier_outside_sqlite_range_returns_400[9223372036854775808-roles-payload1]" time="0.433"><failure message="AssertionError: {'code': 'EVENT_FAILURE', 'event': {'allowed': False, 'created_at': '2026-10-28T11:31:28.764+00:00', 'event_type': 'ROLE_PERMISSION_UPDATE', 'id': 'e60fb42a31554a43a60276404092e6e2', ...}, 'message': '事件处理失败，事务已回滚', 'ok': False}&#10;assert 503 == 400&#10; +  where 503 = &lt;WrapperTestResponse 1307 bytes [503 SERVICE UNAVAILABLE]&gt;.status_code">app = &lt;Flask 'app'&gt;, route = 'roles', payload = {'permission_ids': [1, 4, 7]}
+identifier = 9223372036854775808
+
+    @pytest.mark.parametrize('route,payload', [
+        ('users', {'role_ids': [1]}),
+        ('roles', {'permission_ids': [1, 4, 7]}),
+    ])
+    @pytest.mark.parametrize('identifier', [2**63, 10**100])
+    def test_url_identifier_outside_sqlite_range_returns_400(app, route, payload, identifier):
+        client, token = _login(app)
+        before = client.get('/api/admin/state').get_json()
+        suffix = 'roles' if route == 'users' else 'permissions'
+        result = client.put(f'/api/admin/{route}/{identifier}/{suffix}',
+                            json={**payload, 'base_revision': before['policy_revision']},
+                            headers={'X-CSRF-Token': token})
+        after = client.get('/api/admin/state').get_json()
+        assert after['policy_revision'] == before['policy_revision']
+        assert after['user_role_map'] == before['user_role_map']
+        assert after['role_permission_map'] == before['role_permission_map']
+        _record(f'REG-ID-{route}-{identifier}', 400, result.status_code,
+                code=result.get_json().get('code'), policy_unchanged=True)
+&gt;       assert result.status_code == 400, result.get_json()
+E       AssertionError: {'code': 'EVENT_FAILURE', 'event': {'allowed': False, 'created_at': '2026-10-28T11:31:28.764+00:00', 'event_type': 'ROLE_PERMISSION_UPDATE', 'id': 'e60fb42a31554a43a60276404092e6e2', ...}, 'message': '事件处理失败，事务已回滚', 'ok': False}
+E       assert 503 == 400
+E        +  where 503 = &lt;WrapperTestResponse 1307 bytes [503 SERVICE UNAVAILABLE]&gt;.status_code
+
+tests\test_regressions.py:58: AssertionError</failure></testcase><testcase classname="tests.test_regressions" name="test_url_identifier_outside_sqlite_range_returns_400[10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000-users-payload0]" time="0.458"><failure message="AssertionError: {'code': 'EVENT_FAILURE', 'event': {'allowed': False, 'created_at': '2026-10-28T11:31:29.209+00:00', 'event_type': 'ROLE_ASSIGN_REQUEST', 'id': '3c26600d6b1445de8549a3d1a3170fe8', ...}, 'message': '事件处理失败，事务已回滚', 'ok': False}&#10;assert 503 == 400&#10; +  where 503 = &lt;WrapperTestResponse 1463 bytes [503 SERVICE UNAVAILABLE]&gt;.status_code">app = &lt;Flask 'app'&gt;, route = 'users', payload = {'role_ids': [1]}
+identifier = 100000000000000000...0000000000000000000
+
+    @pytest.mark.parametrize('route,payload', [
+        ('users', {'role_ids': [1]}),
+        ('roles', {'permission_ids': [1, 4, 7]}),
+    ])
+    @pytest.mark.parametrize('identifier', [2**63, 10**100])
+    def test_url_identifier_outside_sqlite_range_returns_400(app, route, payload, identifier):
+        client, token = _login(app)
+        before = client.get('/api/admin/state').get_json()
+        suffix = 'roles' if route == 'users' else 'permissions'
+        result = client.put(f'/api/admin/{route}/{identifier}/{suffix}',
+                            json={**payload, 'base_revision': before['policy_revision']},
+                            headers={'X-CSRF-Token': token})
+        after = client.get('/api/admin/state').get_json()
+        assert after['policy_revision'] == before['policy_revision']
+        assert after['user_role_map'] == before['user_role_map']
+        assert after['role_permission_map'] == before['role_permission_map']
+        _record(f'REG-ID-{route}-{identifier}', 400, result.status_code,
+                code=result.get_json().get('code'), policy_unchanged=True)
+&gt;       assert result.status_code == 400, result.get_json()
+E       AssertionError: {'code': 'EVENT_FAILURE', 'event': {'allowed': False, 'created_at': '2026-10-28T11:31:29.209+00:00', 'event_type': 'ROLE_ASSIGN_REQUEST', 'id': '3c26600d6b1445de8549a3d1a3170fe8', ...}, 'message': '事件处理失败，事务已回滚', 'ok': False}
+E       assert 503 == 400
+E        +  where 503 = &lt;WrapperTestResponse 1463 bytes [503 SERVICE UNAVAILABLE]&gt;.status_code
+
+tests\test_regressions.py:58: AssertionError</failure></testcase><testcase classname="tests.test_regressions" name="test_url_identifier_outside_sqlite_range_returns_400[10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000-roles-payload1]" time="0.687"><failure message="AssertionError: {'code': 'EVENT_FAILURE', 'event': {'allowed': False, 'created_at': '2026-10-28T11:31:29.906+00:00', 'event_type': 'ROLE_PERMISSION_UPDATE', 'id': '79bc20b8c0a3479492469238f3465129', ...}, 'message': '事件处理失败，事务已回滚', 'ok': False}&#10;assert 503 == 400&#10; +  where 503 = &lt;WrapperTestResponse 1471 bytes [503 SERVICE UNAVAILABLE]&gt;.status_code">app = &lt;Flask 'app'&gt;, route = 'roles', payload = {'permission_ids': [1, 4, 7]}
+identifier = 100000000000000000...0000000000000000000
+
+    @pytest.mark.parametrize('route,payload', [
+        ('users', {'role_ids': [1]}),
+        ('roles', {'permission_ids': [1, 4, 7]}),
+    ])
+    @pytest.mark.parametrize('identifier', [2**63, 10**100])
+    def test_url_identifier_outside_sqlite_range_returns_400(app, route, payload, identifier):
+        client, token = _login(app)
+        before = client.get('/api/admin/state').get_json()
+        suffix = 'roles' if route == 'users' else 'permissions'
+        result = client.put(f'/api/admin/{route}/{identifier}/{suffix}',
+                            json={**payload, 'base_revision': before['policy_revision']},
+                            headers={'X-CSRF-Token': token})
+        after = client.get('/api/admin/state').get_json()
+        assert after['policy_revision'] == before['policy_revision']
+        assert after['user_role_map'] == before['user_role_map']
+        assert after['role_permission_map'] == before['role_permission_map']
+        _record(f'REG-ID-{route}-{identifier}', 400, result.status_code,
+                code=result.get_json().get('code'), policy_unchanged=True)
+&gt;       assert result.status_code == 400, result.get_json()
+E       AssertionError: {'code': 'EVENT_FAILURE', 'event': {'allowed': False, 'created_at': '2026-10-28T11:31:29.906+00:00', 'event_type': 'ROLE_PERMISSION_UPDATE', 'id': '79bc20b8c0a3479492469238f3465129', ...}, 'message': '事件处理失败，事务已回滚', 'ok': False}
+E       assert 503 == 400
+E        +  where 503 = &lt;WrapperTestResponse 1471 bytes [503 SERVICE UNAVAILABLE]&gt;.status_code
+
+tests\test_regressions.py:58: AssertionError</failure></testcase><testcase classname="tests.test_regressions" name="test_nonstandard_json_constant_rejected_without_business_write[NaN]" time="0.755"><failure message="AssertionError: {'business': {'audits': 0, 'cavalry_deployments': 0, 'gold': 3200, 'swords': 25}, 'event': {'allowed': True, 'created_..., 'event_type': 'ACTION_REQUEST', 'id': '985aa51e7a794d08ad7326865d77d479', ...}, 'message': '一把矿路护卫铁剑已入库', 'ok': True}&#10;assert 200 == 400&#10; +  where 200 = &lt;WrapperTestResponse streamed [200 OK]&gt;.status_code">app = &lt;Flask 'app'&gt;, constant = 'NaN'
+
+    @pytest.mark.parametrize('constant', ['NaN', 'Infinity', '-Infinity'])
+    def test_nonstandard_json_constant_rejected_without_business_write(app, constant):
+        client, token = _login(app, 'henry')
+        before = client.get('/api/state').get_json()['business']
+        result = client.post('/api/actions/forge_sword', data='{"note":' + constant + '}',
+                             content_type='application/json', headers={'X-CSRF-Token': token})
+        after = client.get('/api/state').get_json()['business']
+        _record('REG-JSON-' + constant, 400, result.status_code,
+                business_before=before, business_after=after, business_unchanged=before == after)
+&gt;       assert result.status_code == 400, result.get_json()
+E       AssertionError: {'business': {'audits': 0, 'cavalry_deployments': 0, 'gold': 3200, 'swords': 25}, 'event': {'allowed': True, 'created_..., 'event_type': 'ACTION_REQUEST', 'id': '985aa51e7a794d08ad7326865d77d479', ...}, 'message': '一把矿路护卫铁剑已入库', 'ok': True}
+E       assert 200 == 400
+E        +  where 200 = &lt;WrapperTestResponse streamed [200 OK]&gt;.status_code
+
+tests\test_regressions.py:70: AssertionError</failure></testcase><testcase classname="tests.test_regressions" name="test_nonstandard_json_constant_rejected_without_business_write[Infinity]" time="0.763"><failure message="AssertionError: {'business': {'audits': 0, 'cavalry_deployments': 0, 'gold': 3200, 'swords': 25}, 'event': {'allowed': True, 'created_..., 'event_type': 'ACTION_REQUEST', 'id': '23b2550b09e84e38a263e38aa8514656', ...}, 'message': '一把矿路护卫铁剑已入库', 'ok': True}&#10;assert 200 == 400&#10; +  where 200 = &lt;WrapperTestResponse streamed [200 OK]&gt;.status_code">app = &lt;Flask 'app'&gt;, constant = 'Infinity'
+
+    @pytest.mark.parametrize('constant', ['NaN', 'Infinity', '-Infinity'])
+    def test_nonstandard_json_constant_rejected_without_business_write(app, constant):
+        client, token = _login(app, 'henry')
+        before = client.get('/api/state').get_json()['business']
+        result = client.post('/api/actions/forge_sword', data='{"note":' + constant + '}',
+                             content_type='application/json', headers={'X-CSRF-Token': token})
+        after = client.get('/api/state').get_json()['business']
+        _record('REG-JSON-' + constant, 400, result.status_code,
+                business_before=before, business_after=after, business_unchanged=before == after)
+&gt;       assert result.status_code == 400, result.get_json()
+E       AssertionError: {'business': {'audits': 0, 'cavalry_deployments': 0, 'gold': 3200, 'swords': 25}, 'event': {'allowed': True, 'created_..., 'event_type': 'ACTION_REQUEST', 'id': '23b2550b09e84e38a263e38aa8514656', ...}, 'message': '一把矿路护卫铁剑已入库', 'ok': True}
+E       assert 200 == 400
+E        +  where 200 = &lt;WrapperTestResponse streamed [200 OK]&gt;.status_code
+
+tests\test_regressions.py:70: AssertionError</failure></testcase><testcase classname="tests.test_regressions" name="test_nonstandard_json_constant_rejected_without_business_write[-Infinity]" time="0.774"><failure message="AssertionError: {'business': {'audits': 0, 'cavalry_deployments': 0, 'gold': 3200, 'swords': 25}, 'event': {'allowed': True, 'created_..., 'event_type': 'ACTION_REQUEST', 'id': 'adfa6b0ac68a48db8965a2c9a63ae446', ...}, 'message': '一把矿路护卫铁剑已入库', 'ok': True}&#10;assert 200 == 400&#10; +  where 200 = &lt;WrapperTestResponse streamed [200 OK]&gt;.status_code">app = &lt;Flask 'app'&gt;, constant = '-Infinity'
+
+    @pytest.mark.parametrize('constant', ['NaN', 'Infinity', '-Infinity'])
+    def test_nonstandard_json_constant_rejected_without_business_write(app, constant):
+        client, token = _login(app, 'henry')
+        before = client.get('/api/state').get_json()['business']
+        result = client.post('/api/actions/forge_sword', data='{"note":' + constant + '}',
+                             content_type='application/json', headers={'X-CSRF-Token': token})
+        after = client.get('/api/state').get_json()['business']
+        _record('REG-JSON-' + constant, 400, result.status_code,
+                business_before=before, business_after=after, business_unchanged=before == after)
+&gt;       assert result.status_code == 400, result.get_json()
+E       AssertionError: {'business': {'audits': 0, 'cavalry_deployments': 0, 'gold': 3200, 'swords': 25}, 'event': {'allowed': True, 'created_..., 'event_type': 'ACTION_REQUEST', 'id': 'adfa6b0ac68a48db8965a2c9a63ae446', ...}, 'message': '一把矿路护卫铁剑已入库', 'ok': True}
+E       assert 200 == 400
+E        +  where 200 = &lt;WrapperTestResponse streamed [200 OK]&gt;.status_code
+
+tests\test_regressions.py:70: AssertionError</failure></testcase><testcase classname="tests.test_regressions" name="test_unpaired_unicode_surrogate_login_returns_400[username-\\ud800]" time="0.485"><failure message="AssertionError: {'code': 'EVENT_FAILURE', 'event': {'allowed': False, 'created_at': '2026-10-28T11:31:32.744+00:00', 'event_type': 'LOGIN_REQUEST', 'id': '3901efc3d1d14ebfb6ccebb2deba4533', ...}, 'message': '事件处理失败，事务已回滚', 'ok': False}&#10;assert 503 == 400&#10; +  where 503 = &lt;WrapperTestResponse 902 bytes [503 SERVICE UNAVAILABLE]&gt;.status_code">app = &lt;Flask 'app'&gt;, field = 'username', escaped = '\\ud800'
+
+    @pytest.mark.parametrize('field,escaped', [
+        ('username', '\\ud800'), ('username', '\\udfff'), ('password', '\\ud800'),
+    ])
+    def test_unpaired_unicode_surrogate_login_returns_400(app, field, escaped):
+        client = app.test_client()
+        token = client.get('/api/bootstrap').get_json()['csrf_token']
+        username = '"' + escaped + '"' if field == 'username' else '"henry"'
+        password = '"' + escaped + '"' if field == 'password' else '"Kingdom@2026"'
+        raw = '{"username":' + username + ',"password":' + password + '}'
+        result = client.post('/api/login', data=raw, content_type='application/json',
+                             headers={'X-CSRF-Token': token})
+        _record('REG-UNICODE-' + field + '-' + escaped, 400, result.status_code,
+                code=result.get_json().get('code'))
+        assert client.get('/api/state').status_code == 401
+&gt;       assert result.status_code == 400, result.get_json()
+E       AssertionError: {'code': 'EVENT_FAILURE', 'event': {'allowed': False, 'created_at': '2026-10-28T11:31:32.744+00:00', 'event_type': 'LOGIN_REQUEST', 'id': '3901efc3d1d14ebfb6ccebb2deba4533', ...}, 'message': '事件处理失败，事务已回滚', 'ok': False}
+E       assert 503 == 400
+E        +  where 503 = &lt;WrapperTestResponse 902 bytes [503 SERVICE UNAVAILABLE]&gt;.status_code
+
+tests\test_regressions.py:88: AssertionError</failure></testcase><testcase classname="tests.test_regressions" name="test_unpaired_unicode_surrogate_login_returns_400[username-\\udfff]" time="0.423"><failure message="AssertionError: {'code': 'EVENT_FAILURE', 'event': {'allowed': False, 'created_at': '2026-10-28T11:31:33.181+00:00', 'event_type': 'LOGIN_REQUEST', 'id': '7a2e8904af484e658ccac90ddc1ef81b', ...}, 'message': '事件处理失败，事务已回滚', 'ok': False}&#10;assert 503 == 400&#10; +  where 503 = &lt;WrapperTestResponse 902 bytes [503 SERVICE UNAVAILABLE]&gt;.status_code">app = &lt;Flask 'app'&gt;, field = 'username', escaped = '\\udfff'
+
+    @pytest.mark.parametrize('field,escaped', [
+        ('username', '\\ud800'), ('username', '\\udfff'), ('password', '\\ud800'),
+    ])
+    def test_unpaired_unicode_surrogate_login_returns_400(app, field, escaped):
+        client = app.test_client()
+        token = client.get('/api/bootstrap').get_json()['csrf_token']
+        username = '"' + escaped + '"' if field == 'username' else '"henry"'
+        password = '"' + escaped + '"' if field == 'password' else '"Kingdom@2026"'
+        raw = '{"username":' + username + ',"password":' + password + '}'
+        result = client.post('/api/login', data=raw, content_type='application/json',
+                             headers={'X-CSRF-Token': token})
+        _record('REG-UNICODE-' + field + '-' + escaped, 400, result.status_code,
+                code=result.get_json().get('code'))
+        assert client.get('/api/state').status_code == 401
+&gt;       assert result.status_code == 400, result.get_json()
+E       AssertionError: {'code': 'EVENT_FAILURE', 'event': {'allowed': False, 'created_at': '2026-10-28T11:31:33.181+00:00', 'event_type': 'LOGIN_REQUEST', 'id': '7a2e8904af484e658ccac90ddc1ef81b', ...}, 'message': '事件处理失败，事务已回滚', 'ok': False}
+E       assert 503 == 400
+E        +  where 503 = &lt;WrapperTestResponse 902 bytes [503 SERVICE UNAVAILABLE]&gt;.status_code
+
+tests\test_regressions.py:88: AssertionError</failure></testcase><testcase classname="tests.test_regressions" name="test_unpaired_unicode_surrogate_login_returns_400[password-\\ud800]" time="0.453"><failure message="AssertionError: {'code': 'EVENT_FAILURE', 'event': {'allowed': False, 'created_at': '2026-10-28T11:31:33.640+00:00', 'event_type': 'LOGIN_REQUEST', 'id': 'ab1a3768b53b43eab99345ce09c84d07', ...}, 'message': '事件处理失败，事务已回滚', 'ok': False}&#10;assert 503 == 400&#10; +  where 503 = &lt;WrapperTestResponse 902 bytes [503 SERVICE UNAVAILABLE]&gt;.status_code">app = &lt;Flask 'app'&gt;, field = 'password', escaped = '\\ud800'
+
+    @pytest.mark.parametrize('field,escaped', [
+        ('username', '\\ud800'), ('username', '\\udfff'), ('password', '\\ud800'),
+    ])
+    def test_unpaired_unicode_surrogate_login_returns_400(app, field, escaped):
+        client = app.test_client()
+        token = client.get('/api/bootstrap').get_json()['csrf_token']
+        username = '"' + escaped + '"' if field == 'username' else '"henry"'
+        password = '"' + escaped + '"' if field == 'password' else '"Kingdom@2026"'
+        raw = '{"username":' + username + ',"password":' + password + '}'
+        result = client.post('/api/login', data=raw, content_type='application/json',
+                             headers={'X-CSRF-Token': token})
+        _record('REG-UNICODE-' + field + '-' + escaped, 400, result.status_code,
+                code=result.get_json().get('code'))
+        assert client.get('/api/state').status_code == 401
+&gt;       assert result.status_code == 400, result.get_json()
+E       AssertionError: {'code': 'EVENT_FAILURE', 'event': {'allowed': False, 'created_at': '2026-10-28T11:31:33.640+00:00', 'event_type': 'LOGIN_REQUEST', 'id': 'ab1a3768b53b43eab99345ce09c84d07', ...}, 'message': '事件处理失败，事务已回滚', 'ok': False}
+E       assert 503 == 400
+E        +  where 503 = &lt;WrapperTestResponse 902 bytes [503 SERVICE UNAVAILABLE]&gt;.status_code
+
+tests\test_regressions.py:88: AssertionError</failure></testcase><testcase classname="tests.test_regressions" name="test_logged_out_cookie_cannot_be_replayed_and_other_session_remains" time="1.020"><failure message="AssertionError: {'active_role_ids': [4], 'business': {'audits': 0, 'cavalry_deployments': 0, 'gold': 3200, 'swords': 24}, 'constraints...银库审计官（静态职责分离 SSD）', 'role_a_id': 3, 'role_b_id': 5}], 'csrf_token': '[REDACTED_TEST_TOKEN]', ...}&#10;assert 200 == 401&#10; +  where 200 = &lt;WrapperTestResponse 6401 bytes [200 OK]&gt;.status_code">app = &lt;Flask 'app'&gt;
+
+    def test_logged_out_cookie_cannot_be_replayed_and_other_session_remains(app):
+        client, token = _login(app)
+        other, _ = _login(app)
+        cookie = client.get_cookie('session').value
+        assert client.post('/api/logout', json={}, headers={'X-CSRF-Token': token}).status_code == 200
+        assert client.get('/api/state').status_code == 401
+        other_status = other.get('/api/state').status_code
+        assert other_status == 200
+        replay = app.test_client()
+        replay.set_cookie('session', cookie)
+        result = replay.get('/api/state')
+        _record('REG-SESSION-REPLAY', 401, result.status_code,
+                other_session_status=other_status,
+                replay_username=result.get_json().get('user', {}).get('username'))
+&gt;       assert result.status_code == 401, result.get_json()
+E       AssertionError: {'active_role_ids': [4], 'business': {'audits': 0, 'cavalry_deployments': 0, 'gold': 3200, 'swords': 24}, 'constraints...银库审计官（静态职责分离 SSD）', 'role_a_id': 3, 'role_b_id': 5}], 'csrf_token': '[REDACTED_TEST_TOKEN]', ...}
+E       assert 200 == 401
+E        +  where 200 = &lt;WrapperTestResponse 6401 bytes [200 OK]&gt;.status_code
+
+tests\test_regressions.py:105: AssertionError</failure></testcase></testsuite></testsuites>

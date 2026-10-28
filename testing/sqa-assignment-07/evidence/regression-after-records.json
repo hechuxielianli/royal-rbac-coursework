@@ -1,0 +1,120 @@
+[
+  {
+    "case_id": "REG-ID-users-9223372036854775808",
+    "expected_status": 400,
+    "actual_status": 400,
+    "passed": true,
+    "code": "INVALID_REQUEST",
+    "policy_unchanged": true
+  },
+  {
+    "case_id": "REG-ID-roles-9223372036854775808",
+    "expected_status": 400,
+    "actual_status": 400,
+    "passed": true,
+    "code": "INVALID_REQUEST",
+    "policy_unchanged": true
+  },
+  {
+    "case_id": "REG-ID-users-10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "expected_status": 400,
+    "actual_status": 400,
+    "passed": true,
+    "code": "INVALID_REQUEST",
+    "policy_unchanged": true
+  },
+  {
+    "case_id": "REG-ID-roles-10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "expected_status": 400,
+    "actual_status": 400,
+    "passed": true,
+    "code": "INVALID_REQUEST",
+    "policy_unchanged": true
+  },
+  {
+    "case_id": "REG-JSON-NaN",
+    "expected_status": 400,
+    "actual_status": 400,
+    "passed": true,
+    "business_before": {
+      "swords": 24,
+      "cavalry_deployments": 0,
+      "gold": 3200,
+      "audits": 0
+    },
+    "business_after": {
+      "swords": 24,
+      "cavalry_deployments": 0,
+      "gold": 3200,
+      "audits": 0
+    },
+    "business_unchanged": true
+  },
+  {
+    "case_id": "REG-JSON-Infinity",
+    "expected_status": 400,
+    "actual_status": 400,
+    "passed": true,
+    "business_before": {
+      "swords": 24,
+      "cavalry_deployments": 0,
+      "gold": 3200,
+      "audits": 0
+    },
+    "business_after": {
+      "swords": 24,
+      "cavalry_deployments": 0,
+      "gold": 3200,
+      "audits": 0
+    },
+    "business_unchanged": true
+  },
+  {
+    "case_id": "REG-JSON--Infinity",
+    "expected_status": 400,
+    "actual_status": 400,
+    "passed": true,
+    "business_before": {
+      "swords": 24,
+      "cavalry_deployments": 0,
+      "gold": 3200,
+      "audits": 0
+    },
+    "business_after": {
+      "swords": 24,
+      "cavalry_deployments": 0,
+      "gold": 3200,
+      "audits": 0
+    },
+    "business_unchanged": true
+  },
+  {
+    "case_id": "REG-UNICODE-username-\\ud800",
+    "expected_status": 400,
+    "actual_status": 400,
+    "passed": true,
+    "code": "INVALID_REQUEST"
+  },
+  {
+    "case_id": "REG-UNICODE-username-\\udfff",
+    "expected_status": 400,
+    "actual_status": 400,
+    "passed": true,
+    "code": "INVALID_REQUEST"
+  },
+  {
+    "case_id": "REG-UNICODE-password-\\ud800",
+    "expected_status": 400,
+    "actual_status": 400,
+    "passed": true,
+    "code": "INVALID_REQUEST"
+  },
+  {
+    "case_id": "REG-SESSION-REPLAY",
+    "expected_status": 401,
+    "actual_status": 401,
+    "passed": true,
+    "other_session_status": 200,
+    "replay_username": null
+  }
+]

@@ -1,0 +1,3433 @@
+{
+  "created": 1793187554.3724487,
+  "duration": 138.04176139831543,
+  "exitcode": 0,
+  "root": "[WORKSPACE]\\sut",
+  "environment": {},
+  "summary": {
+    "passed": 98,
+    "total": 98,
+    "collected": 98
+  },
+  "collectors": [
+    {
+      "nodeid": "",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": "tests",
+          "type": "Dir"
+        }
+      ]
+    },
+    {
+      "nodeid": "tests/browser",
+      "outcome": "passed",
+      "result": []
+    },
+    {
+      "nodeid": "tests/test_authorization.py",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": "tests/test_authorization.py::test_anonymous_cannot_read_protected_resources[/api/state]",
+          "type": "Function",
+          "lineno": 5
+        },
+        {
+          "nodeid": "tests/test_authorization.py::test_anonymous_cannot_read_protected_resources[/api/events]",
+          "type": "Function",
+          "lineno": 5
+        },
+        {
+          "nodeid": "tests/test_authorization.py::test_anonymous_cannot_read_protected_resources[/api/admin/state]",
+          "type": "Function",
+          "lineno": 5
+        },
+        {
+          "nodeid": "tests/test_authorization.py::test_anonymous_cannot_read_protected_resources[/api/pages/defense_map]",
+          "type": "Function",
+          "lineno": 5
+        },
+        {
+          "nodeid": "tests/test_authorization.py::test_anonymous_cannot_read_protected_resources[/api/navigation/treasury]",
+          "type": "Function",
+          "lineno": 5
+        },
+        {
+          "nodeid": "tests/test_authorization.py::test_password_required_and_no_hash_disclosure",
+          "type": "Function",
+          "lineno": 11
+        },
+        {
+          "nodeid": "tests/test_authorization.py::test_csrf_is_required_for_mutations",
+          "type": "Function",
+          "lineno": 21
+        },
+        {
+          "nodeid": "tests/test_authorization.py::test_client_actor_cannot_impersonate_king",
+          "type": "Function",
+          "lineno": 31
+        },
+        {
+          "nodeid": "tests/test_authorization.py::test_non_ascii_csrf_header_returns_denial_without_server_error",
+          "type": "Function",
+          "lineno": 41
+        },
+        {
+          "nodeid": "tests/test_authorization.py::test_administration_rejects_peasant[PUT-/api/admin/users/1/roles-payload0]",
+          "type": "Function",
+          "lineno": 51
+        },
+        {
+          "nodeid": "tests/test_authorization.py::test_administration_rejects_peasant[PUT-/api/admin/roles/1/permissions-payload1]",
+          "type": "Function",
+          "lineno": 51
+        },
+        {
+          "nodeid": "tests/test_authorization.py::test_administration_rejects_peasant[PUT-/api/admin/hierarchy-payload2]",
+          "type": "Function",
+          "lineno": 51
+        },
+        {
+          "nodeid": "tests/test_authorization.py::test_role_inheritance_and_no_universal_king",
+          "type": "Function",
+          "lineno": 62
+        },
+        {
+          "nodeid": "tests/test_authorization.py::test_real_page_routes_are_protected_and_do_not_leak",
+          "type": "Function",
+          "lineno": 72
+        },
+        {
+          "nodeid": "tests/test_authorization.py::test_menu_permission_is_independent_from_page_permission",
+          "type": "Function",
+          "lineno": 83
+        },
+        {
+          "nodeid": "tests/test_authorization.py::test_session_can_only_activate_assigned_roles",
+          "type": "Function",
+          "lineno": 96
+        },
+        {
+          "nodeid": "tests/test_authorization.py::test_logout_invalidates_authenticated_access",
+          "type": "Function",
+          "lineno": 108
+        },
+        {
+          "nodeid": "tests/test_authorization.py::test_unknown_resources_fail_closed[/api/pages/unknown]",
+          "type": "Function",
+          "lineno": 114
+        },
+        {
+          "nodeid": "tests/test_authorization.py::test_unknown_resources_fail_closed[/api/navigation/unknown]",
+          "type": "Function",
+          "lineno": 114
+        }
+      ]
+    },
+    {
+      "nodeid": "tests/test_business_and_persistence.py",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": "tests/test_business_and_persistence.py::test_allowed_actions_change_real_business_data",
+          "type": "Function",
+          "lineno": 6
+        },
+        {
+          "nodeid": "tests/test_business_and_persistence.py::test_denied_action_has_persistent_trace_but_no_business_write",
+          "type": "Function",
+          "lineno": 24
+        },
+        {
+          "nodeid": "tests/test_business_and_persistence.py::test_audit_scope_is_actor_only_unless_admin",
+          "type": "Function",
+          "lineno": 37
+        },
+        {
+          "nodeid": "tests/test_business_and_persistence.py::test_restarting_factory_preserves_policy_business_and_audit",
+          "type": "Function",
+          "lineno": 47
+        },
+        {
+          "nodeid": "tests/test_business_and_persistence.py::test_database_integrity_and_foreign_keys",
+          "type": "Function",
+          "lineno": 67
+        }
+      ]
+    },
+    {
+      "nodeid": "tests/test_engine_and_failures.py",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": "tests/test_engine_and_failures.py::test_event_without_listener_is_denied",
+          "type": "Function",
+          "lineno": 10
+        },
+        {
+          "nodeid": "tests/test_engine_and_failures.py::test_invalid_ids_do_not_mutate_policy[role_ids0]",
+          "type": "Function",
+          "lineno": 17
+        },
+        {
+          "nodeid": "tests/test_engine_and_failures.py::test_invalid_ids_do_not_mutate_policy[role_ids1]",
+          "type": "Function",
+          "lineno": 17
+        },
+        {
+          "nodeid": "tests/test_engine_and_failures.py::test_invalid_ids_do_not_mutate_policy[role_ids2]",
+          "type": "Function",
+          "lineno": 17
+        },
+        {
+          "nodeid": "tests/test_engine_and_failures.py::test_invalid_ids_do_not_mutate_policy[role_ids3]",
+          "type": "Function",
+          "lineno": 17
+        },
+        {
+          "nodeid": "tests/test_engine_and_failures.py::test_invalid_ids_do_not_mutate_policy[None]",
+          "type": "Function",
+          "lineno": 17
+        },
+        {
+          "nodeid": "tests/test_engine_and_failures.py::test_invalid_ids_do_not_mutate_policy[1]",
+          "type": "Function",
+          "lineno": 17
+        },
+        {
+          "nodeid": "tests/test_engine_and_failures.py::test_audit_failure_rolls_back_business",
+          "type": "Function",
+          "lineno": 26
+        },
+        {
+          "nodeid": "tests/test_engine_and_failures.py::test_concurrent_payments_do_not_overdraw_treasury",
+          "type": "Function",
+          "lineno": 39
+        }
+      ]
+    },
+    {
+      "nodeid": "tests/test_kuttenberg_theme.py",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": "tests/test_kuttenberg_theme.py::test_v2_display_upgrade_preserves_customizations_and_history",
+          "type": "Function",
+          "lineno": 8
+        },
+        {
+          "nodeid": "tests/test_kuttenberg_theme.py::test_theme_catalog_preserves_codes_and_business_semantics",
+          "type": "Function",
+          "lineno": 51
+        },
+        {
+          "nodeid": "tests/test_kuttenberg_theme.py::test_anti_smuggling_decree_rejects_ssd_without_changing_assignment",
+          "type": "Function",
+          "lineno": 71
+        },
+        {
+          "nodeid": "tests/test_kuttenberg_theme.py::test_theme_v1_translation_upgrade_changes_only_known_defaults",
+          "type": "Function",
+          "lineno": 81
+        },
+        {
+          "nodeid": "tests/test_kuttenberg_theme.py::test_fresh_theme_and_real_page_templates_use_kuttenburg_translation",
+          "type": "Function",
+          "lineno": 139
+        },
+        {
+          "nodeid": "tests/test_kuttenberg_theme.py::test_completed_theme_v2_does_not_rewrite_later_customization",
+          "type": "Function",
+          "lineno": 152
+        }
+      ]
+    },
+    {
+      "nodeid": "tests/test_policy.py",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": "tests/test_policy.py::test_direct_ssd_conflict_rolls_back",
+          "type": "Function",
+          "lineno": 9
+        },
+        {
+          "nodeid": "tests/test_policy.py::test_inherited_ssd_conflict_rolls_back_hierarchy",
+          "type": "Function",
+          "lineno": 18
+        },
+        {
+          "nodeid": "tests/test_policy.py::test_cycle_is_rejected_and_original_policy_remains",
+          "type": "Function",
+          "lineno": 27
+        },
+        {
+          "nodeid": "tests/test_policy.py::test_valid_diamond_hierarchy_deduplicates_roles",
+          "type": "Function",
+          "lineno": 36
+        },
+        {
+          "nodeid": "tests/test_policy.py::test_permission_matrix_cannot_bypass_duty_separation",
+          "type": "Function",
+          "lineno": 48
+        },
+        {
+          "nodeid": "tests/test_policy.py::test_last_administrator_cannot_be_removed",
+          "type": "Function",
+          "lineno": 58
+        },
+        {
+          "nodeid": "tests/test_policy.py::test_permission_changes_apply_to_existing_session_immediately",
+          "type": "Function",
+          "lineno": 69
+        },
+        {
+          "nodeid": "tests/test_policy.py::test_assignment_revocation_removes_stale_active_role",
+          "type": "Function",
+          "lineno": 81
+        },
+        {
+          "nodeid": "tests/test_policy.py::test_invalid_foreign_key_does_not_partially_write",
+          "type": "Function",
+          "lineno": 90
+        }
+      ]
+    },
+    {
+      "nodeid": "tests/test_review_concurrency.py",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": "tests/test_review_concurrency.py::test_concurrent_policy_saves_commit_only_one_shared_revision",
+          "type": "Function",
+          "lineno": 7
+        }
+      ]
+    },
+    {
+      "nodeid": "tests/test_review_revision.py",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": "tests/test_review_revision.py::test_even_trusted_admin_cannot_assign_own_roles[henry-1]",
+          "type": "Function",
+          "lineno": 48
+        },
+        {
+          "nodeid": "tests/test_review_revision.py::test_even_trusted_admin_cannot_assign_own_roles[wenceslas-4]",
+          "type": "Function",
+          "lineno": 48
+        },
+        {
+          "nodeid": "tests/test_review_revision.py::test_original_assign_self_coronation_attack_stops_before_activation",
+          "type": "Function",
+          "lineno": 63
+        },
+        {
+          "nodeid": "tests/test_review_revision.py::test_partial_assign_cannot_delegate_management_or_uncovered_business[role_ids0]",
+          "type": "Function",
+          "lineno": 74
+        },
+        {
+          "nodeid": "tests/test_review_revision.py::test_partial_assign_cannot_delegate_management_or_uncovered_business[role_ids1]",
+          "type": "Function",
+          "lineno": 74
+        },
+        {
+          "nodeid": "tests/test_review_revision.py::test_partial_assign_cannot_delegate_management_or_uncovered_business[role_ids2]",
+          "type": "Function",
+          "lineno": 74
+        },
+        {
+          "nodeid": "tests/test_review_revision.py::test_partial_assign_can_delegate_covered_nonmanagement_role",
+          "type": "Function",
+          "lineno": 83
+        },
+        {
+          "nodeid": "tests/test_review_revision.py::test_partial_assign_cannot_revoke_another_administrators_capabilities",
+          "type": "Function",
+          "lineno": 90
+        },
+        {
+          "nodeid": "tests/test_review_revision.py::test_trusted_king_can_delegate_finance_without_holding_its_business_power[3]",
+          "type": "Function",
+          "lineno": 99
+        },
+        {
+          "nodeid": "tests/test_review_revision.py::test_trusted_king_can_delegate_finance_without_holding_its_business_power[5]",
+          "type": "Function",
+          "lineno": 99
+        },
+        {
+          "nodeid": "tests/test_review_revision.py::test_admin_snapshot_is_accessible_and_trimmed_by_active_capability[admin:assign]",
+          "type": "Function",
+          "lineno": 109
+        },
+        {
+          "nodeid": "tests/test_review_revision.py::test_admin_snapshot_is_accessible_and_trimmed_by_active_capability[admin:policy]",
+          "type": "Function",
+          "lineno": 109
+        },
+        {
+          "nodeid": "tests/test_review_revision.py::test_admin_snapshot_is_accessible_and_trimmed_by_active_capability[admin:audit]",
+          "type": "Function",
+          "lineno": 109
+        },
+        {
+          "nodeid": "tests/test_review_revision.py::test_partial_policy_cannot_mint_capabilities_or_uncovered_permissions[self_admin_grant]",
+          "type": "Function",
+          "lineno": 128
+        },
+        {
+          "nodeid": "tests/test_review_revision.py::test_partial_policy_cannot_mint_capabilities_or_uncovered_permissions[other_role_admin_grant]",
+          "type": "Function",
+          "lineno": 128
+        },
+        {
+          "nodeid": "tests/test_review_revision.py::test_partial_policy_cannot_mint_capabilities_or_uncovered_permissions[uncovered_business_grant]",
+          "type": "Function",
+          "lineno": 128
+        },
+        {
+          "nodeid": "tests/test_review_revision.py::test_partial_policy_cannot_remove_management_power",
+          "type": "Function",
+          "lineno": 144
+        },
+        {
+          "nodeid": "tests/test_review_revision.py::test_partial_policy_cannot_change_redundant_direct_admin_grant[add]",
+          "type": "Function",
+          "lineno": 154
+        },
+        {
+          "nodeid": "tests/test_review_revision.py::test_partial_policy_cannot_change_redundant_direct_admin_grant[remove]",
+          "type": "Function",
+          "lineno": 154
+        },
+        {
+          "nodeid": "tests/test_review_revision.py::test_partial_policy_cannot_change_redundant_admin_inheritance_edge[add]",
+          "type": "Function",
+          "lineno": 182
+        },
+        {
+          "nodeid": "tests/test_review_revision.py::test_partial_policy_cannot_change_redundant_admin_inheritance_edge[remove]",
+          "type": "Function",
+          "lineno": 182
+        },
+        {
+          "nodeid": "tests/test_review_revision.py::test_partial_policy_cannot_inherit_trusted_admin",
+          "type": "Function",
+          "lineno": 210
+        },
+        {
+          "nodeid": "tests/test_review_revision.py::test_partial_policy_cannot_change_unused_role_admin_closure",
+          "type": "Function",
+          "lineno": 221
+        },
+        {
+          "nodeid": "tests/test_review_revision.py::test_partial_policy_can_distribute_already_held_business_permission",
+          "type": "Function",
+          "lineno": 233
+        },
+        {
+          "nodeid": "tests/test_review_revision.py::test_trusted_delegation_requires_all_management_powers_to_be_active",
+          "type": "Function",
+          "lineno": 242
+        },
+        {
+          "nodeid": "tests/test_review_revision.py::test_policy_revision_must_be_explicit_nonnegative_integer[None]",
+          "type": "Function",
+          "lineno": 253
+        },
+        {
+          "nodeid": "tests/test_review_revision.py::test_policy_revision_must_be_explicit_nonnegative_integer[True]",
+          "type": "Function",
+          "lineno": 253
+        },
+        {
+          "nodeid": "tests/test_review_revision.py::test_policy_revision_must_be_explicit_nonnegative_integer[-1]",
+          "type": "Function",
+          "lineno": 253
+        },
+        {
+          "nodeid": "tests/test_review_revision.py::test_policy_revision_must_be_explicit_nonnegative_integer[0]",
+          "type": "Function",
+          "lineno": 253
+        },
+        {
+          "nodeid": "tests/test_review_revision.py::test_policy_revision_must_be_explicit_nonnegative_integer[1.5]",
+          "type": "Function",
+          "lineno": 253
+        },
+        {
+          "nodeid": "tests/test_review_revision.py::test_stale_management_snapshot_cannot_overwrite_any_policy_kind[assignment]",
+          "type": "Function",
+          "lineno": 267
+        },
+        {
+          "nodeid": "tests/test_review_revision.py::test_stale_management_snapshot_cannot_overwrite_any_policy_kind[permissions]",
+          "type": "Function",
+          "lineno": 267
+        },
+        {
+          "nodeid": "tests/test_review_revision.py::test_stale_management_snapshot_cannot_overwrite_any_policy_kind[hierarchy]",
+          "type": "Function",
+          "lineno": 267
+        },
+        {
+          "nodeid": "tests/test_review_revision.py::test_audit_report_reconciles_currency_only_and_tracks_ledger_cutoff",
+          "type": "Function",
+          "lineno": 290
+        },
+        {
+          "nodeid": "tests/test_review_revision.py::test_audit_difference_is_a_saved_finding_not_transaction_failure",
+          "type": "Function",
+          "lineno": 311
+        },
+        {
+          "nodeid": "tests/test_review_revision.py::test_audit_storage_failure_rolls_back_report_counter_and_ledger[audit_report]",
+          "type": "Function",
+          "lineno": 328
+        },
+        {
+          "nodeid": "tests/test_review_revision.py::test_audit_storage_failure_rolls_back_report_counter_and_ledger[audit_event]",
+          "type": "Function",
+          "lineno": 328
+        },
+        {
+          "nodeid": "tests/test_review_revision.py::test_startup_refuses_manually_corrupted_policy[permission_conflict]",
+          "type": "Function",
+          "lineno": 347
+        },
+        {
+          "nodeid": "tests/test_review_revision.py::test_startup_refuses_manually_corrupted_policy[foreign_key]",
+          "type": "Function",
+          "lineno": 347
+        },
+        {
+          "nodeid": "tests/test_review_revision.py::test_existing_session_refuses_newly_corrupted_permission_mutex",
+          "type": "Function",
+          "lineno": 359
+        },
+        {
+          "nodeid": "tests/test_review_revision.py::test_protected_metadata_read_refuses_runtime_corrupted_permission_mutex[/api/events-events]",
+          "type": "Function",
+          "lineno": 371
+        },
+        {
+          "nodeid": "tests/test_review_revision.py::test_protected_metadata_read_refuses_runtime_corrupted_permission_mutex[/api/state-permission_codes]",
+          "type": "Function",
+          "lineno": 371
+        },
+        {
+          "nodeid": "tests/test_review_revision.py::test_v1_incremental_migration_preserves_existing_policy_business_and_audit",
+          "type": "Function",
+          "lineno": 383
+        },
+        {
+          "nodeid": "tests/test_review_revision.py::test_resource_catalog_has_territories_and_never_carries_protected_body",
+          "type": "Function",
+          "lineno": 420
+        },
+        {
+          "nodeid": "tests/test_review_revision.py::test_resource_catalog_reads_database_metadata_without_granting_access",
+          "type": "Function",
+          "lineno": 438
+        },
+        {
+          "nodeid": "tests/test_review_revision.py::test_navigation_catalog_is_scoped_without_imposing_menu_on_pages",
+          "type": "Function",
+          "lineno": 450
+        },
+        {
+          "nodeid": "tests/test_review_revision.py::test_api_document_column_order_matches_persisted_source[tax_scroll-columns0]",
+          "type": "Function",
+          "lineno": 467
+        },
+        {
+          "nodeid": "tests/test_review_revision.py::test_api_document_column_order_matches_persisted_source[defense_map-columns1]",
+          "type": "Function",
+          "lineno": 467
+        },
+        {
+          "nodeid": "tests/test_review_revision.py::test_low_cost_security_headers_trusted_hosts_and_healthz",
+          "type": "Function",
+          "lineno": 476
+        }
+      ]
+    },
+    {
+      "nodeid": "tests",
+      "outcome": "passed",
+      "result": [
+        {
+          "nodeid": "tests/browser",
+          "type": "Dir"
+        },
+        {
+          "nodeid": "tests/test_authorization.py",
+          "type": "Module"
+        },
+        {
+          "nodeid": "tests/test_business_and_persistence.py",
+          "type": "Module"
+        },
+        {
+          "nodeid": "tests/test_engine_and_failures.py",
+          "type": "Module"
+        },
+        {
+          "nodeid": "tests/test_kuttenberg_theme.py",
+          "type": "Module"
+        },
+        {
+          "nodeid": "tests/test_policy.py",
+          "type": "Module"
+        },
+        {
+          "nodeid": "tests/test_review_concurrency.py",
+          "type": "Module"
+        },
+        {
+          "nodeid": "tests/test_review_revision.py",
+          "type": "Module"
+        }
+      ]
+    }
+  ],
+  "tests": [
+    {
+      "nodeid": "tests/test_authorization.py::test_anonymous_cannot_read_protected_resources[/api/state]",
+      "lineno": 5,
+      "outcome": "passed",
+      "keywords": [
+        "test_anonymous_cannot_read_protected_resources[/api/state]",
+        "parametrize",
+        "pytestmark",
+        "/api/state",
+        "test_authorization.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.22966940002515912,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.010539199924096465,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0005370000144466758,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_authorization.py::test_anonymous_cannot_read_protected_resources[/api/events]",
+      "lineno": 5,
+      "outcome": "passed",
+      "keywords": [
+        "test_anonymous_cannot_read_protected_resources[/api/events]",
+        "parametrize",
+        "pytestmark",
+        "/api/events",
+        "test_authorization.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.20504809997510165,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.003294300055131316,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0004023000365123153,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_authorization.py::test_anonymous_cannot_read_protected_resources[/api/admin/state]",
+      "lineno": 5,
+      "outcome": "passed",
+      "keywords": [
+        "test_anonymous_cannot_read_protected_resources[/api/admin/state]",
+        "parametrize",
+        "pytestmark",
+        "/api/admin/state",
+        "test_authorization.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.202223900007084,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.007446100004017353,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0004080000799149275,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_authorization.py::test_anonymous_cannot_read_protected_resources[/api/pages/defense_map]",
+      "lineno": 5,
+      "outcome": "passed",
+      "keywords": [
+        "test_anonymous_cannot_read_protected_resources[/api/pages/defense_map]",
+        "parametrize",
+        "pytestmark",
+        "/api/pages/defense_map",
+        "test_authorization.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.2118495999602601,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.008028600015677512,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00041369989048689604,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_authorization.py::test_anonymous_cannot_read_protected_resources[/api/navigation/treasury]",
+      "lineno": 5,
+      "outcome": "passed",
+      "keywords": [
+        "test_anonymous_cannot_read_protected_resources[/api/navigation/treasury]",
+        "parametrize",
+        "pytestmark",
+        "/api/navigation/treasury",
+        "test_authorization.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.2154310999903828,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.025130300084128976,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.001486700028181076,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_authorization.py::test_password_required_and_no_hash_disclosure",
+      "lineno": 11,
+      "outcome": "passed",
+      "keywords": [
+        "test_password_required_and_no_hash_disclosure",
+        "test_authorization.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.7060849999543279,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.4197998000308871,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0014440999366343021,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_authorization.py::test_csrf_is_required_for_mutations",
+      "lineno": 21,
+      "outcome": "passed",
+      "keywords": [
+        "test_csrf_is_required_for_mutations",
+        "test_authorization.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6693852000171319,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.5146023000124842,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.001308100065216422,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_authorization.py::test_client_actor_cannot_impersonate_king",
+      "lineno": 31,
+      "outcome": "passed",
+      "keywords": [
+        "test_client_actor_cannot_impersonate_king",
+        "test_authorization.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6335441999835894,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.5400734998984262,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.001586700091138482,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_authorization.py::test_non_ascii_csrf_header_returns_denial_without_server_error",
+      "lineno": 41,
+      "outcome": "passed",
+      "keywords": [
+        "test_non_ascii_csrf_header_returns_denial_without_server_error",
+        "test_authorization.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6118481999728829,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.504690199973993,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0013653000351041555,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_authorization.py::test_administration_rejects_peasant[PUT-/api/admin/users/1/roles-payload0]",
+      "lineno": 51,
+      "outcome": "passed",
+      "keywords": [
+        "test_administration_rejects_peasant[PUT-/api/admin/users/1/roles-payload0]",
+        "parametrize",
+        "pytestmark",
+        "PUT-/api/admin/users/1/roles-payload0",
+        "test_authorization.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6632271000416949,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.5131633999990299,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0019024999346584082,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_authorization.py::test_administration_rejects_peasant[PUT-/api/admin/roles/1/permissions-payload1]",
+      "lineno": 51,
+      "outcome": "passed",
+      "keywords": [
+        "test_administration_rejects_peasant[PUT-/api/admin/roles/1/permissions-payload1]",
+        "parametrize",
+        "pytestmark",
+        "PUT-/api/admin/roles/1/permissions-payload1",
+        "test_authorization.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6560710999183357,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.4852720000781119,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0014569999184459448,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_authorization.py::test_administration_rejects_peasant[PUT-/api/admin/hierarchy-payload2]",
+      "lineno": 51,
+      "outcome": "passed",
+      "keywords": [
+        "test_administration_rejects_peasant[PUT-/api/admin/hierarchy-payload2]",
+        "parametrize",
+        "pytestmark",
+        "PUT-/api/admin/hierarchy-payload2",
+        "test_authorization.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6526548999827355,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.49076409998815507,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0014696000143885612,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_authorization.py::test_role_inheritance_and_no_universal_king",
+      "lineno": 62,
+      "outcome": "passed",
+      "keywords": [
+        "test_role_inheritance_and_no_universal_king",
+        "test_authorization.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6463154000230134,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.46578209998551756,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0014359999913722277,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_authorization.py::test_real_page_routes_are_protected_and_do_not_leak",
+      "lineno": 72,
+      "outcome": "passed",
+      "keywords": [
+        "test_real_page_routes_are_protected_and_do_not_leak",
+        "test_authorization.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6273592000361532,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.6101058999774978,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0014477999648079276,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_authorization.py::test_menu_permission_is_independent_from_page_permission",
+      "lineno": 83,
+      "outcome": "passed",
+      "keywords": [
+        "test_menu_permission_is_independent_from_page_permission",
+        "test_authorization.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6339929999085143,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 1.0029162999708205,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0014694000128656626,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_authorization.py::test_session_can_only_activate_assigned_roles",
+      "lineno": 96,
+      "outcome": "passed",
+      "keywords": [
+        "test_session_can_only_activate_assigned_roles",
+        "test_authorization.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6402468999149278,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.6286100000143051,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0014468999579548836,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_authorization.py::test_logout_invalidates_authenticated_access",
+      "lineno": 108,
+      "outcome": "passed",
+      "keywords": [
+        "test_logout_invalidates_authenticated_access",
+        "test_authorization.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6559848999604583,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.4377567000919953,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0014572000363841653,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_authorization.py::test_unknown_resources_fail_closed[/api/pages/unknown]",
+      "lineno": 114,
+      "outcome": "passed",
+      "keywords": [
+        "test_unknown_resources_fail_closed[/api/pages/unknown]",
+        "parametrize",
+        "pytestmark",
+        "/api/pages/unknown",
+        "test_authorization.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6565937999403104,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.42733859992586076,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.002508200006559491,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_authorization.py::test_unknown_resources_fail_closed[/api/navigation/unknown]",
+      "lineno": 114,
+      "outcome": "passed",
+      "keywords": [
+        "test_unknown_resources_fail_closed[/api/navigation/unknown]",
+        "parametrize",
+        "pytestmark",
+        "/api/navigation/unknown",
+        "test_authorization.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.647094399901107,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.426844900008291,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.001627200050279498,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_business_and_persistence.py::test_allowed_actions_change_real_business_data",
+      "lineno": 6,
+      "outcome": "passed",
+      "keywords": [
+        "test_allowed_actions_change_real_business_data",
+        "test_business_and_persistence.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6541211999719962,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 1.6029814999783412,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0015839000698179007,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_business_and_persistence.py::test_denied_action_has_persistent_trace_but_no_business_write",
+      "lineno": 24,
+      "outcome": "passed",
+      "keywords": [
+        "test_denied_action_has_persistent_trace_but_no_business_write",
+        "test_business_and_persistence.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6637205000733957,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.5503862999612466,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.002598599996417761,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_business_and_persistence.py::test_audit_scope_is_actor_only_unless_admin",
+      "lineno": 37,
+      "outcome": "passed",
+      "keywords": [
+        "test_audit_scope_is_actor_only_unless_admin",
+        "test_business_and_persistence.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6557799000293016,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 1.3320902999257669,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0017265999922528863,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_business_and_persistence.py::test_restarting_factory_preserves_policy_business_and_audit",
+      "lineno": 47,
+      "outcome": "passed",
+      "keywords": [
+        "test_restarting_factory_preserves_policy_business_and_audit",
+        "test_business_and_persistence.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6659821999492124,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 2.111177199985832,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0016904999502003193,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_business_and_persistence.py::test_database_integrity_and_foreign_keys",
+      "lineno": 67,
+      "outcome": "passed",
+      "keywords": [
+        "test_database_integrity_and_foreign_keys",
+        "test_business_and_persistence.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6521298999432474,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.010815600049681962,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.001569500076584518,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_engine_and_failures.py::test_event_without_listener_is_denied",
+      "lineno": 10,
+      "outcome": "passed",
+      "keywords": [
+        "test_event_without_listener_is_denied",
+        "test_engine_and_failures.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.0013806999195367098,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.004927299916744232,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0011512000346556306,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_engine_and_failures.py::test_invalid_ids_do_not_mutate_policy[role_ids0]",
+      "lineno": 17,
+      "outcome": "passed",
+      "keywords": [
+        "test_invalid_ids_do_not_mutate_policy[role_ids0]",
+        "parametrize",
+        "pytestmark",
+        "role_ids0",
+        "test_engine_and_failures.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6519423000281677,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.5725003998959437,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0017757000168785453,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_engine_and_failures.py::test_invalid_ids_do_not_mutate_policy[role_ids1]",
+      "lineno": 17,
+      "outcome": "passed",
+      "keywords": [
+        "test_invalid_ids_do_not_mutate_policy[role_ids1]",
+        "parametrize",
+        "pytestmark",
+        "role_ids1",
+        "test_engine_and_failures.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6672539999708533,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.5296315000159666,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.002281000022776425,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_engine_and_failures.py::test_invalid_ids_do_not_mutate_policy[role_ids2]",
+      "lineno": 17,
+      "outcome": "passed",
+      "keywords": [
+        "test_invalid_ids_do_not_mutate_policy[role_ids2]",
+        "parametrize",
+        "pytestmark",
+        "role_ids2",
+        "test_engine_and_failures.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6736951000057161,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.5648198999697343,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0016413000412285328,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_engine_and_failures.py::test_invalid_ids_do_not_mutate_policy[role_ids3]",
+      "lineno": 17,
+      "outcome": "passed",
+      "keywords": [
+        "test_invalid_ids_do_not_mutate_policy[role_ids3]",
+        "parametrize",
+        "pytestmark",
+        "role_ids3",
+        "test_engine_and_failures.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.7108879000879824,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.5804574999492615,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0018843000289052725,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_engine_and_failures.py::test_invalid_ids_do_not_mutate_policy[None]",
+      "lineno": 17,
+      "outcome": "passed",
+      "keywords": [
+        "test_invalid_ids_do_not_mutate_policy[None]",
+        "parametrize",
+        "pytestmark",
+        "None",
+        "test_engine_and_failures.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6859054999658838,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.5769679999211803,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0017852999735623598,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_engine_and_failures.py::test_invalid_ids_do_not_mutate_policy[1]",
+      "lineno": 17,
+      "outcome": "passed",
+      "keywords": [
+        "test_invalid_ids_do_not_mutate_policy[1]",
+        "parametrize",
+        "pytestmark",
+        "1",
+        "test_engine_and_failures.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6523089000256732,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.5376718000043184,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0015873999800533056,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_engine_and_failures.py::test_audit_failure_rolls_back_business",
+      "lineno": 26,
+      "outcome": "passed",
+      "keywords": [
+        "test_audit_failure_rolls_back_business",
+        "test_engine_and_failures.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6656901999376714,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.5602083000121638,
+        "outcome": "passed",
+        "log": [
+          {
+            "name": "app",
+            "msg": "Event 3441b7c3f2e84779b77d0204ff4f2b02 failed",
+            "args": null,
+            "levelname": "ERROR",
+            "levelno": 40,
+            "pathname": "[WORKSPACE]\\sut\\rbac\\routes.py",
+            "filename": "routes.py",
+            "module": "routes",
+            "exc_info": null,
+            "exc_text": "Traceback (most recent call last):\n  File \"[WORKSPACE]\\sut\\rbac\\routes.py\", line 104, in run_event\n    AuditListener().on_event(event, conn)\n    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^\n  File \"[WORKSPACE]\\sut\\rbac\\events.py\", line 253, in on_event\n    conn.execute('INSERT INTO audit_event VALUES (?,?,?,?,?,?,?,?)',\n    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n                 (event.id,event.actor_id,event.event_type,event.target,int(event.allowed),\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n                  event.message,json.dumps(event.logs,ensure_ascii=False),event.created_at))\n                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nsqlite3.IntegrityError: simulated audit failure",
+            "stack_info": null,
+            "lineno": 115,
+            "funcName": "run_event",
+            "created": 1793187451.7529433,
+            "msecs": 752.0,
+            "relativeCreated": 36868.9457,
+            "thread": 47456,
+            "threadName": "MainThread",
+            "processName": "MainProcess",
+            "process": 19472,
+            "taskName": null
+          },
+          {
+            "name": "app",
+            "msg": "Cannot persist denied event 3441b7c3f2e84779b77d0204ff4f2b02",
+            "args": null,
+            "levelname": "ERROR",
+            "levelno": 40,
+            "pathname": "[WORKSPACE]\\sut\\rbac\\routes.py",
+            "filename": "routes.py",
+            "module": "routes",
+            "exc_info": null,
+            "exc_text": "Traceback (most recent call last):\n  File \"[WORKSPACE]\\sut\\rbac\\routes.py\", line 104, in run_event\n    AuditListener().on_event(event, conn)\n    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^\n  File \"[WORKSPACE]\\sut\\rbac\\events.py\", line 253, in on_event\n    conn.execute('INSERT INTO audit_event VALUES (?,?,?,?,?,?,?,?)',\n    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n                 (event.id,event.actor_id,event.event_type,event.target,int(event.allowed),\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n                  event.message,json.dumps(event.logs,ensure_ascii=False),event.created_at))\n                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nsqlite3.IntegrityError: simulated audit failure\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"[WORKSPACE]\\sut\\rbac\\routes.py\", line 121, in run_event\n    AuditListener().on_event(event, conn)\n    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^\n  File \"[WORKSPACE]\\sut\\rbac\\events.py\", line 253, in on_event\n    conn.execute('INSERT INTO audit_event VALUES (?,?,?,?,?,?,?,?)',\n    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n                 (event.id,event.actor_id,event.event_type,event.target,int(event.allowed),\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n                  event.message,json.dumps(event.logs,ensure_ascii=False),event.created_at))\n                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nsqlite3.IntegrityError: simulated audit failure",
+            "stack_info": null,
+            "lineno": 125,
+            "funcName": "run_event",
+            "created": 1793187451.7759976,
+            "msecs": 775.0,
+            "relativeCreated": 36892.0,
+            "thread": 47456,
+            "threadName": "MainThread",
+            "processName": "MainProcess",
+            "process": 19472,
+            "taskName": null
+          }
+        ]
+      },
+      "teardown": {
+        "duration": 0.002217800007201731,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_engine_and_failures.py::test_concurrent_payments_do_not_overdraw_treasury",
+      "lineno": 39,
+      "outcome": "passed",
+      "keywords": [
+        "test_concurrent_payments_do_not_overdraw_treasury",
+        "test_engine_and_failures.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6545949000865221,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.8801368999993429,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0022737999679520726,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_kuttenberg_theme.py::test_v2_display_upgrade_preserves_customizations_and_history",
+      "lineno": 8,
+      "outcome": "passed",
+      "keywords": [
+        "test_v2_display_upgrade_preserves_customizations_and_history",
+        "test_kuttenberg_theme.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.01147960009984672,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.8131542999763042,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0012181999627500772,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_kuttenberg_theme.py::test_theme_catalog_preserves_codes_and_business_semantics",
+      "lineno": 51,
+      "outcome": "passed",
+      "keywords": [
+        "test_theme_catalog_preserves_codes_and_business_semantics",
+        "test_kuttenberg_theme.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6824757000431418,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 1.0296978000551462,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0016011999687179923,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_kuttenberg_theme.py::test_anti_smuggling_decree_rejects_ssd_without_changing_assignment",
+      "lineno": 71,
+      "outcome": "passed",
+      "keywords": [
+        "test_anti_smuggling_decree_rejects_ssd_without_changing_assignment",
+        "test_kuttenberg_theme.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6817086000228301,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.5189893000060692,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.001506800064817071,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_kuttenberg_theme.py::test_theme_v1_translation_upgrade_changes_only_known_defaults",
+      "lineno": 81,
+      "outcome": "passed",
+      "keywords": [
+        "test_theme_v1_translation_upgrade_changes_only_known_defaults",
+        "test_kuttenberg_theme.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.010755999945104122,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.8123384000500664,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0012691000010818243,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_kuttenberg_theme.py::test_fresh_theme_and_real_page_templates_use_kuttenburg_translation",
+      "lineno": 139,
+      "outcome": "passed",
+      "keywords": [
+        "test_fresh_theme_and_real_page_templates_use_kuttenburg_translation",
+        "test_kuttenberg_theme.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6510937999701127,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.6220519000198692,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0014730999246239662,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_kuttenberg_theme.py::test_completed_theme_v2_does_not_rewrite_later_customization",
+      "lineno": 152,
+      "outcome": "passed",
+      "keywords": [
+        "test_completed_theme_v2_does_not_rewrite_later_customization",
+        "test_kuttenberg_theme.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6675740999635309,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.11036930000409484,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00171000009868294,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_policy.py::test_direct_ssd_conflict_rolls_back",
+      "lineno": 9,
+      "outcome": "passed",
+      "keywords": [
+        "test_direct_ssd_conflict_rolls_back",
+        "test_policy.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.673490900080651,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.6235027000075206,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0014693000121042132,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_policy.py::test_inherited_ssd_conflict_rolls_back_hierarchy",
+      "lineno": 18,
+      "outcome": "passed",
+      "keywords": [
+        "test_inherited_ssd_conflict_rolls_back_hierarchy",
+        "test_policy.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6496669000480324,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.5972224000142887,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0014383000088855624,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_policy.py::test_cycle_is_rejected_and_original_policy_remains",
+      "lineno": 27,
+      "outcome": "passed",
+      "keywords": [
+        "test_cycle_is_rejected_and_original_policy_remains",
+        "test_policy.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6798518999712542,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.5856078999349847,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0014721000334247947,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_policy.py::test_valid_diamond_hierarchy_deduplicates_roles",
+      "lineno": 36,
+      "outcome": "passed",
+      "keywords": [
+        "test_valid_diamond_hierarchy_deduplicates_roles",
+        "test_policy.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6734919999726117,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.542299099965021,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0013839000603184104,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_policy.py::test_permission_matrix_cannot_bypass_duty_separation",
+      "lineno": 48,
+      "outcome": "passed",
+      "keywords": [
+        "test_permission_matrix_cannot_bypass_duty_separation",
+        "test_policy.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6443539999891073,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.5539231000002474,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0014636999694630504,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_policy.py::test_last_administrator_cannot_be_removed",
+      "lineno": 58,
+      "outcome": "passed",
+      "keywords": [
+        "test_last_administrator_cannot_be_removed",
+        "test_policy.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.626524499966763,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.629056099918671,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0016593000618740916,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_policy.py::test_permission_changes_apply_to_existing_session_immediately",
+      "lineno": 69,
+      "outcome": "passed",
+      "keywords": [
+        "test_permission_changes_apply_to_existing_session_immediately",
+        "test_policy.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6157475999789312,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 1.0646955000702292,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0016119999345391989,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_policy.py::test_assignment_revocation_removes_stale_active_role",
+      "lineno": 81,
+      "outcome": "passed",
+      "keywords": [
+        "test_assignment_revocation_removes_stale_active_role",
+        "test_policy.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6894963000668213,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.9801344000734389,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0013905999949201941,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_policy.py::test_invalid_foreign_key_does_not_partially_write",
+      "lineno": 90,
+      "outcome": "passed",
+      "keywords": [
+        "test_invalid_foreign_key_does_not_partially_write",
+        "test_policy.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6955784000456333,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.5618256999878213,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0015341999242082238,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_review_concurrency.py::test_concurrent_policy_saves_commit_only_one_shared_revision",
+      "lineno": 7,
+      "outcome": "passed",
+      "keywords": [
+        "test_concurrent_policy_saves_commit_only_one_shared_revision",
+        "test_review_concurrency.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6505134999752045,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 1.0229210000252351,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0013455000007525086,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_review_revision.py::test_even_trusted_admin_cannot_assign_own_roles[henry-1]",
+      "lineno": 48,
+      "outcome": "passed",
+      "keywords": [
+        "test_even_trusted_admin_cannot_assign_own_roles[henry-1]",
+        "parametrize",
+        "pytestmark",
+        "henry-1",
+        "test_review_revision.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.7157603000523522,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 1.184190099942498,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0015634000301361084,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_review_revision.py::test_even_trusted_admin_cannot_assign_own_roles[wenceslas-4]",
+      "lineno": 48,
+      "outcome": "passed",
+      "keywords": [
+        "test_even_trusted_admin_cannot_assign_own_roles[wenceslas-4]",
+        "parametrize",
+        "pytestmark",
+        "wenceslas-4",
+        "test_review_revision.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6961745000444353,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.6119462999049574,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0029492999892681837,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_review_revision.py::test_original_assign_self_coronation_attack_stops_before_activation",
+      "lineno": 63,
+      "outcome": "passed",
+      "keywords": [
+        "test_original_assign_self_coronation_attack_stops_before_activation",
+        "test_review_revision.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.7502803999232128,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 1.3258356999140233,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0015359000535681844,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_review_revision.py::test_partial_assign_cannot_delegate_management_or_uncovered_business[role_ids0]",
+      "lineno": 74,
+      "outcome": "passed",
+      "keywords": [
+        "test_partial_assign_cannot_delegate_management_or_uncovered_business[role_ids0]",
+        "parametrize",
+        "pytestmark",
+        "role_ids0",
+        "test_review_revision.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.7233681998914108,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 1.2410774000454694,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0014451999450102448,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_review_revision.py::test_partial_assign_cannot_delegate_management_or_uncovered_business[role_ids1]",
+      "lineno": 74,
+      "outcome": "passed",
+      "keywords": [
+        "test_partial_assign_cannot_delegate_management_or_uncovered_business[role_ids1]",
+        "parametrize",
+        "pytestmark",
+        "role_ids1",
+        "test_review_revision.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6912917000008747,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 1.2252775999950245,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0019655999494716525,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_review_revision.py::test_partial_assign_cannot_delegate_management_or_uncovered_business[role_ids2]",
+      "lineno": 74,
+      "outcome": "passed",
+      "keywords": [
+        "test_partial_assign_cannot_delegate_management_or_uncovered_business[role_ids2]",
+        "parametrize",
+        "pytestmark",
+        "role_ids2",
+        "test_review_revision.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.7445776000386104,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 1.2708653999725357,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0013713999651372433,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_review_revision.py::test_partial_assign_can_delegate_covered_nonmanagement_role",
+      "lineno": 83,
+      "outcome": "passed",
+      "keywords": [
+        "test_partial_assign_can_delegate_covered_nonmanagement_role",
+        "test_review_revision.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.8186713999602944,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 1.2393754000077024,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0019369999645277858,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_review_revision.py::test_partial_assign_cannot_revoke_another_administrators_capabilities",
+      "lineno": 90,
+      "outcome": "passed",
+      "keywords": [
+        "test_partial_assign_cannot_revoke_another_administrators_capabilities",
+        "test_review_revision.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.7216012000571936,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 1.4117483000736684,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.002021400025114417,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_review_revision.py::test_trusted_king_can_delegate_finance_without_holding_its_business_power[3]",
+      "lineno": 99,
+      "outcome": "passed",
+      "keywords": [
+        "test_trusted_king_can_delegate_finance_without_holding_its_business_power[3]",
+        "parametrize",
+        "pytestmark",
+        "3",
+        "test_review_revision.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.7186820999486372,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.6864094999618828,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.00196170003619045,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_review_revision.py::test_trusted_king_can_delegate_finance_without_holding_its_business_power[5]",
+      "lineno": 99,
+      "outcome": "passed",
+      "keywords": [
+        "test_trusted_king_can_delegate_finance_without_holding_its_business_power[5]",
+        "parametrize",
+        "pytestmark",
+        "5",
+        "test_review_revision.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.8929437999613583,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.7527703999076039,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0014864999102428555,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_review_revision.py::test_admin_snapshot_is_accessible_and_trimmed_by_active_capability[admin:assign]",
+      "lineno": 109,
+      "outcome": "passed",
+      "keywords": [
+        "test_admin_snapshot_is_accessible_and_trimmed_by_active_capability[admin:assign]",
+        "parametrize",
+        "pytestmark",
+        "admin:assign",
+        "test_review_revision.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.7929145999951288,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 1.3613425999647006,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0014613999519497156,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_review_revision.py::test_admin_snapshot_is_accessible_and_trimmed_by_active_capability[admin:policy]",
+      "lineno": 109,
+      "outcome": "passed",
+      "keywords": [
+        "test_admin_snapshot_is_accessible_and_trimmed_by_active_capability[admin:policy]",
+        "parametrize",
+        "pytestmark",
+        "admin:policy",
+        "test_review_revision.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.770948400022462,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 1.2848460000241175,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.001800999976694584,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_review_revision.py::test_admin_snapshot_is_accessible_and_trimmed_by_active_capability[admin:audit]",
+      "lineno": 109,
+      "outcome": "passed",
+      "keywords": [
+        "test_admin_snapshot_is_accessible_and_trimmed_by_active_capability[admin:audit]",
+        "parametrize",
+        "pytestmark",
+        "admin:audit",
+        "test_review_revision.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.7175157000310719,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 1.6674337999429554,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0018135999562218785,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_review_revision.py::test_partial_policy_cannot_mint_capabilities_or_uncovered_permissions[self_admin_grant]",
+      "lineno": 128,
+      "outcome": "passed",
+      "keywords": [
+        "test_partial_policy_cannot_mint_capabilities_or_uncovered_permissions[self_admin_grant]",
+        "parametrize",
+        "pytestmark",
+        "self_admin_grant",
+        "test_review_revision.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.7936354000121355,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 1.2815651999553666,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0019474999280646443,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_review_revision.py::test_partial_policy_cannot_mint_capabilities_or_uncovered_permissions[other_role_admin_grant]",
+      "lineno": 128,
+      "outcome": "passed",
+      "keywords": [
+        "test_partial_policy_cannot_mint_capabilities_or_uncovered_permissions[other_role_admin_grant]",
+        "parametrize",
+        "pytestmark",
+        "other_role_admin_grant",
+        "test_review_revision.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.7592858999269083,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 1.2568631999893114,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0021440000273287296,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_review_revision.py::test_partial_policy_cannot_mint_capabilities_or_uncovered_permissions[uncovered_business_grant]",
+      "lineno": 128,
+      "outcome": "passed",
+      "keywords": [
+        "test_partial_policy_cannot_mint_capabilities_or_uncovered_permissions[uncovered_business_grant]",
+        "parametrize",
+        "pytestmark",
+        "uncovered_business_grant",
+        "test_review_revision.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.7223709999816492,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 1.587548999930732,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.001540199969895184,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_review_revision.py::test_partial_policy_cannot_remove_management_power",
+      "lineno": 144,
+      "outcome": "passed",
+      "keywords": [
+        "test_partial_policy_cannot_remove_management_power",
+        "test_review_revision.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.8003597999922931,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 1.1870478000491858,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.001424799906089902,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_review_revision.py::test_partial_policy_cannot_change_redundant_direct_admin_grant[add]",
+      "lineno": 154,
+      "outcome": "passed",
+      "keywords": [
+        "test_partial_policy_cannot_change_redundant_direct_admin_grant[add]",
+        "parametrize",
+        "pytestmark",
+        "add",
+        "test_review_revision.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6670416999841109,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 1.1583275001030415,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.001505899941548705,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_review_revision.py::test_partial_policy_cannot_change_redundant_direct_admin_grant[remove]",
+      "lineno": 154,
+      "outcome": "passed",
+      "keywords": [
+        "test_partial_policy_cannot_change_redundant_direct_admin_grant[remove]",
+        "parametrize",
+        "pytestmark",
+        "remove",
+        "test_review_revision.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6890358999371529,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 1.2350349000189453,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.002189600025303662,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_review_revision.py::test_partial_policy_cannot_change_redundant_admin_inheritance_edge[add]",
+      "lineno": 182,
+      "outcome": "passed",
+      "keywords": [
+        "test_partial_policy_cannot_change_redundant_admin_inheritance_edge[add]",
+        "parametrize",
+        "pytestmark",
+        "add",
+        "test_review_revision.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6842314000241458,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 1.132401300012134,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0016400000313296914,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_review_revision.py::test_partial_policy_cannot_change_redundant_admin_inheritance_edge[remove]",
+      "lineno": 182,
+      "outcome": "passed",
+      "keywords": [
+        "test_partial_policy_cannot_change_redundant_admin_inheritance_edge[remove]",
+        "parametrize",
+        "pytestmark",
+        "remove",
+        "test_review_revision.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6287726999726146,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 1.1715817000949755,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0015103999758139253,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_review_revision.py::test_partial_policy_cannot_inherit_trusted_admin",
+      "lineno": 210,
+      "outcome": "passed",
+      "keywords": [
+        "test_partial_policy_cannot_inherit_trusted_admin",
+        "test_review_revision.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.693949600099586,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 1.17876919999253,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0015298000071197748,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_review_revision.py::test_partial_policy_cannot_change_unused_role_admin_closure",
+      "lineno": 221,
+      "outcome": "passed",
+      "keywords": [
+        "test_partial_policy_cannot_change_unused_role_admin_closure",
+        "test_review_revision.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6621299999533221,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 1.254960999940522,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.001437300001271069,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_review_revision.py::test_partial_policy_can_distribute_already_held_business_permission",
+      "lineno": 233,
+      "outcome": "passed",
+      "keywords": [
+        "test_partial_policy_can_distribute_already_held_business_permission",
+        "test_review_revision.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6591060999780893,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 1.1226483000209555,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0015080999583005905,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_review_revision.py::test_trusted_delegation_requires_all_management_powers_to_be_active",
+      "lineno": 242,
+      "outcome": "passed",
+      "keywords": [
+        "test_trusted_delegation_requires_all_management_powers_to_be_active",
+        "test_review_revision.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6620777000207454,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 1.790961700025946,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0017880001105368137,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_review_revision.py::test_policy_revision_must_be_explicit_nonnegative_integer[None]",
+      "lineno": 253,
+      "outcome": "passed",
+      "keywords": [
+        "test_policy_revision_must_be_explicit_nonnegative_integer[None]",
+        "parametrize",
+        "pytestmark",
+        "None",
+        "test_review_revision.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.7205362999811769,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.5318698000628501,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0014574999222531915,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_review_revision.py::test_policy_revision_must_be_explicit_nonnegative_integer[True]",
+      "lineno": 253,
+      "outcome": "passed",
+      "keywords": [
+        "test_policy_revision_must_be_explicit_nonnegative_integer[True]",
+        "parametrize",
+        "pytestmark",
+        "True",
+        "test_review_revision.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6822019000537694,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.5259534999495372,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0013781000161543489,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_review_revision.py::test_policy_revision_must_be_explicit_nonnegative_integer[-1]",
+      "lineno": 253,
+      "outcome": "passed",
+      "keywords": [
+        "test_policy_revision_must_be_explicit_nonnegative_integer[-1]",
+        "parametrize",
+        "pytestmark",
+        "-1",
+        "test_review_revision.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6329784999834374,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.5121608999324962,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0016067000105977058,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_review_revision.py::test_policy_revision_must_be_explicit_nonnegative_integer[0]",
+      "lineno": 253,
+      "outcome": "passed",
+      "keywords": [
+        "test_policy_revision_must_be_explicit_nonnegative_integer[0]",
+        "parametrize",
+        "pytestmark",
+        "0",
+        "test_review_revision.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6722478000447154,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.49613989994395524,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0015674999449402094,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_review_revision.py::test_policy_revision_must_be_explicit_nonnegative_integer[1.5]",
+      "lineno": 253,
+      "outcome": "passed",
+      "keywords": [
+        "test_policy_revision_must_be_explicit_nonnegative_integer[1.5]",
+        "parametrize",
+        "pytestmark",
+        "1.5",
+        "test_review_revision.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6843731000553817,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.5314547000452876,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0019141000229865313,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_review_revision.py::test_stale_management_snapshot_cannot_overwrite_any_policy_kind[assignment]",
+      "lineno": 267,
+      "outcome": "passed",
+      "keywords": [
+        "test_stale_management_snapshot_cannot_overwrite_any_policy_kind[assignment]",
+        "parametrize",
+        "pytestmark",
+        "assignment",
+        "test_review_revision.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6975519000552595,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.6080532999476418,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0016365000046789646,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_review_revision.py::test_stale_management_snapshot_cannot_overwrite_any_policy_kind[permissions]",
+      "lineno": 267,
+      "outcome": "passed",
+      "keywords": [
+        "test_stale_management_snapshot_cannot_overwrite_any_policy_kind[permissions]",
+        "parametrize",
+        "pytestmark",
+        "permissions",
+        "test_review_revision.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.8054966001072899,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.6594841000624001,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0018387000309303403,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_review_revision.py::test_stale_management_snapshot_cannot_overwrite_any_policy_kind[hierarchy]",
+      "lineno": 267,
+      "outcome": "passed",
+      "keywords": [
+        "test_stale_management_snapshot_cannot_overwrite_any_policy_kind[hierarchy]",
+        "parametrize",
+        "pytestmark",
+        "hierarchy",
+        "test_review_revision.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.7343130999943241,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.5938271000050008,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0023264000192284584,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_review_revision.py::test_audit_report_reconciles_currency_only_and_tracks_ledger_cutoff",
+      "lineno": 290,
+      "outcome": "passed",
+      "keywords": [
+        "test_audit_report_reconciles_currency_only_and_tracks_ledger_cutoff",
+        "test_review_revision.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.7226110999472439,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 1.4446833999827504,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0014481000835075974,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_review_revision.py::test_audit_difference_is_a_saved_finding_not_transaction_failure",
+      "lineno": 311,
+      "outcome": "passed",
+      "keywords": [
+        "test_audit_difference_is_a_saved_finding_not_transaction_failure",
+        "test_review_revision.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.7172635999741033,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.5807299999287352,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.001906899968162179,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_review_revision.py::test_audit_storage_failure_rolls_back_report_counter_and_ledger[audit_report]",
+      "lineno": 328,
+      "outcome": "passed",
+      "keywords": [
+        "test_audit_storage_failure_rolls_back_report_counter_and_ledger[audit_report]",
+        "parametrize",
+        "pytestmark",
+        "audit_report",
+        "test_review_revision.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.7102339999983087,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.581263400032185,
+        "outcome": "passed",
+        "log": [
+          {
+            "name": "app",
+            "msg": "Event 0cf61614ffcb4e93a2397886530dda68 failed",
+            "args": null,
+            "levelname": "ERROR",
+            "levelno": 40,
+            "pathname": "[WORKSPACE]\\sut\\rbac\\routes.py",
+            "filename": "routes.py",
+            "module": "routes",
+            "exc_info": null,
+            "exc_text": "Traceback (most recent call last):\n  File \"[WORKSPACE]\\sut\\rbac\\routes.py\", line 94, in run_event\n    current_app.extensions['event_bus'].publish(event, conn)\n    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^\n  File \"[WORKSPACE]\\sut\\rbac\\events.py\", line 56, in publish\n    listener.on_event(event, conn)\n    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^\n  File \"[WORKSPACE]\\sut\\rbac\\events.py\", line 236, in on_event\n    report = reconcile_ledger(conn, event)\n  File \"[WORKSPACE]\\sut\\rbac\\accounting.py\", line 17, in reconcile_ledger\n    cursor = conn.execute(f'INSERT INTO audit_report(event_id,actor_id,{columns}) VALUES (?,?,{placeholders})',\n                          (event.id, event.actor_id, *report.values()))\nsqlite3.IntegrityError: simulated failure",
+            "stack_info": null,
+            "lineno": 115,
+            "funcName": "run_event",
+            "created": 1793187537.628774,
+            "msecs": 628.0,
+            "relativeCreated": 122744.7762,
+            "thread": 47456,
+            "threadName": "MainThread",
+            "processName": "MainProcess",
+            "process": 19472,
+            "taskName": null
+          }
+        ]
+      },
+      "teardown": {
+        "duration": 0.0017285000067204237,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_review_revision.py::test_audit_storage_failure_rolls_back_report_counter_and_ledger[audit_event]",
+      "lineno": 328,
+      "outcome": "passed",
+      "keywords": [
+        "test_audit_storage_failure_rolls_back_report_counter_and_ledger[audit_event]",
+        "parametrize",
+        "pytestmark",
+        "audit_event",
+        "test_review_revision.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.7343846999574453,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.5827626000391319,
+        "outcome": "passed",
+        "log": [
+          {
+            "name": "app",
+            "msg": "Event a5e9d73523cf4cc6b4c3aaa213c13857 failed",
+            "args": null,
+            "levelname": "ERROR",
+            "levelno": 40,
+            "pathname": "[WORKSPACE]\\sut\\rbac\\routes.py",
+            "filename": "routes.py",
+            "module": "routes",
+            "exc_info": null,
+            "exc_text": "Traceback (most recent call last):\n  File \"[WORKSPACE]\\sut\\rbac\\routes.py\", line 104, in run_event\n    AuditListener().on_event(event, conn)\n    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^\n  File \"[WORKSPACE]\\sut\\rbac\\events.py\", line 253, in on_event\n    conn.execute('INSERT INTO audit_event VALUES (?,?,?,?,?,?,?,?)',\n    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n                 (event.id,event.actor_id,event.event_type,event.target,int(event.allowed),\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n                  event.message,json.dumps(event.logs,ensure_ascii=False),event.created_at))\n                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nsqlite3.IntegrityError: simulated failure",
+            "stack_info": null,
+            "lineno": 115,
+            "funcName": "run_event",
+            "created": 1793187538.9672656,
+            "msecs": 967.0,
+            "relativeCreated": 124083.2679,
+            "thread": 47456,
+            "threadName": "MainThread",
+            "processName": "MainProcess",
+            "process": 19472,
+            "taskName": null
+          },
+          {
+            "name": "app",
+            "msg": "Cannot persist denied event a5e9d73523cf4cc6b4c3aaa213c13857",
+            "args": null,
+            "levelname": "ERROR",
+            "levelno": 40,
+            "pathname": "[WORKSPACE]\\sut\\rbac\\routes.py",
+            "filename": "routes.py",
+            "module": "routes",
+            "exc_info": null,
+            "exc_text": "Traceback (most recent call last):\n  File \"[WORKSPACE]\\sut\\rbac\\routes.py\", line 104, in run_event\n    AuditListener().on_event(event, conn)\n    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^\n  File \"[WORKSPACE]\\sut\\rbac\\events.py\", line 253, in on_event\n    conn.execute('INSERT INTO audit_event VALUES (?,?,?,?,?,?,?,?)',\n    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n                 (event.id,event.actor_id,event.event_type,event.target,int(event.allowed),\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n                  event.message,json.dumps(event.logs,ensure_ascii=False),event.created_at))\n                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nsqlite3.IntegrityError: simulated failure\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"[WORKSPACE]\\sut\\rbac\\routes.py\", line 121, in run_event\n    AuditListener().on_event(event, conn)\n    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^\n  File \"[WORKSPACE]\\sut\\rbac\\events.py\", line 253, in on_event\n    conn.execute('INSERT INTO audit_event VALUES (?,?,?,?,?,?,?,?)',\n    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n                 (event.id,event.actor_id,event.event_type,event.target,int(event.allowed),\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n                  event.message,json.dumps(event.logs,ensure_ascii=False),event.created_at))\n                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nsqlite3.IntegrityError: simulated failure",
+            "stack_info": null,
+            "lineno": 125,
+            "funcName": "run_event",
+            "created": 1793187538.9715033,
+            "msecs": 971.0,
+            "relativeCreated": 124087.5056,
+            "thread": 47456,
+            "threadName": "MainThread",
+            "processName": "MainProcess",
+            "process": 19472,
+            "taskName": null
+          }
+        ]
+      },
+      "teardown": {
+        "duration": 0.0015412999782711267,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_review_revision.py::test_startup_refuses_manually_corrupted_policy[permission_conflict]",
+      "lineno": 347,
+      "outcome": "passed",
+      "keywords": [
+        "test_startup_refuses_manually_corrupted_policy[permission_conflict]",
+        "parametrize",
+        "pytestmark",
+        "permission_conflict",
+        "test_review_revision.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6857754000229761,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.060395399923436344,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0016525000100955367,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_review_revision.py::test_startup_refuses_manually_corrupted_policy[foreign_key]",
+      "lineno": 347,
+      "outcome": "passed",
+      "keywords": [
+        "test_startup_refuses_manually_corrupted_policy[foreign_key]",
+        "parametrize",
+        "pytestmark",
+        "foreign_key",
+        "test_review_revision.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.7170943999662995,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.06832449999637902,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0013804000336676836,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_review_revision.py::test_existing_session_refuses_newly_corrupted_permission_mutex",
+      "lineno": 359,
+      "outcome": "passed",
+      "keywords": [
+        "test_existing_session_refuses_newly_corrupted_permission_mutex",
+        "test_review_revision.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.7067735999589786,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.5377188000129536,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0016553000314161181,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_review_revision.py::test_protected_metadata_read_refuses_runtime_corrupted_permission_mutex[/api/events-events]",
+      "lineno": 371,
+      "outcome": "passed",
+      "keywords": [
+        "test_protected_metadata_read_refuses_runtime_corrupted_permission_mutex[/api/events-events]",
+        "parametrize",
+        "pytestmark",
+        "/api/events-events",
+        "test_review_revision.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.7057338999584317,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.4906009000260383,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0016176000935956836,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_review_revision.py::test_protected_metadata_read_refuses_runtime_corrupted_permission_mutex[/api/state-permission_codes]",
+      "lineno": 371,
+      "outcome": "passed",
+      "keywords": [
+        "test_protected_metadata_read_refuses_runtime_corrupted_permission_mutex[/api/state-permission_codes]",
+        "parametrize",
+        "pytestmark",
+        "/api/state-permission_codes",
+        "test_review_revision.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.7153328000567853,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.4873551999917254,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0019256999948993325,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_review_revision.py::test_v1_incremental_migration_preserves_existing_policy_business_and_audit",
+      "lineno": 383,
+      "outcome": "passed",
+      "keywords": [
+        "test_v1_incremental_migration_preserves_existing_policy_business_and_audit",
+        "test_review_revision.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.7607897999696434,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 1.9002711999928579,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0018125999486073852,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_review_revision.py::test_resource_catalog_has_territories_and_never_carries_protected_body",
+      "lineno": 420,
+      "outcome": "passed",
+      "keywords": [
+        "test_resource_catalog_has_territories_and_never_carries_protected_body",
+        "test_review_revision.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6738009001128376,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.5250178000424057,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.003951499937102199,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_review_revision.py::test_resource_catalog_reads_database_metadata_without_granting_access",
+      "lineno": 438,
+      "outcome": "passed",
+      "keywords": [
+        "test_resource_catalog_reads_database_metadata_without_granting_access",
+        "test_review_revision.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.7096538000041619,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.5306267000269145,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0018922999734058976,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_review_revision.py::test_navigation_catalog_is_scoped_without_imposing_menu_on_pages",
+      "lineno": 450,
+      "outcome": "passed",
+      "keywords": [
+        "test_navigation_catalog_is_scoped_without_imposing_menu_on_pages",
+        "test_review_revision.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.691763799986802,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 1.10464769997634,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0022486000088974833,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_review_revision.py::test_api_document_column_order_matches_persisted_source[tax_scroll-columns0]",
+      "lineno": 467,
+      "outcome": "passed",
+      "keywords": [
+        "test_api_document_column_order_matches_persisted_source[tax_scroll-columns0]",
+        "parametrize",
+        "pytestmark",
+        "tax_scroll-columns0",
+        "test_review_revision.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6815140000544488,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.4622583999298513,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0015165999066084623,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_review_revision.py::test_api_document_column_order_matches_persisted_source[defense_map-columns1]",
+      "lineno": 467,
+      "outcome": "passed",
+      "keywords": [
+        "test_api_document_column_order_matches_persisted_source[defense_map-columns1]",
+        "parametrize",
+        "pytestmark",
+        "defense_map-columns1",
+        "test_review_revision.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.7079484999412671,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.46274959994480014,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.0021389999892562628,
+        "outcome": "passed"
+      }
+    },
+    {
+      "nodeid": "tests/test_review_revision.py::test_low_cost_security_headers_trusted_hosts_and_healthz",
+      "lineno": 476,
+      "outcome": "passed",
+      "keywords": [
+        "test_low_cost_security_headers_trusted_hosts_and_healthz",
+        "test_review_revision.py",
+        "tests",
+        "sut",
+        ""
+      ],
+      "setup": {
+        "duration": 0.6577957000117749,
+        "outcome": "passed"
+      },
+      "call": {
+        "duration": 0.0785413000266999,
+        "outcome": "passed"
+      },
+      "teardown": {
+        "duration": 0.006970199989154935,
+        "outcome": "passed"
+      }
+    }
+  ],
+  "warnings": [
+    {
+      "message": "unclosed database in <sqlite3.Connection object at 0x000001763E37EB60>",
+      "category": "ResourceWarning",
+      "when": "runtest",
+      "filename": "[WORKSPACE]\\.venv\\Lib\\site-packages\\werkzeug\\routing\\rules.py",
+      "lineno": 778
+    },
+    {
+      "message": "unclosed database in <sqlite3.Connection object at 0x000001763E4B1210>",
+      "category": "ResourceWarning",
+      "when": "runtest",
+      "filename": "[WORKSPACE]\\sut\\rbac\\policy.py",
+      "lineno": 56
+    },
+    {
+      "message": "unclosed database in <sqlite3.Connection object at 0x000001763E4B2F20>",
+      "category": "ResourceWarning",
+      "when": "runtest",
+      "filename": "[WORKSPACE]\\sut\\rbac\\policy.py",
+      "lineno": 56
+    },
+    {
+      "message": "unclosed database in <sqlite3.Connection object at 0x000001763E4B2200>",
+      "category": "ResourceWarning",
+      "when": "runtest",
+      "filename": "[WORKSPACE]\\sut\\rbac\\policy.py",
+      "lineno": 56
+    },
+    {
+      "message": "unclosed database in <sqlite3.Connection object at 0x000001763E4B3970>",
+      "category": "ResourceWarning",
+      "when": "runtest",
+      "filename": "[WORKSPACE]\\sut\\rbac\\policy.py",
+      "lineno": 56
+    },
+    {
+      "message": "unclosed database in <sqlite3.Connection object at 0x000001763E4B1E40>",
+      "category": "ResourceWarning",
+      "when": "runtest",
+      "filename": "[WORKSPACE]\\.venv\\Lib\\site-packages\\werkzeug\\routing\\rules.py",
+      "lineno": 770
+    },
+    {
+      "message": "unclosed database in <sqlite3.Connection object at 0x000001763E4B06D0>",
+      "category": "ResourceWarning",
+      "when": "runtest",
+      "filename": "[WORKSPACE]\\.venv\\Lib\\site-packages\\werkzeug\\routing\\rules.py",
+      "lineno": 770
+    },
+    {
+      "message": "unclosed database in <sqlite3.Connection object at 0x000001763E4B1A80>",
+      "category": "ResourceWarning",
+      "when": "runtest",
+      "filename": "[USER_HOME]\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\ast.py",
+      "lineno": 54
+    },
+    {
+      "message": "unclosed database in <sqlite3.Connection object at 0x000001763E4B3880>",
+      "category": "ResourceWarning",
+      "when": "runtest",
+      "filename": "[WORKSPACE]\\.venv\\Lib\\site-packages\\jinja2\\visitor.py",
+      "lineno": 28
+    },
+    {
+      "message": "unclosed database in <sqlite3.Connection object at 0x000001763E4B32E0>",
+      "category": "ResourceWarning",
+      "when": "runtest",
+      "filename": "[WORKSPACE]\\.venv\\Lib\\site-packages\\jinja2\\visitor.py",
+      "lineno": 28
+    },
+    {
+      "message": "unclosed database in <sqlite3.Connection object at 0x000001763E4B36A0>",
+      "category": "ResourceWarning",
+      "when": "runtest",
+      "filename": "[WORKSPACE]\\.venv\\Lib\\site-packages\\werkzeug\\routing\\rules.py",
+      "lineno": 615
+    },
+    {
+      "message": "unclosed database in <sqlite3.Connection object at 0x000001763E4B0F40>",
+      "category": "ResourceWarning",
+      "when": "runtest",
+      "filename": "[WORKSPACE]\\.venv\\Lib\\site-packages\\werkzeug\\routing\\rules.py",
+      "lineno": 615
+    },
+    {
+      "message": "unclosed database in <sqlite3.Connection object at 0x000001763E4B0B80>",
+      "category": "ResourceWarning",
+      "when": "runtest",
+      "filename": "[WORKSPACE]\\sut\\rbac\\db.py",
+      "lineno": 31
+    },
+    {
+      "message": "unclosed database in <sqlite3.Connection object at 0x000001763E4B0E50>",
+      "category": "ResourceWarning",
+      "when": "runtest",
+      "filename": "[WORKSPACE]\\sut\\rbac\\db.py",
+      "lineno": 31
+    },
+    {
+      "message": "unclosed database in <sqlite3.Connection object at 0x000001763E6847C0>",
+      "category": "ResourceWarning",
+      "when": "runtest",
+      "filename": "[WORKSPACE]\\.venv\\Lib\\site-packages\\werkzeug\\local.py",
+      "lineno": 515
+    },
+    {
+      "message": "unclosed database in <sqlite3.Connection object at 0x000001763E6853F0>",
+      "category": "ResourceWarning",
+      "when": "runtest",
+      "filename": "[WORKSPACE]\\.venv\\Lib\\site-packages\\werkzeug\\local.py",
+      "lineno": 515
+    },
+    {
+      "message": "unclosed database in <sqlite3.Connection object at 0x000001763E685030>",
+      "category": "ResourceWarning",
+      "when": "runtest",
+      "filename": "[WORKSPACE]\\sut\\rbac\\policy.py",
+      "lineno": 35
+    },
+    {
+      "message": "unclosed database in <sqlite3.Connection object at 0x000001763E685300>",
+      "category": "ResourceWarning",
+      "when": "runtest",
+      "filename": "[WORKSPACE]\\sut\\rbac\\policy.py",
+      "lineno": 35
+    },
+    {
+      "message": "unclosed database in <sqlite3.Connection object at 0x000001763E684400>",
+      "category": "ResourceWarning",
+      "when": "runtest",
+      "filename": "[WORKSPACE]\\sut\\rbac\\policy.py",
+      "lineno": 35
+    },
+    {
+      "message": "unclosed database in <sqlite3.Connection object at 0x000001763E684040>",
+      "category": "ResourceWarning",
+      "when": "runtest",
+      "filename": "[WORKSPACE]\\sut\\rbac\\policy.py",
+      "lineno": 35
+    },
+    {
+      "message": "unclosed database in <sqlite3.Connection object at 0x000001763E6845E0>",
+      "category": "ResourceWarning",
+      "when": "runtest",
+      "filename": "<frozen importlib._bootstrap>",
+      "lineno": 1412
+    },
+    {
+      "message": "unclosed database in <sqlite3.Connection object at 0x000001763E685210>",
+      "category": "ResourceWarning",
+      "when": "runtest",
+      "filename": "<frozen importlib._bootstrap>",
+      "lineno": 1412
+    },
+    {
+      "message": "unclosed database in <sqlite3.Connection object at 0x000001763E6844F0>",
+      "category": "ResourceWarning",
+      "when": "runtest",
+      "filename": "<frozen importlib._bootstrap>",
+      "lineno": 1412
+    },
+    {
+      "message": "unclosed database in <sqlite3.Connection object at 0x000001763E6848B0>",
+      "category": "ResourceWarning",
+      "when": "runtest",
+      "filename": "[USER_HOME]\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\json\\encoder.py",
+      "lineno": 105
+    },
+    {
+      "message": "unclosed database in <sqlite3.Connection object at 0x000001763E684310>",
+      "category": "ResourceWarning",
+      "when": "runtest",
+      "filename": "[USER_HOME]\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\json\\encoder.py",
+      "lineno": 105
+    },
+    {
+      "message": "unclosed database in <sqlite3.Connection object at 0x000001763E6846D0>",
+      "category": "ResourceWarning",
+      "when": "runtest",
+      "filename": "[WORKSPACE]\\.venv\\Lib\\site-packages\\werkzeug\\routing\\rules.py",
+      "lineno": 117
+    },
+    {
+      "message": "unclosed database in <sqlite3.Connection object at 0x000001763E6857B0>",
+      "category": "ResourceWarning",
+      "when": "runtest",
+      "filename": "[WORKSPACE]\\.venv\\Lib\\site-packages\\werkzeug\\routing\\rules.py",
+      "lineno": 117
+    },
+    {
+      "message": "unclosed database in <sqlite3.Connection object at 0x000001763E6858A0>",
+      "category": "ResourceWarning",
+      "when": "runtest",
+      "filename": "[WORKSPACE]\\.venv\\Lib\\site-packages\\werkzeug\\routing\\rules.py",
+      "lineno": 117
+    },
+    {
+      "message": "unclosed database in <sqlite3.Connection object at 0x000001763E684B80>",
+      "category": "ResourceWarning",
+      "when": "runtest",
+      "filename": "[USER_HOME]\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\json\\encoder.py",
+      "lineno": 252
+    },
+    {
+      "message": "unclosed database in <sqlite3.Connection object at 0x000001763E6855D0>",
+      "category": "ResourceWarning",
+      "when": "runtest",
+      "filename": "[USER_HOME]\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\json\\encoder.py",
+      "lineno": 252
+    }
+  ]
+}

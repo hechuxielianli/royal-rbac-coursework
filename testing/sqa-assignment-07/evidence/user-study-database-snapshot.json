@@ -1,0 +1,239 @@
+{
+  "kingdom_state": [
+    {
+      "id": 1,
+      "swords": 25,
+      "cavalry_deployments": 0,
+      "gold": 3100,
+      "audits": 1
+    }
+  ],
+  "business_ledger": [
+    {
+      "id": 1,
+      "event_id": "26a8c070450241f99f04fb8cfd135c84",
+      "actor_id": 1,
+      "action": "forge_sword",
+      "amount": 1,
+      "description": "一把矿路护卫铁剑已入库",
+      "created_at": "2026-10-28T11:34:23.631+00:00"
+    },
+    {
+      "id": 2,
+      "event_id": "79f34b360a7c40bc98e8f95232fdf9ee",
+      "actor_id": 3,
+      "action": "open_vault",
+      "amount": -100,
+      "description": "已拨付100格罗申运银经费，支出已记入意大利宫收支密账",
+      "created_at": "2026-10-28T11:40:14.988+00:00"
+    },
+    {
+      "id": 3,
+      "event_id": "d724ec61e9954385919b80a329261b0d",
+      "actor_id": 5,
+      "action": "audit_ledger",
+      "amount": 1,
+      "description": "银库核对报告已保存：余额一致",
+      "created_at": "2026-10-28T11:42:29.171+00:00"
+    }
+  ],
+  "audit_report": [
+    {
+      "id": 1,
+      "event_id": "d724ec61e9954385919b80a329261b0d",
+      "actor_id": 5,
+      "opening_gold": 3200,
+      "total_credits": 0,
+      "total_debits": 100,
+      "expected_gold": 3100,
+      "actual_gold": 3100,
+      "difference": 0,
+      "consistent": 1,
+      "ledger_count": 2,
+      "through_ledger_id": 2,
+      "created_at": "2026-10-28T11:42:29.171+00:00"
+    }
+  ],
+  "audit_event": [
+    {
+      "id": "0ffcafaf7f9049bab08cc2cbc7ede801",
+      "actor_id": 1,
+      "event_type": "LOGIN_REQUEST",
+      "target": "session:login",
+      "allowed": 1,
+      "message": "亨利·斯卡里茨，欢迎来到政令大厅",
+      "logs_json": "[{\"step\": \"EVENT_EMIT\", \"detail\": \"发布 LOGIN_REQUEST，目标 session:login\", \"time\": \"2026-10-28T11:33:34.919+00:00\"}, {\"step\": \"LISTENER_CAPTURED\", \"detail\": \"AuthenticationListener 接收事件\", \"time\": \"2026-10-28T11:33:34.919+00:00\"}, {\"step\": \"DECISION_ALLOW\", \"detail\": \"密码哈希校验通过；创建激活已分配角色的会话\", \"time\": \"2026-10-28T11:33:35.282+00:00\"}, {\"step\": \"DB_COMMIT\", \"detail\": \"授权响应与审计记录作为同一事务提交\", \"time\": \"2026-10-28T11:33:35.282+00:00\"}, {\"step\": \"AUDIT_PERSIST\", \"detail\": \"事件 0ffcafaf7f90 已保存至 audit_event\", \"time\": \"2026-10-28T11:33:35.282+00:00\"}]",
+      "created_at": "2026-10-28T11:33:34.919+00:00"
+    },
+    {
+      "id": "31e521ce84be45f0b784cdcfcc6f1693",
+      "actor_id": 1,
+      "event_type": "ACCESS_CHECK",
+      "target": "menu:square",
+      "allowed": 1,
+      "message": "卫队放行：库滕堡市政广场",
+      "logs_json": "[{\"step\": \"EVENT_EMIT\", \"detail\": \"发布 ACCESS_CHECK，目标 menu:square\", \"time\": \"2026-10-28T11:33:35.604+00:00\"}, {\"step\": \"LISTENER_CAPTURED\", \"detail\": \"RoyalGuardAccessListener 接收事件\", \"time\": \"2026-10-28T11:33:35.604+00:00\"}, {\"step\": \"ROLE_CLOSURE\", \"detail\": \"当前分配 [1]；激活 [1]；继承闭包 [1]\", \"time\": \"2026-10-28T11:33:35.606+00:00\"}, {\"step\": \"DECISION_ALLOW\", \"detail\": \"数据库角色授权包含 menu:square\", \"time\": \"2026-10-28T11:33:35.606+00:00\"}, {\"step\": \"DB_COMMIT\", \"detail\": \"授权响应与审计记录作为同一事务提交\", \"time\": \"2026-10-28T11:33:35.606+00:00\"}, {\"step\": \"AUDIT_PERSIST\", \"detail\": \"事件 31e521ce84be 已保存至 audit_event\", \"time\": \"2026-10-28T11:33:35.606+00:00\"}]",
+      "created_at": "2026-10-28T11:33:35.604+00:00"
+    },
+    {
+      "id": "976d2ec97a794638aa2df01819cc6304",
+      "actor_id": 1,
+      "event_type": "ACCESS_CHECK",
+      "target": "menu:square",
+      "allowed": 1,
+      "message": "卫队放行：库滕堡市政广场",
+      "logs_json": "[{\"step\": \"EVENT_EMIT\", \"detail\": \"发布 ACCESS_CHECK，目标 menu:square\", \"time\": \"2026-10-28T11:34:19.868+00:00\"}, {\"step\": \"LISTENER_CAPTURED\", \"detail\": \"RoyalGuardAccessListener 接收事件\", \"time\": \"2026-10-28T11:34:19.868+00:00\"}, {\"step\": \"ROLE_CLOSURE\", \"detail\": \"当前分配 [1]；激活 [1]；继承闭包 [1]\", \"time\": \"2026-10-28T11:34:19.869+00:00\"}, {\"step\": \"DECISION_ALLOW\", \"detail\": \"数据库角色授权包含 menu:square\", \"time\": \"2026-10-28T11:34:19.869+00:00\"}, {\"step\": \"DB_COMMIT\", \"detail\": \"授权响应与审计记录作为同一事务提交\", \"time\": \"2026-10-28T11:34:19.869+00:00\"}, {\"step\": \"AUDIT_PERSIST\", \"detail\": \"事件 976d2ec97a79 已保存至 audit_event\", \"time\": \"2026-10-28T11:34:19.870+00:00\"}]",
+      "created_at": "2026-10-28T11:34:19.868+00:00"
+    },
+    {
+      "id": "26a8c070450241f99f04fb8cfd135c84",
+      "actor_id": 1,
+      "event_type": "ACTION_REQUEST",
+      "target": "btn:forge_sword",
+      "allowed": 1,
+      "message": "一把矿路护卫铁剑已入库",
+      "logs_json": "[{\"step\": \"EVENT_EMIT\", \"detail\": \"发布 ACTION_REQUEST，目标 btn:forge_sword\", \"time\": \"2026-10-28T11:34:23.631+00:00\"}, {\"step\": \"LISTENER_CAPTURED\", \"detail\": \"RoyalGuardAccessListener 接收事件\", \"time\": \"2026-10-28T11:34:23.631+00:00\"}, {\"step\": \"ROLE_CLOSURE\", \"detail\": \"当前分配 [1]；激活 [1]；继承闭包 [1]\", \"time\": \"2026-10-28T11:34:23.632+00:00\"}, {\"step\": \"DECISION_ALLOW\", \"detail\": \"数据库角色授权包含 btn:forge_sword\", \"time\": \"2026-10-28T11:34:23.632+00:00\"}, {\"step\": \"LISTENER_CAPTURED\", \"detail\": \"BusinessActionListener 接收事件\", \"time\": \"2026-10-28T11:34:23.632+00:00\"}, {\"step\": \"DB_WRITE\", \"detail\": \"kingdom_state.swords 变化 +1；business_ledger 已登记操作者\", \"time\": \"2026-10-28T11:34:23.635+00:00\"}, {\"step\": \"DB_COMMIT\", \"detail\": \"授权响应与审计记录作为同一事务提交\", \"time\": \"2026-10-28T11:34:23.635+00:00\"}, {\"step\": \"AUDIT_PERSIST\", \"detail\": \"事件 26a8c0704502 已保存至 audit_event\", \"time\": \"2026-10-28T11:34:23.635+00:00\"}]",
+      "created_at": "2026-10-28T11:34:23.631+00:00"
+    },
+    {
+      "id": "3d945bb1e1674d12a54e53248d20d049",
+      "actor_id": 1,
+      "event_type": "LOGOUT_REQUEST",
+      "target": "session:logout",
+      "allowed": 1,
+      "message": "已退出当前身份",
+      "logs_json": "[{\"step\": \"EVENT_EMIT\", \"detail\": \"发布 LOGOUT_REQUEST，目标 session:logout\", \"time\": \"2026-10-28T11:39:25.186+00:00\"}, {\"step\": \"LISTENER_CAPTURED\", \"detail\": \"LogoutListener 接收事件\", \"time\": \"2026-10-28T11:39:25.186+00:00\"}, {\"step\": \"SESSION_LOGOUT\", \"detail\": \"撤销当前浏览器会话\", \"time\": \"2026-10-28T11:39:25.186+00:00\"}, {\"step\": \"DB_COMMIT\", \"detail\": \"授权响应与审计记录作为同一事务提交\", \"time\": \"2026-10-28T11:39:25.186+00:00\"}, {\"step\": \"AUDIT_PERSIST\", \"detail\": \"事件 3d945bb1e167 已保存至 audit_event\", \"time\": \"2026-10-28T11:39:25.186+00:00\"}]",
+      "created_at": "2026-10-28T11:39:25.186+00:00"
+    },
+    {
+      "id": "fbcfd9c3210d45f881e3c5a1b1c1e840",
+      "actor_id": 3,
+      "event_type": "LOGIN_REQUEST",
+      "target": "session:login",
+      "allowed": 1,
+      "message": "汉斯·卡蓬，欢迎来到政令大厅",
+      "logs_json": "[{\"step\": \"EVENT_EMIT\", \"detail\": \"发布 LOGIN_REQUEST，目标 session:login\", \"time\": \"2026-10-28T11:39:36.017+00:00\"}, {\"step\": \"LISTENER_CAPTURED\", \"detail\": \"AuthenticationListener 接收事件\", \"time\": \"2026-10-28T11:39:36.017+00:00\"}, {\"step\": \"DECISION_ALLOW\", \"detail\": \"密码哈希校验通过；创建激活已分配角色的会话\", \"time\": \"2026-10-28T11:39:36.474+00:00\"}, {\"step\": \"DB_COMMIT\", \"detail\": \"授权响应与审计记录作为同一事务提交\", \"time\": \"2026-10-28T11:39:36.474+00:00\"}, {\"step\": \"AUDIT_PERSIST\", \"detail\": \"事件 fbcfd9c3210d 已保存至 audit_event\", \"time\": \"2026-10-28T11:39:36.474+00:00\"}]",
+      "created_at": "2026-10-28T11:39:36.017+00:00"
+    },
+    {
+      "id": "49d23de9b27b466c8cee26c4dc759bbd",
+      "actor_id": 3,
+      "event_type": "ACCESS_CHECK",
+      "target": "menu:square",
+      "allowed": 1,
+      "message": "卫队放行：库滕堡市政广场",
+      "logs_json": "[{\"step\": \"EVENT_EMIT\", \"detail\": \"发布 ACCESS_CHECK，目标 menu:square\", \"time\": \"2026-10-28T11:39:36.574+00:00\"}, {\"step\": \"LISTENER_CAPTURED\", \"detail\": \"RoyalGuardAccessListener 接收事件\", \"time\": \"2026-10-28T11:39:36.574+00:00\"}, {\"step\": \"ROLE_CLOSURE\", \"detail\": \"当前分配 [3]；激活 [3]；继承闭包 [1, 3]\", \"time\": \"2026-10-28T11:39:36.579+00:00\"}, {\"step\": \"DECISION_ALLOW\", \"detail\": \"数据库角色授权包含 menu:square\", \"time\": \"2026-10-28T11:39:36.579+00:00\"}, {\"step\": \"DB_COMMIT\", \"detail\": \"授权响应与审计记录作为同一事务提交\", \"time\": \"2026-10-28T11:39:36.579+00:00\"}, {\"step\": \"AUDIT_PERSIST\", \"detail\": \"事件 49d23de9b27b 已保存至 audit_event\", \"time\": \"2026-10-28T11:39:36.579+00:00\"}]",
+      "created_at": "2026-10-28T11:39:36.574+00:00"
+    },
+    {
+      "id": "e961bbab215d43318d4f461def47a0cb",
+      "actor_id": 3,
+      "event_type": "ACCESS_CHECK",
+      "target": "page:tax_scroll",
+      "allowed": 1,
+      "message": "卫队放行：市政税务告示",
+      "logs_json": "[{\"step\": \"EVENT_EMIT\", \"detail\": \"发布 ACCESS_CHECK，目标 page:tax_scroll\", \"time\": \"2026-10-28T11:39:51.938+00:00\"}, {\"step\": \"LISTENER_CAPTURED\", \"detail\": \"RoyalGuardAccessListener 接收事件\", \"time\": \"2026-10-28T11:39:51.938+00:00\"}, {\"step\": \"ROLE_CLOSURE\", \"detail\": \"当前分配 [3]；激活 [3]；继承闭包 [1, 3]\", \"time\": \"2026-10-28T11:39:51.939+00:00\"}, {\"step\": \"DECISION_ALLOW\", \"detail\": \"数据库角色授权包含 page:tax_scroll\", \"time\": \"2026-10-28T11:39:51.939+00:00\"}, {\"step\": \"DB_COMMIT\", \"detail\": \"授权响应与审计记录作为同一事务提交\", \"time\": \"2026-10-28T11:39:51.939+00:00\"}, {\"step\": \"AUDIT_PERSIST\", \"detail\": \"事件 e961bbab215d 已保存至 audit_event\", \"time\": \"2026-10-28T11:39:51.939+00:00\"}]",
+      "created_at": "2026-10-28T11:39:51.938+00:00"
+    },
+    {
+      "id": "8c047359af944ea787b16638b7ff9f3e",
+      "actor_id": 3,
+      "event_type": "ACCESS_CHECK",
+      "target": "menu:treasury",
+      "allowed": 1,
+      "message": "卫队放行：意大利宫皇家铸币内廷",
+      "logs_json": "[{\"step\": \"EVENT_EMIT\", \"detail\": \"发布 ACCESS_CHECK，目标 menu:treasury\", \"time\": \"2026-10-28T11:39:57.192+00:00\"}, {\"step\": \"LISTENER_CAPTURED\", \"detail\": \"RoyalGuardAccessListener 接收事件\", \"time\": \"2026-10-28T11:39:57.192+00:00\"}, {\"step\": \"ROLE_CLOSURE\", \"detail\": \"当前分配 [3]；激活 [3]；继承闭包 [1, 3]\", \"time\": \"2026-10-28T11:39:57.192+00:00\"}, {\"step\": \"DECISION_ALLOW\", \"detail\": \"数据库角色授权包含 menu:treasury\", \"time\": \"2026-10-28T11:39:57.192+00:00\"}, {\"step\": \"DB_COMMIT\", \"detail\": \"授权响应与审计记录作为同一事务提交\", \"time\": \"2026-10-28T11:39:57.193+00:00\"}, {\"step\": \"AUDIT_PERSIST\", \"detail\": \"事件 8c047359af94 已保存至 audit_event\", \"time\": \"2026-10-28T11:39:57.193+00:00\"}]",
+      "created_at": "2026-10-28T11:39:57.192+00:00"
+    },
+    {
+      "id": "79f34b360a7c40bc98e8f95232fdf9ee",
+      "actor_id": 3,
+      "event_type": "ACTION_REQUEST",
+      "target": "btn:open_vault",
+      "allowed": 1,
+      "message": "已拨付100格罗申运银经费，支出已记入意大利宫收支密账",
+      "logs_json": "[{\"step\": \"EVENT_EMIT\", \"detail\": \"发布 ACTION_REQUEST，目标 btn:open_vault\", \"time\": \"2026-10-28T11:40:14.988+00:00\"}, {\"step\": \"LISTENER_CAPTURED\", \"detail\": \"RoyalGuardAccessListener 接收事件\", \"time\": \"2026-10-28T11:40:14.988+00:00\"}, {\"step\": \"ROLE_CLOSURE\", \"detail\": \"当前分配 [3]；激活 [3]；继承闭包 [1, 3]\", \"time\": \"2026-10-28T11:40:14.989+00:00\"}, {\"step\": \"DECISION_ALLOW\", \"detail\": \"数据库角色授权包含 btn:open_vault\", \"time\": \"2026-10-28T11:40:14.989+00:00\"}, {\"step\": \"LISTENER_CAPTURED\", \"detail\": \"BusinessActionListener 接收事件\", \"time\": \"2026-10-28T11:40:14.989+00:00\"}, {\"step\": \"DB_WRITE\", \"detail\": \"kingdom_state.gold 变化 -100；business_ledger 已登记操作者\", \"time\": \"2026-10-28T11:40:14.991+00:00\"}, {\"step\": \"DB_COMMIT\", \"detail\": \"授权响应与审计记录作为同一事务提交\", \"time\": \"2026-10-28T11:40:14.991+00:00\"}, {\"step\": \"AUDIT_PERSIST\", \"detail\": \"事件 79f34b360a7c 已保存至 audit_event\", \"time\": \"2026-10-28T11:40:14.991+00:00\"}]",
+      "created_at": "2026-10-28T11:40:14.988+00:00"
+    },
+    {
+      "id": "11813dd14ea14f05b6f6ffa8c415605b",
+      "actor_id": 3,
+      "event_type": "ACCESS_CHECK",
+      "target": "page:royal_ledger",
+      "allowed": 1,
+      "message": "卫队放行：意大利宫收支密账",
+      "logs_json": "[{\"step\": \"EVENT_EMIT\", \"detail\": \"发布 ACCESS_CHECK，目标 page:royal_ledger\", \"time\": \"2026-10-28T11:41:33.793+00:00\"}, {\"step\": \"LISTENER_CAPTURED\", \"detail\": \"RoyalGuardAccessListener 接收事件\", \"time\": \"2026-10-28T11:41:33.793+00:00\"}, {\"step\": \"ROLE_CLOSURE\", \"detail\": \"当前分配 [3]；激活 [3]；继承闭包 [1, 3]\", \"time\": \"2026-10-28T11:41:33.794+00:00\"}, {\"step\": \"DECISION_ALLOW\", \"detail\": \"数据库角色授权包含 page:royal_ledger\", \"time\": \"2026-10-28T11:41:33.794+00:00\"}, {\"step\": \"DB_COMMIT\", \"detail\": \"授权响应与审计记录作为同一事务提交\", \"time\": \"2026-10-28T11:41:33.794+00:00\"}, {\"step\": \"AUDIT_PERSIST\", \"detail\": \"事件 11813dd14ea1 已保存至 audit_event\", \"time\": \"2026-10-28T11:41:33.794+00:00\"}]",
+      "created_at": "2026-10-28T11:41:33.793+00:00"
+    },
+    {
+      "id": "0b334b28c17c4582a431af5c3761bdf3",
+      "actor_id": 3,
+      "event_type": "LOGOUT_REQUEST",
+      "target": "session:logout",
+      "allowed": 1,
+      "message": "已退出当前身份",
+      "logs_json": "[{\"step\": \"EVENT_EMIT\", \"detail\": \"发布 LOGOUT_REQUEST，目标 session:logout\", \"time\": \"2026-10-28T11:41:49.798+00:00\"}, {\"step\": \"LISTENER_CAPTURED\", \"detail\": \"LogoutListener 接收事件\", \"time\": \"2026-10-28T11:41:49.798+00:00\"}, {\"step\": \"SESSION_LOGOUT\", \"detail\": \"撤销当前浏览器会话\", \"time\": \"2026-10-28T11:41:49.798+00:00\"}, {\"step\": \"DB_COMMIT\", \"detail\": \"授权响应与审计记录作为同一事务提交\", \"time\": \"2026-10-28T11:41:49.798+00:00\"}, {\"step\": \"AUDIT_PERSIST\", \"detail\": \"事件 0b334b28c17c 已保存至 audit_event\", \"time\": \"2026-10-28T11:41:49.799+00:00\"}]",
+      "created_at": "2026-10-28T11:41:49.798+00:00"
+    },
+    {
+      "id": "e4bc98e4aefc4875a07838fe238d8d68",
+      "actor_id": 5,
+      "event_type": "LOGIN_REQUEST",
+      "target": "session:login",
+      "allowed": 1,
+      "message": "阿格尼丝，欢迎来到政令大厅",
+      "logs_json": "[{\"step\": \"EVENT_EMIT\", \"detail\": \"发布 LOGIN_REQUEST，目标 session:login\", \"time\": \"2026-10-28T11:41:54.928+00:00\"}, {\"step\": \"LISTENER_CAPTURED\", \"detail\": \"AuthenticationListener 接收事件\", \"time\": \"2026-10-28T11:41:54.928+00:00\"}, {\"step\": \"DECISION_ALLOW\", \"detail\": \"密码哈希校验通过；创建激活已分配角色的会话\", \"time\": \"2026-10-28T11:41:55.272+00:00\"}, {\"step\": \"DB_COMMIT\", \"detail\": \"授权响应与审计记录作为同一事务提交\", \"time\": \"2026-10-28T11:41:55.272+00:00\"}, {\"step\": \"AUDIT_PERSIST\", \"detail\": \"事件 e4bc98e4aefc 已保存至 audit_event\", \"time\": \"2026-10-28T11:41:55.272+00:00\"}]",
+      "created_at": "2026-10-28T11:41:54.928+00:00"
+    },
+    {
+      "id": "10354627c1094e9ba076eebd6ef3a16c",
+      "actor_id": 5,
+      "event_type": "ACCESS_CHECK",
+      "target": "menu:square",
+      "allowed": 1,
+      "message": "卫队放行：库滕堡市政广场",
+      "logs_json": "[{\"step\": \"EVENT_EMIT\", \"detail\": \"发布 ACCESS_CHECK，目标 menu:square\", \"time\": \"2026-10-28T11:41:55.373+00:00\"}, {\"step\": \"LISTENER_CAPTURED\", \"detail\": \"RoyalGuardAccessListener 接收事件\", \"time\": \"2026-10-28T11:41:55.373+00:00\"}, {\"step\": \"ROLE_CLOSURE\", \"detail\": \"当前分配 [5]；激活 [5]；继承闭包 [1, 5]\", \"time\": \"2026-10-28T11:41:55.374+00:00\"}, {\"step\": \"DECISION_ALLOW\", \"detail\": \"数据库角色授权包含 menu:square\", \"time\": \"2026-10-28T11:41:55.374+00:00\"}, {\"step\": \"DB_COMMIT\", \"detail\": \"授权响应与审计记录作为同一事务提交\", \"time\": \"2026-10-28T11:41:55.374+00:00\"}, {\"step\": \"AUDIT_PERSIST\", \"detail\": \"事件 10354627c109 已保存至 audit_event\", \"time\": \"2026-10-28T11:41:55.374+00:00\"}]",
+      "created_at": "2026-10-28T11:41:55.373+00:00"
+    },
+    {
+      "id": "a838e408e7e9464f81df040925c9b863",
+      "actor_id": 5,
+      "event_type": "ACCESS_CHECK",
+      "target": "page:royal_ledger",
+      "allowed": 1,
+      "message": "卫队放行：意大利宫收支密账",
+      "logs_json": "[{\"step\": \"EVENT_EMIT\", \"detail\": \"发布 ACCESS_CHECK，目标 page:royal_ledger\", \"time\": \"2026-10-28T11:42:16.062+00:00\"}, {\"step\": \"LISTENER_CAPTURED\", \"detail\": \"RoyalGuardAccessListener 接收事件\", \"time\": \"2026-10-28T11:42:16.062+00:00\"}, {\"step\": \"ROLE_CLOSURE\", \"detail\": \"当前分配 [5]；激活 [5]；继承闭包 [1, 5]\", \"time\": \"2026-10-28T11:42:16.062+00:00\"}, {\"step\": \"DECISION_ALLOW\", \"detail\": \"数据库角色授权包含 page:royal_ledger\", \"time\": \"2026-10-28T11:42:16.062+00:00\"}, {\"step\": \"DB_COMMIT\", \"detail\": \"授权响应与审计记录作为同一事务提交\", \"time\": \"2026-10-28T11:42:16.063+00:00\"}, {\"step\": \"AUDIT_PERSIST\", \"detail\": \"事件 a838e408e7e9 已保存至 audit_event\", \"time\": \"2026-10-28T11:42:16.063+00:00\"}]",
+      "created_at": "2026-10-28T11:42:16.061+00:00"
+    },
+    {
+      "id": "bdfad176c2f447fba9a4881075b689fa",
+      "actor_id": 5,
+      "event_type": "ACCESS_CHECK",
+      "target": "menu:treasury",
+      "allowed": 1,
+      "message": "卫队放行：意大利宫皇家铸币内廷",
+      "logs_json": "[{\"step\": \"EVENT_EMIT\", \"detail\": \"发布 ACCESS_CHECK，目标 menu:treasury\", \"time\": \"2026-10-28T11:42:21.325+00:00\"}, {\"step\": \"LISTENER_CAPTURED\", \"detail\": \"RoyalGuardAccessListener 接收事件\", \"time\": \"2026-10-28T11:42:21.325+00:00\"}, {\"step\": \"ROLE_CLOSURE\", \"detail\": \"当前分配 [5]；激活 [5]；继承闭包 [1, 5]\", \"time\": \"2026-10-28T11:42:21.325+00:00\"}, {\"step\": \"DECISION_ALLOW\", \"detail\": \"数据库角色授权包含 menu:treasury\", \"time\": \"2026-10-28T11:42:21.325+00:00\"}, {\"step\": \"DB_COMMIT\", \"detail\": \"授权响应与审计记录作为同一事务提交\", \"time\": \"2026-10-28T11:42:21.326+00:00\"}, {\"step\": \"AUDIT_PERSIST\", \"detail\": \"事件 bdfad176c2f4 已保存至 audit_event\", \"time\": \"2026-10-28T11:42:21.326+00:00\"}]",
+      "created_at": "2026-10-28T11:42:21.324+00:00"
+    },
+    {
+      "id": "d726335f74064fd68d5973bf220d71f3",
+      "actor_id": 5,
+      "event_type": "ACCESS_CHECK",
+      "target": "page:royal_ledger",
+      "allowed": 1,
+      "message": "卫队放行：意大利宫收支密账",
+      "logs_json": "[{\"step\": \"EVENT_EMIT\", \"detail\": \"发布 ACCESS_CHECK，目标 page:royal_ledger\", \"time\": \"2026-10-28T11:42:22.701+00:00\"}, {\"step\": \"LISTENER_CAPTURED\", \"detail\": \"RoyalGuardAccessListener 接收事件\", \"time\": \"2026-10-28T11:42:22.701+00:00\"}, {\"step\": \"ROLE_CLOSURE\", \"detail\": \"当前分配 [5]；激活 [5]；继承闭包 [1, 5]\", \"time\": \"2026-10-28T11:42:22.702+00:00\"}, {\"step\": \"DECISION_ALLOW\", \"detail\": \"数据库角色授权包含 page:royal_ledger\", \"time\": \"2026-10-28T11:42:22.702+00:00\"}, {\"step\": \"DB_COMMIT\", \"detail\": \"授权响应与审计记录作为同一事务提交\", \"time\": \"2026-10-28T11:42:22.703+00:00\"}, {\"step\": \"AUDIT_PERSIST\", \"detail\": \"事件 d726335f7406 已保存至 audit_event\", \"time\": \"2026-10-28T11:42:22.703+00:00\"}]",
+      "created_at": "2026-10-28T11:42:22.701+00:00"
+    },
+    {
+      "id": "d724ec61e9954385919b80a329261b0d",
+      "actor_id": 5,
+      "event_type": "ACTION_REQUEST",
+      "target": "btn:audit_ledger",
+      "allowed": 1,
+      "message": "银库核对报告已保存：余额一致",
+      "logs_json": "[{\"step\": \"EVENT_EMIT\", \"detail\": \"发布 ACTION_REQUEST，目标 btn:audit_ledger\", \"time\": \"2026-10-28T11:42:29.171+00:00\"}, {\"step\": \"LISTENER_CAPTURED\", \"detail\": \"RoyalGuardAccessListener 接收事件\", \"time\": \"2026-10-28T11:42:29.171+00:00\"}, {\"step\": \"ROLE_CLOSURE\", \"detail\": \"当前分配 [5]；激活 [5]；继承闭包 [1, 5]\", \"time\": \"2026-10-28T11:42:29.172+00:00\"}, {\"step\": \"DECISION_ALLOW\", \"detail\": \"数据库角色授权包含 btn:audit_ledger\", \"time\": \"2026-10-28T11:42:29.172+00:00\"}, {\"step\": \"LISTENER_CAPTURED\", \"detail\": \"BusinessActionListener 接收事件\", \"time\": \"2026-10-28T11:42:29.172+00:00\"}, {\"step\": \"LEDGER_RECONCILED\", \"detail\": \"覆盖流水至 2；预期余额 3100；实际 3100；差异 0\", \"time\": \"2026-10-28T11:42:29.196+00:00\"}, {\"step\": \"DB_WRITE\", \"detail\": \"kingdom_state.audits 变化 +1；business_ledger 已登记操作者\", \"time\": \"2026-10-28T11:42:29.196+00:00\"}, {\"step\": \"DB_COMMIT\", \"detail\": \"授权响应与审计记录作为同一事务提交\", \"time\": \"2026-10-28T11:42:29.196+00:00\"}, {\"step\": \"AUDIT_PERSIST\", \"detail\": \"事件 d724ec61e995 已保存至 audit_event\", \"time\": \"2026-10-28T11:42:29.196+00:00\"}]",
+      "created_at": "2026-10-28T11:42:29.171+00:00"
+    }
+  ]
+}

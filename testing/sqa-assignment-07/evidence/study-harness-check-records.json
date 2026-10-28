@@ -1,0 +1,14 @@
+[
+  {
+    "id": "U1",
+    "person": "AUTOMATION-TOOL-CHECK",
+    "prior": "使用过",
+    "result": "未完成",
+    "wrong_menus": 0,
+    "ease": 5,
+    "notes": "自动化工具校核；无参与者，不计入用户结果",
+    "elapsed_seconds": 0.36,
+    "verified_actions": [],
+    "recorded_at": "2026-10-28T11:52:34.231745+00:00"
+  }
+]

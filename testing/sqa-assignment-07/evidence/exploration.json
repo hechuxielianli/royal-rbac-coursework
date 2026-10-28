@@ -1,0 +1,125 @@
+{
+  "kind": "browser-assisted guided exploration",
+  "base_url": "http://127.0.0.1:5089",
+  "browser": "Microsoft Edge headless",
+  "browser_version": "156.0.4314.50",
+  "started_at": "2026-10-28T11:39:35.724Z",
+  "ended_at": "2026-10-28T11:40:48.103Z",
+  "records": [
+    {
+      "id": "E1",
+      "purpose": "观察快速双击是否造成同一轮提交重复生产。",
+      "started_at": "2026-10-28T11:39:38.188Z",
+      "ended_at": "2026-10-28T11:39:38.536Z",
+      "elapsed_ms": 348,
+      "status": "passed",
+      "observed": {
+        "post_requests": 1,
+        "swords_before": 24,
+        "swords_after": 25,
+        "mechanism_observed": "first click disables busy button; second immediate click sends no POST"
+      },
+      "next_hypothesis": "即时双击受到busy状态保护，继续检查浏览器历史与刷新会不会重放已完成操作。"
+    },
+    {
+      "id": "E2",
+      "purpose": "完成生产后打开卷轴、切换模型、后退前进并刷新，检查业务写请求与库存。",
+      "started_at": "2026-10-28T11:39:38.538Z",
+      "ended_at": "2026-10-28T11:39:39.738Z",
+      "elapsed_ms": 1200,
+      "status": "passed",
+      "observed": {
+        "swords_before": 25,
+        "swords_after": 25,
+        "additional_write_requests": 0,
+        "final_hash": "#/model"
+      },
+      "next_hypothesis": "导航只读取状态且未重放，下一轮转向客户端身份伪造和真实服务器会话过期边界。"
+    },
+    {
+      "id": "E3",
+      "purpose": "根据首轮未重放观察，转向篡改本地身份及角色，检查服务端是否仍拒绝财政操作。",
+      "started_at": "2026-10-28T11:40:40.975Z",
+      "ended_at": "2026-10-28T11:40:41.551Z",
+      "elapsed_ms": 576,
+      "status": "passed",
+      "observed": {
+        "forged_local_storage": {
+          "user_id": 4,
+          "username": "wenceslas",
+          "role": "KING",
+          "active_role_ids": [
+            4
+          ]
+        },
+        "server_user": "henry",
+        "server_active_roles": [
+          1
+        ],
+        "status": 403,
+        "code": "PERMISSION_DENIED",
+        "business_unchanged": true,
+        "visible_message": "亨利·斯卡里茨，拨付运银经费已被拦截。当前激活角色没有「拨付运银经费」权限 事件：89422130b4ac4e1e9d91bc9c02413c3f"
+      },
+      "next_hypothesis": "客户端身份字段未影响授权，继续让已登录会话在服务器真实过期，检查旧表单提交与恢复。"
+    },
+    {
+      "id": "E4",
+      "purpose": "保持已登录旧页面，通过夹具使auth_session到期，点击生产按钮后重新登录并检查不重放。",
+      "started_at": "2026-10-28T11:40:41.551Z",
+      "ended_at": "2026-10-28T11:40:43.176Z",
+      "elapsed_ms": 1625,
+      "status": "passed",
+      "observed": {
+        "fixture_setup": "expires_at set to current time minus one in the disposable server session row",
+        "status": 401,
+        "code": "AUTHENTICATION_REQUIRED",
+        "visible_message": "会话已过期，请重新登录。原操作未执行或重发。",
+        "forge_post_count": 1,
+        "swords_before": 25,
+        "swords_after": 25,
+        "explicit_login_succeeded": true
+      },
+      "next_hypothesis": "会话恢复未自动重发业务请求，最后检查窄屏下现有拒绝反馈与管理表单是否可见、可操作。"
+    },
+    {
+      "id": "E5",
+      "purpose": "以390×844视口检查正常页面、拒绝详情及国王授权表单的横向溢出和按钮尺寸。",
+      "started_at": "2026-10-28T11:40:43.177Z",
+      "ended_at": "2026-10-28T11:40:48.102Z",
+      "elapsed_ms": 4926,
+      "status": "passed",
+      "observed": {
+        "viewport": "390x844",
+        "measurements": [
+          {
+            "view": "henry home",
+            "viewport": 390,
+            "document_width": 390,
+            "body_width": 390
+          },
+          {
+            "view": "permission denial and trace",
+            "viewport": 390,
+            "document_width": 390,
+            "body_width": 390
+          },
+          {
+            "view": "permission form",
+            "viewport": 390,
+            "document_width": 390,
+            "save_button_height": 46
+          }
+        ],
+        "error_message_visible": true
+      },
+      "next_hypothesis": "本轮检查未发现新的失效路径，记录结果并结束本次短时探索。"
+    }
+  ],
+  "page_errors": [],
+  "rounds": 2,
+  "harness_adjustment": "Initial pointer-coordinate test timed out before the target was scrolled into the viewport. It is retained separately in exploration-harness-initial.json and excluded from product defect counts.",
+  "testing_type": "browser-assisted guided exploration, followed by automated replay; no participant user study data",
+  "wall_duration_seconds": 72,
+  "active_step_seconds": 9
+}
